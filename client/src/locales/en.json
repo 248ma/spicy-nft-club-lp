@@ -1,0 +1,324 @@
+{
+  "hero": {
+    "subtitle": "Innovate with You",
+    "title": "Premium Adult Entertainment Membership NFT",
+    "cta": "Buy NFT",
+    "current_price": "Current Price"
+  },
+  "concept": {
+    "subtitle": "Concept",
+    "title": "World's First Premium Adult Entertainment Membership NFT",
+    "description": "SPICY NFT CLUB is the world's first project to revolutionize premium adult entertainment membership with Web3 technology. Under the concept of 'Enjoy premium adult entertainment. Own it. Turn it into an asset.', we evolve the industry into safe and sustainable premium entertainment.",
+    "vision": {
+      "label": "VISION",
+      "text": "Innovating Premium Adult Entertainment with You"
+    },
+    "mission": {
+      "label": "MISSION",
+      "text": "Evolve the adult entertainment industry into a safe, fair, and attractive sector through technology and professional management, providing valuable experiences and possibilities to global stakeholders."
+    },
+    "features": [
+      {
+        "title": "Legality and Safety",
+        "description": "Strictly comply with Japanese Entertainment Business Act and realize clean operation that excludes anti-social forces."
+      },
+      {
+        "title": "Win-Win Structure",
+        "description": "An ecosystem where casts, guests, and holders all benefit - 'Everyone profits together'."
+      },
+      {
+        "title": "Evolution through DX",
+        "description": "Promote transparency and efficiency, and enable systematic high-quality service delivery."
+      }
+    ]
+  },
+  "features_section": {
+    "title": "Features of SPICY NFT CLUB",
+    "items": [
+      {
+        "title": "Virtually Free* Usage Rights",
+        "description": "Just by holding the NFT, you will receive *VIP usage rights worth 500,000 JPY annually. It generates value just by holding."
+      },
+      {
+        "title": "Secondary Market Trading",
+        "description": "Since it is purchased as an NFT, it can be sold on OpenSea and other secondary markets."
+      },
+      {
+        "title": "Participate in Management",
+        "description": "You can participate in project decision-making through management voting rights (Governance)."
+      },
+      {
+        "title": "Holding Rewards & Utility",
+        "description": "Rewards based on store revenue and utilities that increase with holding period. Directly enjoy the growth of the business."
+      }
+    ]
+  },
+  "problem": {
+    "subtitle": "The Problem",
+    "title": "Disrupting Old Norms with Web3.",
+    "items": [
+      {
+        "title": "Funding Barriers",
+        "description": "Traditional financial institutions make it difficult to secure loans, creating a major barrier to business expansion."
+      },
+      {
+        "title": "Opaque Management",
+        "description": "Structural issues make management transparency difficult, hindering trust from stakeholders."
+      },
+      {
+        "title": "Closed Structure",
+        "description": "The industry's inherent exclusivity has stifled innovation and healthy competition."
+      }
+    ]
+  },
+  "solution": {
+    "subtitle": "The Solution",
+    "title": "Limited to 400. Key to the Future.",
+    "description": "SPICY NFT CLUB is the world's first premium adult entertainment membership NFT project innovating with Web3 technology. Limited issuance of 200 on Ethereum + 200 on Solana (Total: 400 NFTs).",
+    "items": [
+      {
+        "title": "Transparency & Freedom",
+        "description": "Dual-chain issuance: 200 on Ethereum + 200 on Solana. Ensuring asset security with world-standard technology."
+      },
+      {
+        "title": "Solid Revenue Base",
+        "description": "Sustainable business model based on real operations of luxury delivery health services in Tokyo (30k-50k JPY/90min)."
+      },
+      {
+        "title": "Strict Compliance",
+        "description": "Compliance with all relevant laws including the Entertainment Business Act and Payment Services Act. Clean operation supervised by lawyers."
+      }
+    ]
+  },
+  "benefits": {
+    "subtitle": "Privileges",
+    "title": "Exclusive Member Privileges",
+    "items": [
+      {
+        "title": "VIP Usage Rights Worth 500,000 JPY Annually",
+        "description": "Free usage quota at project-operated stores and special discounts at partner stores. Simply holding provides value exceeding the purchase price."
+      },
+      {
+        "title": "Priority Reservation Rights",
+        "description": "Priority reservations even for popular staff and peak periods. Arranged by dedicated concierge desk for members."
+      },
+      {
+        "title": "Travel Usage Support",
+        "description": "Smooth access to carefully selected services through partner networks even during business trips or travel."
+      },
+      {
+        "title": "Exclusive Event Participation",
+        "description": "Invitations to special events exclusively for holders, such as secret parties and meet-and-greets with staff."
+      },
+      {
+        "title": "Store Revenue Returns",
+        "description": "Sharing business success with holders. Return program planned with 5% of store revenue as source."
+      },
+      {
+        "title": "Management Voting Rights",
+        "description": "Voting rights to participate in important project decisions such as new store locations and service content."
+      }
+    ]
+  },
+  "whitepaper": {
+    "subtitle": "Whitepaper",
+    "title": "Unraveling Project Details",
+    "description": "We have published a whitepaper covering the vision, business model, tokenomics, and detailed roadmap of SPICY NFT CLUB. Check out our innovative approach.",
+    "button": "View Whitepaper"
+  },
+  "how_to_buy": {
+    "subtitle": "How to Buy",
+    "title": "How to Purchase NFT",
+    "steps": [
+      {
+        "title": "Create a Wallet",
+        "description": "Create a cryptocurrency wallet such as MetaMask and install it in your browser."
+      },
+      {
+        "title": "Purchase & Send ETH",
+        "description": "Purchase ETH (Ethereum) on an exchange and send it to your created wallet."
+      },
+      {
+        "title": "Connect Wallet",
+        "description": "Click the 'Buy NFT' button on this site and connect your wallet."
+      },
+      {
+        "title": "Purchase NFT",
+        "description": "Select the quantity on the purchase screen, approve the transaction, and complete the purchase."
+      }
+    ]
+  },
+  "market": {
+    "subtitle": "Market Opportunity",
+    "title": "Untapped Huge Market.",
+    "description": "Japan Adult Market (~7.8T JPY) × Web3 Market (~7T JPY). A blue ocean where two giant markets intersect."
+  },
+    "bonding_curve": {
+      "title": "Bonding Curve Sales Model",
+      "description": "SPICY NFT CLUB NFTs are priced using a Bonding Curve model. For every NFT sold, the price immediately increases by 0.01 ETH (or 0.2 SOL).",
+      "features": [
+        {
+          "title": "Price Increase Mechanism",
+          "description": "Ethereum: 1st → 0.01 ETH, 2nd → 0.02 ETH, 100th → 1.00 ETH, 200th → 2.00 ETH (Sold Out) / Solana: 1st → 0.2 SOL, 2nd → 0.4 SOL, 100th → 20 SOL, 200th → 40 SOL (Sold Out)"
+        },
+        {
+          "title": "Benefits of Early Purchase",
+          "description": "Available at the lowest price immediately after sales start. The earlier you buy, the significantly cheaper it is. As prices soar later, early holders benefit from the large price difference."
+        },
+        {
+          "title": "Mint Now to Secure the Lowest Price!",
+          "description": "Limited to 400 (ETH 200 + SOL 200) — The price continues to rise as they sell."
+        }
+      ]
+    },
+    "tokenomics": {
+    "subtitle": "Tokenomics",
+    "title": "Growing Together with the Project.",
+    "items": {
+      "supply": { "label": "Total Supply", "value": "400 (No additional issuance)" },
+      "sale": { "label": "For Sale", "value": "400 (ETH 200 / SOL 200)" },
+      "team": { "label": "Team Reserve", "value": "0 (All for sale)" },
+      "price": { "label": "Price", "value": "Bonding Curve" },
+      "revenue": { "label": "Revenue Share", "value": "5% of Store Revenue" },
+      "royalty": { "label": "Secondary Market", "value": "Royalty 3%" }
+    }
+  },
+  "roadmap": {
+    "subtitle": "Roadmap",
+    "title": "Vision to Reality.",
+    "items": [
+      { "date": "Jan 2026", "title": "NFT Public Sale Starts", "description": "Sale of 400 limited premium memberships (ETH 200 + SOL 200)" },
+      { "date": "Q1 2026", "title": "1st Store Grand Open", "description": "Start of luxury delivery health store operation in Tokyo" },
+      { "date": "Q2 2026", "title": "First Revenue Share", "description": "Start of holder return program" },
+      { "date": "Q3 2026~", "title": "2nd Store / DAO", "description": "Multi-store expansion and transition to DAO" }
+    ]
+  },
+  "team": {
+    "subtitle": "Team",
+    "title": "Professionals in Industry & Web3.",
+    "description": "CEO: 248ma - 12 years industry experience, founding member of a major group with 10+ stores, built a group with 2B JPY annual revenue from scratch.",
+    "members": [
+      { "name": "Web3 Engineer", "role": "Advisor", "description": "Blockchain Technology Specialist" },
+      { "name": "Lawyer", "role": "Advisor", "description": "Legal supervision of Entertainment Business Act & Payment Services Act" },
+      { "name": "Admin Scrivener", "role": "Advisor", "description": "Licensing & Compliance Management" },
+      { "name": "AI Developer", "role": "Advisor", "description": "Support for latest technology implementation" }
+    ]
+  },
+  "faq": {
+    "subtitle": "FAQ",
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How is revenue sharing conducted?",
+        "answer": "We plan to return 5% of the store's monthly sales to NFT holders. The frequency and method will be decided in consultation with lawyers, prioritizing legal compliance. In the future, we aim for automatic distribution via smart contracts."
+      },
+      {
+        "question": "Are there legal risks?",
+        "answer": "This project operates in compliance with relevant laws such as the Entertainment Business Act, Payment Services Act, and Financial Instruments and Exchange Act. We are building a legal scheme under the supervision of dedicated lawyers and administrative scriveners. However, please understand the risks as regulations regarding crypto assets and NFTs may change."
+      },
+      {
+        "question": "Can I resell the NFT?",
+        "answer": "Yes, secondary trading (resale) is possible on major NFT marketplaces like OpenSea and Magic Eden. Upon secondary trading, 3% of the transaction amount will be returned to the project as royalty, used for operating funds and holder returns."
+      },
+      {
+        "question": "Will the physical store really open?",
+        "answer": "Yes, we are already proceeding with property selection and cast recruitment for the grand opening of the 1st store in the Shinjuku area, Tokyo, in February 2026. We will reliably launch the business leveraging the CEO's extensive track record and network in the industry."
+      },
+      {
+        "question": "Is cryptocurrency required for purchase?",
+        "answer": "Basically, purchase will be made with Ethereum (ETH) or Solana (SOL), but we are also considering introducing credit card payments. We plan to provide a detailed guide so that first-time users can also purchase."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Join the Revolution.",
+    "description": "You are the first revolutionary.",
+    "button": "Join Now"
+  },
+  "footer": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "cookie_policy": {
+      "title": "Cookie & Storage Usage",
+      "content": "This site respects your privacy and does not use tracking cookies. We only use browser local storage (localStorage) to maintain essential functions such as age verification and language settings. No personal tracking or data sharing with third parties occurs."
+    },
+    "law": "Legal Notice",
+    "disclaimer": "This project does not guarantee revenue or increase in NFT value. Risks specific to crypto assets and the adult entertainment industry exist. All investment decisions are at your own risk."
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "last_updated": "Last Updated: December 1, 2025",
+    "sections": {
+      "intro": {
+        "title": "Introduction",
+        "content": "These Terms of Service (hereinafter referred to as \"Terms\") set forth the conditions for using the NFTs and related services (hereinafter referred to as \"Services\") provided by SPICY NFT CLUB (hereinafter referred to as \"Project\"). By using the Services, users are deemed to have agreed to these Terms."
+      },
+      "definitions": {
+        "title": "Definitions",
+        "content": "1. \"NFT\" refers to non-fungible tokens issued on the blockchain.\n2. \"Holder\" refers to a person who legitimately holds an NFT issued by the Project.\n3. \"Wallet\" refers to software for managing crypto assets and NFTs."
+      },
+      "nft_rights": {
+        "title": "Rights of NFT",
+        "content": "1. Holders have the right to use and display their NFTs for personal purposes.\n2. Holding an NFT does not grant voting rights or equity interest in the Project's operation.\n3. Intellectual property rights belong to the Project and are not transferred to the Holder."
+      },
+      "prohibitions": {
+        "title": "Prohibited Acts",
+        "content": "Users shall not engage in the following acts:\n1. Acts that violate laws or public order and morals\n2. Acts involved in criminal activities such as money laundering\n3. Acts that interfere with the operation of the Project\n4. Acts that cause nuisance to other users"
+      },
+      "disclaimer": {
+        "title": "Disclaimer",
+        "content": "1. The Project does not guarantee the value of NFTs or future revenue.\n2. The Project is not responsible for blockchain network failures or high gas fees.\n3. The Project is not involved in disputes between users."
+      },
+      "modifications": {
+        "title": "Modification of Terms",
+        "content": "The Project may modify these Terms without prior notice to users if deemed necessary. The modified Terms shall take effect from the time they are displayed on this site."
+      },
+      "governing_law": {
+        "title": "Governing Law & Jurisdiction",
+        "content": "These Terms shall be interpreted in accordance with Japanese law. The Tokyo District Court shall have exclusive jurisdiction over any disputes related to the Services."
+      }
+    }
+  },
+  "legal_notice": {
+    "title": "Legal Notice (Specified Commercial Transactions Law)",
+    "items": {
+      "distributor": { "label": "Distributor", "value": "SPICY NFT CLUB Administration" },
+      "representative": { "label": "Representative", "value": "248ma" },
+      "location": { "label": "Location", "value": "Shinjuku 3-chome, Shinjuku-ku, Tokyo 160-0022 (Details will be disclosed without delay upon request)" },
+      "contact": { "label": "Contact", "value": "support@spicynft.club" },
+      "price": { "label": "Selling Price", "value": "Based on the price displayed on each NFT purchase page (ETH/SOL)." },
+      "charges": { "label": "Additional Charges", "value": "Gas fees for the blockchain network are required separately." },
+      "payment_method": { "label": "Payment Method", "value": "Payment via Cryptocurrency (Ethereum / Solana)" },
+      "delivery": { "label": "Delivery Time", "value": "Sent to your wallet immediately after the blockchain transaction is confirmed upon payment completion." },
+      "return": { "label": "Returns & Cancellations", "value": "Due to the nature of digital data, returns, cancellations, or exchanges are not accepted after payment completion." },
+      "system_requirements": { "label": "System Requirements", "value": "A browser environment compatible with Web3 wallets like MetaMask (Chrome, Firefox, Brave, etc.) is required." }
+    }
+  },
+  "age_gate": {
+    "title": "AGE VERIFICATION",
+    "description": "This website contains adult content.<br />Are you 18 years of age or older?",
+    "enter": "ENTER",
+    "exit": "EXIT",
+    "warning": "You must be 18+ to enter."
+  },
+  "exit_page": {
+    "title": "Entertainment of the Future",
+    "subtitle": "SPICY NFT CLUB is an innovative project aiming for industry transparency and healthy development using Web3 technology.",
+    "features": {
+      "security": {
+        "title": "Security & Transparency",
+        "desc": "Ensuring transparency in all transactions and operations through blockchain technology. Building a clean ecosystem without fraud."
+      },
+      "global": {
+        "title": "Global Standards",
+        "desc": "Establishing world-class compliance and governance structures, challenging new value creation across borders."
+      },
+      "tech": {
+        "title": "Innovation",
+        "desc": "Fusing cutting-edge Web3 technology with real business to realize a sustainable and fair business model."
+      }
+    },
+    "note": "*Access to the main content of this site is restricted to those under 18 in accordance with laws and regulations.",
+    "back_button": "Back to Top"
+  }
+}

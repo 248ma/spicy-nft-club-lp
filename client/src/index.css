@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -79,38 +80,54 @@
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  /* SPICY NFT CLUB 高級感パレット */
+  /* リッチマゼンタ: 深みのある赤紫で大人の色気と高級感を表現 */
+  --primary: oklch(0.55 0.25 330); 
+  --primary-foreground: oklch(1 0 0);
+  
+  /* ダークラグジュアリー: 漆黒に近いがわずかに紫を含んだ背景 */
+  --background: oklch(0.12 0.03 280);
+  /* シルバーホワイト: 真っ白ではなく少し落ち着いた白 */
+  --foreground: oklch(0.92 0.01 280);
+  
+  /* カード背景: ガラスのような透明感のある暗色 */
+  --card: oklch(0.15 0.03 280);
+  --card-foreground: oklch(0.92 0.01 280);
+  
+  --popover: oklch(0.15 0.03 280);
+  --popover-foreground: oklch(0.92 0.01 280);
+  
+  /* セカンダリー: アクセントとなるゴールド/シャンパンカラー */
+  --secondary: oklch(0.75 0.15 85);
+  --secondary-foreground: oklch(0.12 0.03 280);
+  
+  --muted: oklch(0.25 0.02 280);
+  --muted-foreground: oklch(0.65 0.02 280);
+  
+  --accent: oklch(0.55 0.25 330);
+  --accent-foreground: oklch(1 0 0);
+  
+  --destructive: oklch(0.5 0.2 25);
+  --destructive-foreground: oklch(1 0 0);
+  
+  --border: oklch(0.25 0.02 280);
+  --input: oklch(0.25 0.02 280);
+  --ring: oklch(0.55 0.25 330);
+  
+  --sidebar: oklch(0.12 0.03 280);
+  --sidebar-foreground: oklch(0.92 0.01 280);
+  --sidebar-primary: oklch(0.55 0.25 330);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.20 0.03 280);
+  --sidebar-accent-foreground: oklch(0.92 0.01 280);
+  --sidebar-border: oklch(0.25 0.02 280);
+  --sidebar-ring: oklch(0.55 0.25 330);
+  
+  --chart-1: oklch(0.55 0.25 330);
+  --chart-2: oklch(0.75 0.15 85);
+  --chart-3: oklch(0.45 0.20 290);
+  --chart-4: oklch(0.65 0.20 340);
+  --chart-5: oklch(0.85 0.10 85);
 }
 
 @layer base {
@@ -119,6 +136,11 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-wide;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -130,6 +152,33 @@
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10 shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 hover:border-white/20 transition-all duration-500 hover:bg-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70;
+  }
+  
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ff0080] via-[#7928ca] to-[#4a00e0];
+  }
+
+  .aurora-bg {
+    background: 
+      radial-gradient(circle at 0% 0%, rgba(121, 40, 202, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 100% 0%, rgba(74, 0, 224, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(255, 0, 128, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(121, 40, 202, 0.15) 0%, transparent 50%);
+    filter: blur(40px);
   }
 }
 

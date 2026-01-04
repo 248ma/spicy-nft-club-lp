@@ -1,0 +1,205 @@
+{
+  "hero": {
+    "subtitle": "与您共创风俗革新",
+    "title": "高级风俗会员权 NFT",
+    "cta": "购买 NFT",
+    "current_price": "当前价格"
+  },
+  "concept": {
+    "subtitle": "Concept",
+    "title": "世界首个高级风俗会员制 NFT",
+    "description": "SPICY NFT CLUB 是世界首个通过 Web3 技术革新风俗高级会员权的项目。秉承“享受高级风俗。拥有它。将其变为资产。”的理念，将行业发展为安全且可持续的高端娱乐。",
+    "vision": {
+      "label": "VISION",
+      "text": "与您共同革新高级风俗"
+    },
+    "mission": {
+      "label": "MISSION",
+      "text": "通过技术和专业管理，将风俗行业发展为安全、公平、具有吸引力的产业，为全球利益相关者提供有价值的体验和可能性。"
+    },
+    "features": [
+      {
+        "title": "合法性与安全性",
+        "description": "严格遵守日本风营法，实现排除反社会势力的清洁运营。"
+      },
+      {
+        "title": "Win-Win 结构",
+        "description": "演员、客人、持有者全部受益的“大家一起赚钱”生态系统。"
+      },
+      {
+        "title": "通过 DX 实现进化",
+        "description": "推进透明度和效率，实现系统化的高质量服务提供。"
+      }
+    ]
+  },
+  "problem": {
+    "subtitle": "The Problem",
+    "title": "用 Web3 颠覆旧常识。",
+    "items": [
+      {
+        "title": "融资壁垒",
+        "description": "难以从传统金融机构获得贷款，成为业务扩展的巨大障碍。"
+      },
+      {
+        "title": "经营不透明",
+        "description": "经营实况难以看清，存在难以获得利益相关者信任的结构性课题。"
+      },
+      {
+        "title": "封闭的结构",
+        "description": "行业特有的封闭性阻碍了创新和良性竞争。"
+      }
+    ]
+  },
+  "solution": {
+    "subtitle": "The Solution",
+    "title": "限量 400 个。通往未来的钥匙。",
+    "description": "SPICY NFT CLUB 高级会员权。这不仅仅是会员权。这是共创通过新产业的权利。ETH 200 个 + SOL 200 个限量发行。",
+    "items": [
+      {
+        "title": "透明性与选择自由",
+        "description": "Ethereum 200 个 + Solana 200 个双链发行。以世界标准的技术确保资产安全。"
+      },
+      {
+        "title": "稳固的收益基础",
+        "description": "基于东京高级上门服务（90分钟 3-5万日元）实业的可持续商业模式。"
+      },
+      {
+        "title": "彻底的合规性",
+        "description": "遵守风营法、资金结算法等所有相关法规。由律师、行政书士监管的清洁运营。"
+      }
+    ]
+  },
+  "benefits": {
+    "subtitle": "Privileges",
+    "title": "会员专属特权",
+    "items": [
+      {
+        "title": "年度价值50万日元的VIP使用权",
+        "description": "项目运营店铺的免费使用额度和合作店铺的特别折扣等,仅持有即可提供超过购买价格的价值。"
+      },
+      {
+        "title": "优先预约权",
+        "description": "即使是人气演员和繁忙期也可以优先预约。会员专用礼宾台为您安排。"
+      },
+      {
+        "title": "旅行时使用支持",
+        "description": "即使在出差或旅行目的地,也可以通过合作网络顺利使用精选服务。"
+      },
+      {
+        "title": "限定活动参加权",
+        "description": "邀请参加持有者限定的特别活动,如秘密派对和与演员的交流会。"
+      },
+      {
+        "title": "店铺收益返还",
+        "description": "与持有者共享业务成功。计划以店铺收益的5%为资金来源的返还计划。"
+      },
+      {
+        "title": "经营投票权",
+        "description": "授予投票权参与新店铺选址和服务内容等项目重要事项决策。"
+      }
+    ]
+  },
+  "whitepaper": {
+    "subtitle": "Whitepaper",
+    "title": "解读项目详情",
+    "description": "我们公开了涵盖 SPICY NFT CLUB 的愿景、商业模式、代币经济学和详细路线图的白皮书。请查看我们的创新方法。",
+    "button": "查看白皮书"
+  },
+  "how_to_buy": {
+    "subtitle": "How to Buy",
+    "title": "如何购买 NFT",
+    "steps": [
+      {
+        "title": "创建钱包",
+        "description": "创建 MetaMask 等加密货币钱包并安装到浏览器中。"
+      },
+      {
+        "title": "购买和发送 ETH",
+        "description": "在交易所购买 ETH（以太币）并发送到您创建的钱包。"
+      },
+      {
+        "title": "连接钱包",
+        "description": "点击本站的“购买 NFT”按钮并连接您的钱包。"
+      },
+      {
+        "title": "购买 NFT",
+        "description": "在购买界面选择数量，批准交易并完成购买。"
+      }
+    ]
+  },
+  "market": {
+    "subtitle": "Market Opportunity",
+    "title": "未开发的巨大市场。",
+    "description": "日本风俗市场（~7.8兆日元）× Web3 市场（~7兆日元）。两个巨大市场交汇的蓝海。"
+  },
+  "tokenomics": {
+    "subtitle": "Tokenomics",
+    "title": "与项目共同成长。",
+    "items": {
+      "supply": { "label": "总供应量", "value": "400 个 (无增发)" },
+      "sale": { "label": "销售部分", "value": "400 个 (ETH 200 / SOL 200)" },
+      "team": { "label": "团队保留", "value": "0 个 (全部销售)" },
+      "price": { "label": "价格", "value": "联合曲线" },
+      "revenue": { "label": "收益返还", "value": "店铺收益的 5%" },
+      "royalty": { "label": "二级流通", "value": "版税 3%" }
+    }
+  },
+  "roadmap": {
+    "subtitle": "Roadmap",
+    "title": "Vision to Reality.",
+    "items": [
+      { "date": "2026.01", "title": "NFT 公开发售开始", "description": "限量 400 个高级会员权发售（ETH 200 + SOL 200）" },
+      { "date": "2026.02", "title": "1号店 Grand Open", "description": "东京高级上门服务店铺开始运营" },
+      { "date": "2026.03", "title": "首次收益返还开始", "description": "持有者返还计划启动" },
+      { "date": "2026.Q3~", "title": "2号店 / DAO化", "description": "多店铺扩展及向自律分散型组织过渡" }
+    ]
+  },
+  "team": {
+    "subtitle": "Team",
+    "title": "熟知行业与 Web3 的专业人士。",
+    "description": "CEO: 248ma - 行业经历 12 年，10 家店铺创业经验，总年商 30 亿日元规模集团创业实绩。",
+    "members": [
+      { "name": "Web3 工程师", "role": "Advisor", "description": "区块链技术专家" },
+      { "name": "律师", "role": "Advisor", "description": "风营法、资金结算法法律监管" },
+      { "name": "行政书士", "role": "Advisor", "description": "许可认证、合规管理" },
+      { "name": "AI 开发者", "role": "Advisor", "description": "最新技术导入支援" }
+    ]
+  },
+  "faq": {
+    "subtitle": "FAQ",
+    "title": "常见问题",
+    "items": [
+      {
+        "question": "收益返还是如何进行的？",
+        "answer": "计划以店铺月销售额的 5% 为原资，向 NFT 持有者进行返还。返还频率和方法将在优先遵守法律的前提下，与律师协商决定。未来旨在通过智能合约实现自动分配。"
+      },
+      {
+        "question": "有法律风险吗？",
+        "answer": "本项目将遵守风营法及资金结算法、金融商品交易法等相关法规进行运营。在专任律师及行政书士的监管下，构建合法的方案。但关于加密资产和 NFT 的法律法规可能会发生变化，请充分理解风险。"
+      },
+      {
+        "question": "NFT 可以转卖吗？",
+        "answer": "是的，可以在 OpenSea 和 Magic Eden 等主要 NFT 市场进行二级流通（转卖）。二级流通时，交易额的 3% 将作为版税返还给项目，用于运营资金和持有者返还。"
+      },
+      {
+        "question": "实体店真的会开业吗？",
+        "answer": "是的，为了 2026 年 2 月在东京新宿地区 1 号店盛大开业，已经正在进行物件选定和演员招聘的准备。利用 CEO 在行业内的丰富实绩和网络，确实地进行事业启动。"
+      },
+      {
+        "question": "购买需要加密资产吗？",
+        "answer": "基本上使用 Ethereum (ETH) 或 Solana (SOL) 进行购买，但也正在考虑引入信用卡支付。为了让初次使用者也能购买，计划提供详细的指南。"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Join the Revolution.",
+    "description": "第一位革命家，就是你。",
+    "button": "立即参加"
+  },
+  "footer": {
+    "terms": "使用条款",
+    "privacy": "隐私政策",
+    "law": "基于特定商交易法的标记",
+    "disclaimer": "本项目不保证收益或 NFT 价值的上升。存在加密资产及风俗行业特有的风险。所有投资判断请自行承担责任。"
+  }
+}
