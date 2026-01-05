@@ -622,7 +622,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">{t('tokenomics.title')}</h2>
           </motion.div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-24">
             {/* NFT Card & Price Display (Moved from Hero/Concept) */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
@@ -680,6 +680,40 @@ export default function Home() {
               </div>
             </div>
           </div>
+
+          {/* Bonding Curve Explanation */}
+          <motion.div 
+            className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl border border-white/10 relative overflow-hidden"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca]" />
+            <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#7928ca] rounded-full blur-[100px] opacity-20" />
+            
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Bonding Curve Sales Model</h3>
+            <p className="text-gray-300 leading-relaxed mb-8">
+              SPICY NFT CLUB adopts a Bonding Curve model where the price increases as more NFTs are minted. 
+              This mechanism rewards early supporters with lower entry prices while ensuring sustainable value growth for the community.
+              The price starts at 0.01 ETH and gradually increases based on a predetermined mathematical curve.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+              <div className="bg-black/40 p-6 rounded-xl border border-white/5">
+                <div className="text-[#ff0080] font-bold mb-2">Early Access</div>
+                <p className="text-sm text-gray-400">Secure your membership at the lowest possible price point by joining early.</p>
+              </div>
+              <div className="bg-black/40 p-6 rounded-xl border border-white/5">
+                <div className="text-[#7928ca] font-bold mb-2">Fair Distribution</div>
+                <p className="text-sm text-gray-400">Transparent pricing mechanism determined purely by demand and supply.</p>
+              </div>
+              <div className="bg-black/40 p-6 rounded-xl border border-white/5">
+                <div className="text-[#4a00e0] font-bold mb-2">Value Protection</div>
+                <p className="text-sm text-gray-400">The curve design helps protect the floor price and value for existing holders.</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
