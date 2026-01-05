@@ -1,4 +1,11 @@
 {
+  "age_gate": {
+    "title": "年龄确认",
+    "description": "本网站包含成人内容。<br />您是否已满18岁？",
+    "enter": "进入",
+    "exit": "退出",
+    "warning": "未满18岁禁止进入。"
+  },
   "hero": {
     "subtitle": "与您共创风俗革新",
     "title": "高级风俗会员权 NFT",
