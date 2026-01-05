@@ -506,7 +506,68 @@ export default function Home() {
             </motion.div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-12">
-            {/* Features Subsection (Relocated) */}
+            {/* SPICY NFT CLUB Features Section */}
+            <div className="w-full mb-32">
+              <motion.div 
+                className="text-center mb-16"
+                {...fadeInUp}
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+                  {t('features_section.title')}
+                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
+                  const iconPath = [
+                    "/images/icon-crown.webp",     // 実質無料利用権
+                    "/images/icon-opensea.webp",   // 二次流通可能
+                    "/images/icon-governance.webp", // 経営への参加
+                    "/images/icon-rewards.webp"    // 保有還元とユーティリティ
+                  ][i];
+                  
+                  // アイコンの背景色（ボーダー色）を交互に変える
+                  const borderColor = [
+                    "border-[#4a00e0]", // 青
+                    "border-[#7928ca]", // 紫
+                    "border-[#ff0080]", // ピンク
+                    "border-[#00d2ff]"  // 水色
+                  ][i];
+
+                  return (
+                    <motion.div 
+                      key={i}
+                      className="relative p-8 rounded-3xl bg-black/40 border border-white/10 overflow-hidden group hover:bg-white/5 transition-all duration-300"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                    >
+                      <div className="flex flex-col h-full relative z-10">
+                        <div className="flex justify-between items-start mb-6">
+                          <div className={`w-16 h-16 rounded-2xl ${borderColor} border-2 flex items-center justify-center bg-black/50 p-3`}>
+                            <img src={iconPath} alt={item.title} className="w-full h-full object-contain" />
+                          </div>
+                          <span className="text-gray-600 font-mono text-sm">0{i + 1}</span>
+                        </div>
+                        
+                        <h4 className="text-xl font-bold text-white mb-4">{item.title}</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                          {item.description.split('*').map((part: string, index: number) => (
+                            index === 0 ? part : <span key={index} className="text-[#ff0080] font-bold">{part}</span>
+                          ))}
+                        </p>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Member Exclusive Privileges Subsection */}
             <div className="w-full mb-24">
               <motion.div 
                 className="text-center mb-12"
