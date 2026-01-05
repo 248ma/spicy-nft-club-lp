@@ -507,10 +507,10 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
                 const iconPath = [
-                  "/images/icon-crown.webp",     // 実質無料利用権
-                  "/images/icon-opensea.webp",   // 二次流通可能
-                  "/images/icon-governance.webp", // 経営への参加
-                  "/images/icon-rewards.webp"    // 保有還元とユーティリティ
+                  "/images/icon-crown.webp",            // 実質無料利用権
+                  "/images/icon-secondary-market.webp", // 二次流通可能 (修正: 正しいファイル名へ)
+                  "/images/icon-governance.webp",       // 経営への参加
+                  "/images/icon-rewards.webp"           // 保有還元とユーティリティ
                 ][i];
                 
                 // アイコンの枠線の色（画像に基づく）
