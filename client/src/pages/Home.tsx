@@ -18,6 +18,7 @@ import { ArrowRight, Check, Key, BarChart3, Scale, Wallet, Coins, Link as LinkIc
 import { Link } from "wouter";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import { BondingCurveVisual } from '../components/BondingCurveVisual';
 import { NftMeter, NftMeterHandle } from "@/components/NftMeter";
 import { useRef } from "react";
 import { useTranslation } from 'react-i18next';
@@ -626,7 +627,7 @@ export default function Home() {
 
           {/* Bonding Curve Explanation */}
           <motion.div 
-            className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl border border-white/10 relative overflow-hidden"
+            className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -636,17 +637,22 @@ export default function Home() {
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#7928ca] rounded-full blur-[100px] opacity-20" />
             
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">{t('bonding_curve.title')}</h3>
-            <p className="text-gray-300 leading-relaxed mb-8">
+            <p className="text-gray-300 leading-relaxed mb-12 max-w-3xl mx-auto">
               {t('bonding_curve.description')}
             </p>
+
+            {/* Visual Component */}
+            <div className="mb-12">
+              <BondingCurveVisual />
+            </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
               {(t('bonding_curve.features', { returnObjects: true }) as any[]).map((feature, i) => (
-                <div key={i} className="bg-black/40 p-6 rounded-xl border border-white/5">
-                  <div className={`${i === 0 ? 'text-[#ff0080]' : i === 1 ? 'text-[#7928ca]' : 'text-[#4a00e0]'} font-bold mb-2`}>
+                <div key={i} className="bg-black/40 p-6 rounded-xl border border-white/5 hover:bg-white/5 transition-colors">
+                  <div className={`${i === 0 ? 'text-[#ff0080]' : i === 1 ? 'text-[#7928ca]' : 'text-[#4a00e0]'} font-bold mb-2 text-lg`}>
                     {feature.title}
                   </div>
-                  <p className="text-sm text-gray-400">{feature.description}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
                 </div>
               ))}
             </div>
