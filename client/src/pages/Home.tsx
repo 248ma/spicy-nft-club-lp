@@ -512,12 +512,10 @@ export default function Home() {
                 className="text-center mb-16"
                 {...fadeInUp}
               >
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
                   {t('features_section.title')}
-                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 </h3>
-                <div className="w-16 h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
+                <div className="w-24 h-1.5 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
               </motion.div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
@@ -529,35 +527,45 @@ export default function Home() {
                     "/images/icon-rewards.webp"    // 保有還元とユーティリティ
                   ][i];
                   
-                  // アイコンの背景色（ボーダー色）を交互に変える
+                  // アイコンの枠線の色（画像に基づく）
                   const borderColor = [
-                    "border-[#4a00e0]", // 青
-                    "border-[#7928ca]", // 紫
-                    "border-[#ff0080]", // ピンク
-                    "border-[#00d2ff]"  // 水色
+                    "border-[#3b82f6]", // 青 (01)
+                    "border-[#a855f7]", // 紫 (02)
+                    "border-[#f97316]", // オレンジ (03)
+                    "border-[#14b8a6]"  // 緑 (04)
+                  ][i];
+
+                  // アイコンの背景色（薄い色）
+                  const iconBgColor = [
+                    "bg-[#3b82f6]/10",
+                    "bg-[#a855f7]/10",
+                    "bg-[#f97316]/10",
+                    "bg-[#14b8a6]/10"
                   ][i];
 
                   return (
                     <motion.div 
                       key={i}
-                      className="relative p-8 rounded-3xl bg-black/40 border border-white/10 overflow-hidden group hover:bg-white/5 transition-all duration-300"
+                      className="relative p-8 rounded-[2rem] bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: i * 0.1 }}
                     >
                       <div className="flex flex-col h-full relative z-10">
-                        <div className="flex justify-between items-start mb-6">
-                          <div className={`w-16 h-16 rounded-2xl ${borderColor} border-2 flex items-center justify-center bg-black/50 p-3`}>
-                            <img src={iconPath} alt={item.title} className="w-full h-full object-contain" />
+                        <div className="flex justify-between items-start mb-8">
+                          {/* Icon Container */}
+                          <div className={`w-14 h-14 rounded-xl ${borderColor} border flex items-center justify-center ${iconBgColor} p-3`}>
+                            <img src={iconPath} alt={item.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                           </div>
-                          <span className="text-gray-600 font-mono text-sm">0{i + 1}</span>
+                          {/* Number */}
+                          <span className="text-gray-500 font-mono text-sm tracking-widest">0{i + 1}</span>
                         </div>
                         
                         <h4 className="text-xl font-bold text-white mb-4">{item.title}</h4>
                         <p className="text-gray-400 text-sm leading-relaxed">
                           {item.description.split('*').map((part: string, index: number) => (
-                            index === 0 ? part : <span key={index} className="text-[#ff0080] font-bold">{part}</span>
+                            index === 0 ? part : <span key={index} className="text-gray-400">{part}</span> // 画像では強調色は見られないためグレーに戻す、もしくは微調整
                           ))}
                         </p>
                       </div>
