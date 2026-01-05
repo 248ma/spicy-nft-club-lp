@@ -69,7 +69,7 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       >
-        <img src="/logo.png" alt="SPICY NFT CLUB" className="h-16 w-auto drop-shadow-[0_0_10px_rgba(140,20,80,0.5)]" />
+        <img src="/logo.webp" alt="SPICY NFT CLUB" className="h-16 w-auto drop-shadow-[0_0_10px_rgba(140,20,80,0.5)]" />
       </motion.div>
 
       {/* Header Actions (CTA + Language) */}
@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* Dot Navigation */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-4">
-        {['hero', 'concept', 'solution', 'benefits', 'tokenomics', 'roadmap', 'team', 'how-to-buy', 'faq'].map((id) => (
+        {['hero', 'concept', 'solution', 'nft', 'roadmap', 'team', 'how-to-buy', 'faq'].map((id) => (
           <a
             key={id}
             href={`#${id}`}
@@ -229,7 +229,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Concept Section (Integrated Vision, Mission & Features) */}
+      {/* Concept Section (Vision & Mission) */}
       <section id="concept" className="py-12 md:py-20 relative bg-black overflow-hidden">
         {/* Background Elements - Global Gradients */}
         <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-b from-[#7928ca]/20 to-transparent pointer-events-none blur-3xl z-0" />
@@ -253,7 +253,7 @@ export default function Home() {
             {/* Background Image - Extended to cover Vision/Mission and part of Features */}
             <div className="absolute inset-0 -mx-4 md:-mx-20 -mt-10 -mb-40 z-0 rounded-3xl overflow-hidden">
               <img 
-                src="/snclady.png" 
+                src="/snclady.webp" 
                 alt="Background" 
                 className="w-full h-full object-cover opacity-[0.38]"
                 style={{ objectPosition: '80% 20%' }}
@@ -367,10 +367,10 @@ export default function Home() {
               {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
                 // Define icons for each feature
                 const icons = [
-                  <img src="/images/icon-crown.png" alt="VIP Access" className="w-full h-full object-contain p-1" />,
-                  <img src="/images/icon-secondary-market.png" alt="Secondary Market" className="w-full h-full object-contain p-1" />,
-                  <img src="/images/icon-governance.png" alt="Governance" className="w-full h-full object-contain p-1" />,
-                  <img src="/images/icon-rewards.png" alt="Rewards" className="w-full h-full object-contain p-1" />
+                  <img src="/images/icon-crown.webp" alt="VIP Access" className="w-full h-full object-contain p-1" />,
+                  <img src="/images/icon-secondary-market.webp" alt="Secondary Market" className="w-full h-full object-contain p-1" />,
+                  <img src="/images/icon-governance.webp" alt="Governance" className="w-full h-full object-contain p-1" />,
+                  <img src="/images/icon-rewards.webp" alt="Rewards" className="w-full h-full object-contain p-1" />
                 ];
 
                 // Define specific colors for visual variety
@@ -474,33 +474,47 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section (Restructured) */}
-      <section id="benefits" className="py-32 relative bg-black overflow-hidden">
-        {/* Background Effects */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-[radial-gradient(circle_at_center,rgba(121,40,202,0.1),transparent_70%)] pointer-events-none" />
-        
-        <div className="container relative z-10 max-w-6xl mx-auto px-6">
+
+      {/* End of Concept Section */}
+
+      {/* NFT Section (Features + Tokenomics) */}
+      <section id="nft" className="py-12 md:py-20 relative bg-black overflow-hidden">
+        <div className="container relative z-10">
+          {/* Unified Section Header */}
           <motion.div 
-            className="text-center mb-32"
+            className="text-center mb-24"
             {...fadeInUp}
           >
-            <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('benefits.subtitle')}</span>
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">{t('benefits.title')}</h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              {t('benefits.description')}
-            </p>
+            <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">Want to join?</span>
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tight">NFT MEMBERSHIP</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Features Subsection */}
+          <div className="mb-32">
+            <motion.div 
+              className="text-center mb-12"
+              {...fadeInUp}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+                {t('benefits.title')}
+                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+              </h3>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                {t('benefits.description')}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(t('benefits.items', { returnObjects: true }) as any[]).map((item, i) => {
-              // Map index to specific icons
               const iconPath = [
-                "/images/icon-crown.png",     // VIP利用権
-                "/images/icon-priority.png",  // 優先予約権
-                "/images/icon-travel.png",    // 旅行時利用サポート
-                "/images/icon-event.png",     // 限定イベント参加権
-                "/images/icon-rewards.png",   // 店舗収益の還元
-                "/images/icon-governance.png" // 経営投票権
+                "/images/icon-crown.webp",     // VIP利用権
+                "/images/icon-priority.webp",  // 優先予約権
+                "/images/icon-travel.webp",    // 旅行時利用サポート
+                "/images/icon-event.webp",     // 限定イベント参加権
+                "/images/icon-rewards.webp",   // 店舗収益の還元
+                "/images/icon-governance.webp" // 経営投票権
               ][i];
 
               return (
@@ -512,11 +526,8 @@ export default function Home() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
-                  {/* Hover Glow Effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
-                  
                   <div className="relative z-10 flex flex-col items-center text-center h-full">
-                    {/* Icon Container */}
                     <div className="mb-8 relative">
                       <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
                       <img 
@@ -525,8 +536,6 @@ export default function Home() {
                         className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-500"
                       />
                     </div>
-
-                    {/* Content */}
                     <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
                       {item.title}
                     </h3>
@@ -537,23 +546,24 @@ export default function Home() {
                 </motion.div>
               );
             })}
+            </div>
           </div>
-        </div>
-      </section>
-      {/* End of Features Grid */}
-      {/* Tokenomics Section (Integrated into Concept) */}
-      <div id="tokenomics" className="py-12 md:py-20 relative">
-        <div className="container relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            {...fadeInUp}
-          >
-            <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('tokenomics.subtitle')}</span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">{t('tokenomics.title')}</h2>
-          </motion.div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-24">
-            {/* NFT Card & Price Display (Moved from Hero/Concept) */}
+          {/* Tokenomics Subsection */}
+          <div className="mt-32 pt-12 border-t border-white/10">
+            <motion.div 
+              className="text-center mb-16"
+              {...fadeInUp}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                <span className="w-8 h-[2px] bg-[#7928ca]"></span>
+                {t('tokenomics.title')}
+                <span className="w-8 h-[2px] bg-[#7928ca]"></span>
+              </h3>
+            </motion.div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-12">
+            {/* NFT Card & Price Display */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
               whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -565,7 +575,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40 animate-pulse" />
                 <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform hover:rotate-y-12 hover:rotate-x-12 duration-500 preserve-3d">
                   <img 
-                    src="/nft-card.png" 
+                    src="/nft-card.webp" loading="lazy" 
                     alt="SPICY NFT Membership Card" 
                     className="w-full h-full object-cover rounded-2xl shadow-2xl"
                   />
@@ -621,9 +631,11 @@ export default function Home() {
             </div>
           </div>
 
+          </div>
+
           {/* Bonding Curve Explanation */}
           <motion.div 
-            className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden"
+            className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden mt-24"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -654,7 +666,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </section>
 
       {/* Whitepaper Section */}
       <section id="whitepaper" className="py-24 relative bg-black overflow-hidden">
@@ -765,7 +777,7 @@ export default function Home() {
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] p-1 flex-shrink-0 shadow-[0_0_30px_rgba(255,0,128,0.3)]">
                 <div className="w-full h-full rounded-full bg-black flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/images/nishiyama01.png" 
+                    src="/images/nishiyama01.webp" loading="lazy" 
                     alt={t('team.ceo.name')} 
                     className="w-full h-full object-cover"
                   />
@@ -961,7 +973,7 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-4">
-              <img src="/logo.png" alt="SPICY NFT CLUB" className="h-10 w-auto" />
+              <img src="/logo.webp" alt="SPICY NFT CLUB" className="h-10 w-auto" loading="lazy" />
               <span className="text-sm text-muted-foreground">© 2025 SPICY NFT CLUB</span>
             </div>
             <div className="flex flex-col items-end gap-4">
