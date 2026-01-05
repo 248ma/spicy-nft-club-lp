@@ -490,64 +490,7 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
           </motion.div>
 
-          {/* Features Subsection */}
-          <div className="mb-32">
-            <motion.div 
-              className="text-center mb-12"
-              {...fadeInUp}
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
-                {t('benefits.title')}
-                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
-              </h3>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                {t('benefits.description')}
-              </p>
-            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {(t('benefits.items', { returnObjects: true }) as any[]).map((item, i) => {
-              const iconPath = [
-                "/images/icon-crown.webp",     // VIP利用権
-                "/images/icon-priority.webp",  // 優先予約権
-                "/images/icon-travel.webp",    // 旅行時利用サポート
-                "/images/icon-event.webp",     // 限定イベント参加権
-                "/images/icon-rewards.webp",   // 店舗収益の還元
-                "/images/icon-governance.webp" // 経営投票権
-              ][i];
-
-              return (
-                <motion.div 
-                  key={i} 
-                  className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
-                  <div className="relative z-10 flex flex-col items-center text-center h-full">
-                    <div className="mb-8 relative">
-                      <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-                      <img 
-                        src={iconPath} 
-                        alt={item.title}
-                        className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-400 leading-relaxed text-sm">
-                      {item.description}
-                    </p>
-                  </div>
-                </motion.div>
-              );
-            })}
-            </div>
-          </div>
 
           {/* Tokenomics Subsection */}
           <div className="mt-32 pt-12 border-t border-white/10">
@@ -563,6 +506,65 @@ export default function Home() {
             </motion.div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-12">
+            {/* Features Subsection (Relocated) */}
+            <div className="w-full mb-24">
+              <motion.div 
+                className="text-center mb-12"
+                {...fadeInUp}
+              >
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+                  {t('benefits.title')}
+                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+                </h3>
+                <p className="text-gray-400 max-w-2xl mx-auto">
+                  {t('benefits.description')}
+                </p>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {(t('benefits.items', { returnObjects: true }) as any[]).map((item, i) => {
+                const iconPath = [
+                  "/images/icon-crown.webp",     // VIP利用権
+                  "/images/icon-priority.webp",  // 優先予約権
+                  "/images/icon-travel.webp",    // 旅行時利用サポート
+                  "/images/icon-event.webp",     // 限定イベント参加権
+                  "/images/icon-rewards.webp",   // 店舗収益の還元
+                  "/images/icon-governance.webp" // 経営投票権
+                ][i];
+
+                return (
+                  <motion.div 
+                    key={i} 
+                    className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
+                    <div className="relative z-10 flex flex-col items-center text-center h-full">
+                      <div className="mb-8 relative">
+                        <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                        <img 
+                          src={iconPath} 
+                          alt={item.title}
+                          className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-500"
+                        />
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-400 leading-relaxed text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+              </div>
+            </div>
+
             {/* NFT Card & Price Display */}
             <motion.div 
               initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
