@@ -376,10 +376,11 @@ export default function Home() {
               className="text-center mb-16"
               {...fadeInUp}
             >
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 {t('features_section.title')}
+                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
-              <div className="w-24 h-1.5 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
             </motion.div>
 
             <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-5xl mx-auto">
