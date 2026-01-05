@@ -33,147 +33,149 @@ export const BondingCurveVisual = () => {
         </div>
       </div>
 
-      {/* Flow Diagram (Top) */}
-      <div className="hidden md:flex items-center justify-between mb-16 relative z-10">
-        {/* Start Node */}
-        <motion.div 
-          className="w-16 h-16 rounded-full bg-[#ff0080] flex items-center justify-center shadow-[0_0_20px_rgba(255,0,128,0.5)] z-10"
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        >
-          <span className="text-white font-bold">Start</span>
-        </motion.div>
-
-        {/* Arrow 1 */}
-        <motion.div 
-          className="h-0.5 flex-1 bg-gradient-to-r from-[#ff0080] to-gray-600 mx-2"
-          initial={{ scaleX: 0, originX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        />
-
-        {/* Sale #1 */}
-        <motion.div 
-          className="px-6 py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          <span className="text-white font-bold">Sale #1</span>
-        </motion.div>
-
-        {/* Arrow 2 (Price Up) */}
-        <div className="flex-1 flex items-center mx-2 relative">
+      {/* Flow Diagram (Top) - Scrollable on mobile */}
+      <div className="w-full overflow-x-auto pb-6 mb-12 scrollbar-hide">
+        <div className="flex items-center min-w-[800px] justify-between relative z-10 px-4">
+          {/* Start Node */}
           <motion.div 
-            className="h-0.5 w-full bg-gray-700"
+            className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#ff0080] flex items-center justify-center shadow-[0_0_20px_rgba(255,0,128,0.5)] z-10 shrink-0"
+            initial={{ scale: 0 }}
+            whileInView={{ scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          >
+            <span className="text-white font-bold text-sm md:text-base">Start</span>
+          </motion.div>
+
+          {/* Arrow 1 */}
+          <motion.div 
+            className="h-0.5 w-12 md:flex-1 bg-gradient-to-r from-[#ff0080] to-gray-600 mx-2"
             initial={{ scaleX: 0, originX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           />
+
+          {/* Sale #1 */}
           <motion.div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 px-2 py-1 rounded text-xs text-gray-300 whitespace-nowrap border border-gray-700"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            className="px-4 py-2 md:px-6 md:py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10 shrink-0"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.4 }}
           >
-            Price +0.01
+            <span className="text-white font-bold text-sm md:text-base">Sale #1</span>
           </motion.div>
-        </div>
 
-        {/* Sale #2 */}
-        <motion.div 
-          className="px-6 py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1.0 }}
-        >
-          <span className="text-white font-bold">Sale #2</span>
-        </motion.div>
+          {/* Arrow 2 (Price Up) */}
+          <div className="w-24 md:flex-1 flex items-center mx-2 relative shrink-0">
+            <motion.div 
+              className="h-0.5 w-full bg-gray-700"
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            />
+            <motion.div 
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 px-2 py-1 rounded text-[10px] md:text-xs text-gray-300 whitespace-nowrap border border-gray-700"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8 }}
+            >
+              Price +0.01
+            </motion.div>
+          </div>
 
-        {/* Arrow 3 (Price Up) */}
-        <div className="flex-1 flex items-center mx-2 relative">
+          {/* Sale #2 */}
           <motion.div 
-            className="h-0.5 w-full bg-gray-700"
+            className="px-4 py-2 md:px-6 md:py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10 shrink-0"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.0 }}
+          >
+            <span className="text-white font-bold text-sm md:text-base">Sale #2</span>
+          </motion.div>
+
+          {/* Arrow 3 (Price Up) */}
+          <div className="w-24 md:flex-1 flex items-center mx-2 relative shrink-0">
+            <motion.div 
+              className="h-0.5 w-full bg-gray-700"
+              initial={{ scaleX: 0, originX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+            />
+            <motion.div 
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 px-2 py-1 rounded text-[10px] md:text-xs text-gray-300 whitespace-nowrap border border-gray-700"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 1.4 }}
+            >
+              Price +0.01
+            </motion.div>
+          </div>
+
+          {/* Sale #3 */}
+          <motion.div 
+            className="px-4 py-2 md:px-6 md:py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10 shrink-0"
+            initial={{ opacity: 0, y: -20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1.6 }}
+          >
+            <span className="text-white font-bold text-sm md:text-base">Sale #3</span>
+          </motion.div>
+
+          {/* Arrow 4 */}
+          <motion.div 
+            className="h-0.5 w-8 md:flex-1 bg-gray-700 mx-2"
             initial={{ scaleX: 0, originX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 1.2 }}
+            transition={{ duration: 0.5, delay: 1.8 }}
           />
+
+          {/* Dots */}
           <motion.div 
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 px-2 py-1 rounded text-xs text-gray-300 whitespace-nowrap border border-gray-700"
+            className="text-gray-500 font-bold mx-2 shrink-0"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 2.0 }}
+          >
+            ...
+          </motion.div>
+
+          {/* Arrow 5 */}
+          <motion.div 
+            className="h-0.5 w-8 md:flex-1 bg-gradient-to-r from-gray-700 to-[#7928ca] mx-2"
+            initial={{ scaleX: 0, originX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 2.2 }}
+          />
+
+          {/* Sale #200 */}
+          <motion.div 
+            className="px-4 py-2 md:px-6 md:py-3 bg-[#7928ca] rounded-lg shadow-[0_0_20px_rgba(121,40,202,0.5)] z-10 border border-white/20 shrink-0"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 1.4 }}
+            transition={{ delay: 2.4, type: "spring" }}
           >
-            Price +0.01
+            <span className="text-white font-bold text-sm md:text-base">Sale #200</span>
           </motion.div>
         </div>
-
-        {/* Sale #3 */}
-        <motion.div 
-          className="px-6 py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10"
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1.6 }}
-        >
-          <span className="text-white font-bold">Sale #3</span>
-        </motion.div>
-
-        {/* Arrow 4 */}
-        <motion.div 
-          className="h-0.5 flex-1 bg-gray-700 mx-2"
-          initial={{ scaleX: 0, originX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 1.8 }}
-        />
-
-        {/* Dots */}
-        <motion.div 
-          className="text-gray-500 font-bold mx-2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 2.0 }}
-        >
-          ...
-        </motion.div>
-
-        {/* Arrow 5 */}
-        <motion.div 
-          className="h-0.5 flex-1 bg-gradient-to-r from-gray-700 to-[#7928ca] mx-2"
-          initial={{ scaleX: 0, originX: 0 }}
-          whileInView={{ scaleX: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 2.2 }}
-        />
-
-        {/* Sale #500 */}
-        <motion.div 
-          className="px-6 py-3 bg-[#7928ca] rounded-lg shadow-[0_0_20px_rgba(121,40,202,0.5)] z-10 border border-white/20"
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 2.4, type: "spring" }}
-        >
-          <span className="text-white font-bold">Sale #200</span>
-        </motion.div>
       </div>
 
-      {/* Visual Representation (Bottom) */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center relative">
+      {/* Visual Representation (Bottom) - Flex on desktop, Stack on mobile */}
+      <div className="flex flex-col md:flex-row justify-between items-center relative gap-8 md:gap-4">
         {/* Step 1 */}
         <motion.div 
-          className="flex flex-col items-center text-center group"
+          className="flex flex-col items-center text-center group w-full md:w-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -192,17 +194,25 @@ export const BondingCurveVisual = () => {
           <div className="text-gray-400 text-sm">0.2 SOL</div>
         </motion.div>
 
-        {/* Arrow & Label */}
-        <div className="hidden md:flex flex-col items-center justify-center -mt-8">
-          <span className="text-xs text-gray-400 mb-2">1個販売</span>
-          <div className="w-full h-px bg-gradient-to-r from-[#ff0080] to-[#ff0080]/30 relative">
+        {/* Arrow & Label - Vertical on mobile, Horizontal on desktop */}
+        <div className="flex md:flex-col items-center justify-center md:-mt-8 w-full md:w-auto relative">
+          <span className="text-xs text-gray-400 mb-2 hidden md:block">1個販売</span>
+          <span className="text-xs text-gray-400 mr-4 md:hidden">1個販売</span>
+          
+          {/* Desktop Arrow */}
+          <div className="hidden md:block w-32 h-px bg-gradient-to-r from-[#ff0080] to-[#ff0080]/30 relative">
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-[#ff0080]/50 rotate-45" />
+          </div>
+
+          {/* Mobile Arrow */}
+          <div className="md:hidden h-12 w-px bg-gradient-to-b from-[#ff0080] to-[#ff0080]/30 relative">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 border-b border-r border-[#ff0080]/50 rotate-45" />
           </div>
         </div>
 
         {/* Step 2 */}
         <motion.div 
-          className="flex flex-col items-center text-center group"
+          className="flex flex-col items-center text-center group w-full md:w-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -220,17 +230,25 @@ export const BondingCurveVisual = () => {
           <div className="text-gray-400 text-sm">0.4 SOL</div>
         </motion.div>
 
-        {/* Arrow & Label */}
-        <div className="hidden md:flex flex-col items-center justify-center -mt-8">
-          <span className="text-xs text-gray-400 mb-2">1個販売</span>
-          <div className="w-full h-px bg-gradient-to-r from-[#ff0080]/50 to-[#7928ca]/50 relative">
+        {/* Arrow & Label - Vertical on mobile, Horizontal on desktop */}
+        <div className="flex md:flex-col items-center justify-center md:-mt-8 w-full md:w-auto relative">
+          <span className="text-xs text-gray-400 mb-2 hidden md:block">1個販売</span>
+          <span className="text-xs text-gray-400 mr-4 md:hidden">1個販売</span>
+          
+          {/* Desktop Arrow */}
+          <div className="hidden md:block w-32 h-px bg-gradient-to-r from-[#ff0080]/50 to-[#7928ca]/50 relative">
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 border-t border-r border-[#7928ca]/50 rotate-45" />
+          </div>
+
+          {/* Mobile Arrow */}
+          <div className="md:hidden h-12 w-px bg-gradient-to-b from-[#ff0080]/50 to-[#7928ca]/50 relative">
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 border-b border-r border-[#7928ca]/50 rotate-45" />
           </div>
         </div>
 
         {/* Step 3 */}
         <motion.div 
-          className="flex flex-col items-center text-center group"
+          className="flex flex-col items-center text-center group w-full md:w-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
