@@ -540,13 +540,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-
-
-
-      {/* Tokenomics Section */}
-      <section id="tokenomics" className="py-12 md:py-20 relative bg-black overflow-hidden">
+      {/* End of Features Grid */}
+      {/* Tokenomics Section (Integrated into Concept) */}
+      <div id="tokenomics" className="py-12 md:py-20 relative">
         <div className="container relative z-10">
           <motion.div 
             className="text-center mb-16"
@@ -658,7 +654,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </div>
 
       {/* Whitepaper Section */}
       <section id="whitepaper" className="py-24 relative bg-black overflow-hidden">
