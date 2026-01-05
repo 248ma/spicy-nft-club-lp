@@ -165,7 +165,7 @@ export const BondingCurveVisual = () => {
           viewport={{ once: true }}
           transition={{ delay: 2.4, type: "spring" }}
         >
-          <span className="text-white font-bold">Sale #500</span>
+          <span className="text-white font-bold">Sale #200</span>
         </motion.div>
       </div>
 
