@@ -533,9 +533,7 @@ export default function Home() {
                 {t('benefits.title')}
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                {t('benefits.description')}
-              </p>
+
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
