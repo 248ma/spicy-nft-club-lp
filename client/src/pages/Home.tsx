@@ -189,11 +189,9 @@ export default function Home() {
                   ETH: #001 / 0.01eth
                 </p>
               </div>
-              <a 
-                href="https://t.me/spicynftclub" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group"
+              <div 
+                onClick={() => window.open("https://t.me/spicynftclub", "_blank")}
+                className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group cursor-pointer"
               >
                 <div className="w-8 h-8 rounded-full bg-[#0088cc] flex items-center justify-center group-hover:scale-110 transition-transform">
                   <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
@@ -201,7 +199,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <span className="text-sm font-medium">Join Telegram Channel</span>
-              </a>
+              </div>
             </div>
           </motion.div>
         </motion.div>
