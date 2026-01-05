@@ -492,8 +492,136 @@ export default function Home() {
 
 
 
+          {/* SPICY NFT CLUB Features Section */}
+          <div className="mt-24 mb-32">
+            <motion.div 
+              className="text-center mb-16"
+              {...fadeInUp}
+            >
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                {t('features_section.title')}
+              </h3>
+              <div className="w-24 h-1.5 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
+                const iconPath = [
+                  "/images/icon-crown.webp",     // 実質無料利用権
+                  "/images/icon-opensea.webp",   // 二次流通可能
+                  "/images/icon-governance.webp", // 経営への参加
+                  "/images/icon-rewards.webp"    // 保有還元とユーティリティ
+                ][i];
+                
+                // アイコンの枠線の色（画像に基づく）
+                const borderColor = [
+                  "border-[#3b82f6]", // 青 (01)
+                  "border-[#a855f7]", // 紫 (02)
+                  "border-[#f97316]", // オレンジ (03)
+                  "border-[#14b8a6]"  // 緑 (04)
+                ][i];
+
+                // アイコンの背景色（薄い色）
+                const iconBgColor = [
+                  "bg-[#3b82f6]/10",
+                  "bg-[#a855f7]/10",
+                  "bg-[#f97316]/10",
+                  "bg-[#14b8a6]/10"
+                ][i];
+
+                return (
+                  <motion.div 
+                    key={i}
+                    className="relative p-8 rounded-[2rem] bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                  >
+                    <div className="flex flex-col h-full relative z-10">
+                      <div className="flex justify-between items-start mb-8">
+                        {/* Icon Container */}
+                        <div className={`w-14 h-14 rounded-xl ${borderColor} border flex items-center justify-center ${iconBgColor} p-3`}>
+                          <img src={iconPath} alt={item.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                        {/* Number */}
+                        <span className="text-gray-500 font-mono text-sm tracking-widest">0{i + 1}</span>
+                      </div>
+                      
+                      <h4 className="text-xl font-bold text-white mb-4">{item.title}</h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">
+                        {item.description.split('*').map((part: string, index: number) => (
+                          index === 0 ? part : <span key={index} className="text-gray-400">{part}</span>
+                        ))}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Member Exclusive Privileges Subsection */}
+          <div className="w-full mb-32">
+            <motion.div 
+              className="text-center mb-12"
+              {...fadeInUp}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
+                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+                {t('benefits.title')}
+                <span className="w-8 h-[2px] bg-[#ff0080]"></span>
+              </h3>
+              <p className="text-gray-400 max-w-2xl mx-auto">
+                {t('benefits.description')}
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {(t('benefits.items', { returnObjects: true }) as any[]).map((item, i) => {
+              const iconPath = [
+                "/images/icon-crown.webp",     // VIP利用権
+                "/images/icon-priority.webp",  // 優先予約権
+                "/images/icon-travel.webp",    // 旅行時利用サポート
+                "/images/icon-event.webp",     // 限定イベント参加権
+                "/images/icon-rewards.webp",   // 店舗収益の還元
+                "/images/icon-governance.webp" // 経営投票権
+              ][i];
+
+              return (
+                <motion.div 
+                  key={i} 
+                  className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
+                  <div className="relative z-10 flex flex-col items-center text-center h-full">
+                    <div className="mb-8 relative">
+                      <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                      <img 
+                        src={iconPath} 
+                        alt={item.title}
+                        className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed text-sm">
+                      {item.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+            </div>
+          </div>
+
           {/* Tokenomics Subsection */}
-          <div className="mt-32 pt-12 border-t border-white/10">
+          <div className="mt-24 pt-12 border-t border-white/10">
             <motion.div 
               className="text-center mb-16"
               {...fadeInUp}
@@ -506,202 +634,73 @@ export default function Home() {
             </motion.div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-12">
-            {/* SPICY NFT CLUB Features Section */}
-            <div className="w-full mb-32">
+              {/* NFT Card & Price Display */}
               <motion.div 
-                className="text-center mb-16"
-                {...fadeInUp}
+                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, type: "spring" }}
+                className="relative flex justify-center w-full md:w-auto"
               >
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                  {t('features_section.title')}
-                </h3>
-                <div className="w-24 h-1.5 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
-                  const iconPath = [
-                    "/images/icon-crown.webp",     // 実質無料利用権
-                    "/images/icon-opensea.webp",   // 二次流通可能
-                    "/images/icon-governance.webp", // 経営への参加
-                    "/images/icon-rewards.webp"    // 保有還元とユーティリティ
-                  ][i];
-                  
-                  // アイコンの枠線の色（画像に基づく）
-                  const borderColor = [
-                    "border-[#3b82f6]", // 青 (01)
-                    "border-[#a855f7]", // 紫 (02)
-                    "border-[#f97316]", // オレンジ (03)
-                    "border-[#14b8a6]"  // 緑 (04)
-                  ][i];
-
-                  // アイコンの背景色（薄い色）
-                  const iconBgColor = [
-                    "bg-[#3b82f6]/10",
-                    "bg-[#a855f7]/10",
-                    "bg-[#f97316]/10",
-                    "bg-[#14b8a6]/10"
-                  ][i];
-
-                  return (
-                    <motion.div 
-                      key={i}
-                      className="relative p-8 rounded-[2rem] bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 }}
-                    >
-                      <div className="flex flex-col h-full relative z-10">
-                        <div className="flex justify-between items-start mb-8">
-                          {/* Icon Container */}
-                          <div className={`w-14 h-14 rounded-xl ${borderColor} border flex items-center justify-center ${iconBgColor} p-3`}>
-                            <img src={iconPath} alt={item.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
-                          </div>
-                          {/* Number */}
-                          <span className="text-gray-500 font-mono text-sm tracking-widest">0{i + 1}</span>
+                <div className="relative w-full max-w-sm aspect-[3/4] perspective-1000">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40 animate-pulse" />
+                  <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform hover:rotate-y-12 hover:rotate-x-12 duration-500 preserve-3d">
+                    <img 
+                      src="/nft-card.webp" loading="lazy" 
+                      alt="SPICY NFT Membership Card" 
+                      className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                    />
+                    <div className="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl">
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <p className="text-xs text-gray-400 uppercase tracking-wider">Membership</p>
+                          <p className="text-lg font-bold text-white">Premium Pass</p>
                         </div>
-                        
-                        <h4 className="text-xl font-bold text-white mb-4">{item.title}</h4>
-                        <p className="text-gray-400 text-sm leading-relaxed">
-                          {item.description.split('*').map((part: string, index: number) => (
-                            index === 0 ? part : <span key={index} className="text-gray-400">{part}</span> // 画像では強調色は見られないためグレーに戻す、もしくは微調整
-                          ))}
-                        </p>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Member Exclusive Privileges Subsection */}
-            <div className="w-full mb-24">
-              <motion.div 
-                className="text-center mb-12"
-                {...fadeInUp}
-              >
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
-                  {t('benefits.title')}
-                  <span className="w-8 h-[2px] bg-[#ff0080]"></span>
-                </h3>
-                <p className="text-gray-400 max-w-2xl mx-auto">
-                  {t('benefits.description')}
-                </p>
-              </motion.div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {(t('benefits.items', { returnObjects: true }) as any[]).map((item, i) => {
-                const iconPath = [
-                  "/images/icon-crown.webp",     // VIP利用権
-                  "/images/icon-priority.webp",  // 優先予約権
-                  "/images/icon-travel.webp",    // 旅行時利用サポート
-                  "/images/icon-event.webp",     // 限定イベント参加権
-                  "/images/icon-rewards.webp",   // 店舗収益の還元
-                  "/images/icon-governance.webp" // 経営投票権
-                ][i];
-
-                return (
-                  <motion.div 
-                    key={i} 
-                    className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
-                    <div className="relative z-10 flex flex-col items-center text-center h-full">
-                      <div className="mb-8 relative">
-                        <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
-                        <img 
-                          src={iconPath} 
-                          alt={item.title}
-                          className="w-24 h-24 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-400 leading-relaxed text-sm">
-                        {item.description}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-              </div>
-            </div>
-
-            {/* NFT Card & Price Display */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, type: "spring" }}
-              className="relative flex justify-center w-full md:w-auto"
-            >
-              <div className="relative w-full max-w-sm aspect-[3/4] perspective-1000">
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40 animate-pulse" />
-                <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform hover:rotate-y-12 hover:rotate-x-12 duration-500 preserve-3d">
-                  <img 
-                    src="/nft-card.webp" loading="lazy" 
-                    alt="SPICY NFT Membership Card" 
-                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
-                  />
-                  <div className="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl">
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <p className="text-xs text-gray-400 uppercase tracking-wider">Membership</p>
-                        <p className="text-lg font-bold text-white">Premium Pass</p>
-                      </div>
-                      <div className="text-right">
-                        <p className="text-xs text-gray-400 uppercase tracking-wider">ID</p>
-                        <p className="text-lg font-mono text-white">#001</p>
+                        <div className="text-right">
+                          <p className="text-xs text-gray-400 uppercase tracking-wider">ID</p>
+                          <p className="text-lg font-mono text-white">#001</p>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <div className="flex flex-col items-center mt-8">
+                    <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2">{t('hero.current_price')}</span>
+                    <p className="text-center text-xl text-white font-mono tracking-wider drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] bg-white/5 px-6 py-2 rounded-full border border-white/10">
+                      ETH: #001 / 0.01eth
+                    </p>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center mt-8">
-                  <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2">{t('hero.current_price')}</span>
-                  <p className="text-center text-xl text-white font-mono tracking-wider drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] bg-white/5 px-6 py-2 rounded-full border border-white/10">
-                    ETH: #001 / 0.01eth
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Tokenomics Details */}
-            <div className="w-full md:w-1/2 max-w-xl">
-              <div className="grid grid-cols-1 gap-6">
-                {Object.entries(t('tokenomics.items', { returnObjects: true }) as Record<string, { label: string, value: string }>).map(([key, item], i) => (
-                  <motion.div 
-                    key={key}
-                    className="glass-card p-6 rounded-xl flex justify-between items-center border-l-4 border-[#ff0080]"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                  >
-                    <span className="text-gray-400 font-medium">{item.label}</span>
-                    <span className="text-white font-bold text-lg">{item.value}</span>
-                  </motion.div>
-                ))}
+              {/* Tokenomics Details */}
+              <div className="w-full md:w-1/2 max-w-xl">
+                <div className="grid grid-cols-1 gap-6">
+                  {Object.entries(t('tokenomics.items', { returnObjects: true }) as Record<string, { label: string, value: string }>).map(([key, item], i) => (
+                    <motion.div 
+                      key={key}
+                      className="glass-card p-6 rounded-xl flex justify-between items-center border-l-4 border-[#ff0080]"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                    >
+                      <span className="text-gray-400 font-medium">{item.label}</span>
+                      <span className="text-white font-bold text-lg">{item.value}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                {/* Note for Secondary Market */}
+                <motion.p 
+                  className="text-gray-500 text-xs mt-4 text-right"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  {t('tokenomics.note')}
+                </motion.p>
               </div>
-              {/* Note for Secondary Market */}
-              <motion.p 
-                className="text-gray-500 text-xs mt-4 text-right"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                {t('tokenomics.note')}
-              </motion.p>
             </div>
-          </div>
-
           </div>
 
           {/* Bonding Curve Explanation */}
