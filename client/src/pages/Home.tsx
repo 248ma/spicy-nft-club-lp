@@ -602,6 +602,16 @@ export default function Home() {
                   </motion.div>
                 ))}
               </div>
+              {/* Note for Secondary Market */}
+              <motion.p 
+                className="text-gray-500 text-xs mt-4 text-right"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                {t('tokenomics.note')}
+              </motion.p>
             </div>
           </div>
 

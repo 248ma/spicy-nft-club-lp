@@ -154,13 +154,11 @@
     "title": "信頼を積み上げる販売方式",
     "chart_label": "収益還元",
     "items": {
-      "supply": { "label": "総供給", "value": "400個 (追加発行なし)" },
+      "supply": { "label": "総供給", "value": "500個 (追加発行予定なし)" },
       "sale": { "label": "販売分", "value": "400個 (ETH 200個 / SOL 200個)" },
-      "team": { "label": "運営分", "value": "0個 (全て販売)" },
-      "price": { "label": "価格", "value": "ボンディングカーブ式 (自動上昇)" },
-      "revenue": { "label": "収益還元", "value": "店舗収益の5%" },
-      "royalty": { "label": "二次流通", "value": "ロイヤリティ 3%" }
-    }
+      "price": { "label": "価格", "value": "0.01ETH/0.2SOLから1個販売毎に上昇(ボンディングカーブ式)" }
+    },
+    "note": "※二次流通時は3%のロイヤリティがかかります"
   },
   "roadmap": {
     "subtitle": "Roadmap",
