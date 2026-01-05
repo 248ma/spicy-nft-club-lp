@@ -958,8 +958,8 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-4">
               <div className="flex gap-8 text-sm text-muted-foreground">
-                <Link href="/terms">
-                  <a className="hover:text-primary transition-colors cursor-pointer">{t('footer.terms')}</a>
+                <Link href="/terms" className="hover:text-primary transition-colors cursor-pointer">
+                  {t('footer.terms')}
                 </Link>
                 <Dialog>
                   <DialogTrigger asChild>
@@ -989,8 +989,8 @@ export default function Home() {
                     </DialogHeader>
                   </DialogContent>
                 </Dialog>
-                <Link href="/legal-notice">
-                  <a className="hover:text-primary transition-colors cursor-pointer">{t('footer.law')}</a>
+                <Link href="/legal-notice" className="hover:text-primary transition-colors cursor-pointer">
+                  {t('footer.law')}
                 </Link>
               </div>
             </div>
