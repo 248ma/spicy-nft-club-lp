@@ -72,3 +72,8 @@ If a deployment fails or doesn't trigger:
 ├── vite.config.ts      # Vite configuration
 └── package.json        # Project dependencies and scripts
 ```
+
+### Active Vercel Project
+- **Project Name**: `spicy-nft-club-lp-main`
+- **Status**: Active & Deploying
+- **Note**: The legacy project `spicy-nft-club-lp` has been removed to prevent duplicate deployments.
