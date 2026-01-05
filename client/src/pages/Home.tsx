@@ -426,51 +426,7 @@ export default function Home() {
 
       {/* Solution Section */}
       <section id="solution" className="py-10 md:py-16 relative overflow-hidden">
-      <section id="tokenomics" className="py-16 md:py-24 relative bg-black overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-[#111] to-black opacity-80" />
-        <div className="container relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            {...fadeInUp}
-          >
-            <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('tokenomics.subtitle')}</span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">{t('tokenomics.title')}</h2>
-          </motion.div>
 
-          <div className="flex flex-col gap-12 items-center max-w-6xl mx-auto">
-            {/* Bonding Curve Explanation */}
-            <motion.div 
-              className="space-y-8 max-w-3xl mx-auto"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div>
-                <h3 className="text-3xl font-bold text-white mb-4">{t('bonding_curve.title')}</h3>
-                <p className="text-gray-300 leading-relaxed mb-8">
-                  {t('bonding_curve.description')}
-                </p>
-                
-                <div className="space-y-6">
-                  {(t('bonding_curve.features', { returnObjects: true }) as any[]).map((feature, i) => (
-                    <div key={i} className="flex gap-4">
-                      <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center shrink-0 border border-white/10">
-                        <span className="text-[#ff0080] font-bold">{i + 1}</span>
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-bold text-white mb-2">{feature.title}</h4>
-                        <p className="text-sm text-gray-400 leading-relaxed">{feature.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
         <div className="container relative z-10">
           <div className="grid md:grid-cols-2 gap-20 items-center max-w-7xl mx-auto">
@@ -692,26 +648,20 @@ export default function Home() {
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca]" />
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#7928ca] rounded-full blur-[100px] opacity-20" />
             
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">Bonding Curve Sales Model</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">{t('bonding_curve.title')}</h3>
             <p className="text-gray-300 leading-relaxed mb-8">
-              SPICY NFT CLUB adopts a Bonding Curve model where the price increases as more NFTs are minted. 
-              This mechanism rewards early supporters with lower entry prices while ensuring sustainable value growth for the community.
-              The price starts at 0.01 ETH and gradually increases based on a predetermined mathematical curve.
+              {t('bonding_curve.description')}
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-              <div className="bg-black/40 p-6 rounded-xl border border-white/5">
-                <div className="text-[#ff0080] font-bold mb-2">Early Access</div>
-                <p className="text-sm text-gray-400">Secure your membership at the lowest possible price point by joining early.</p>
-              </div>
-              <div className="bg-black/40 p-6 rounded-xl border border-white/5">
-                <div className="text-[#7928ca] font-bold mb-2">Fair Distribution</div>
-                <p className="text-sm text-gray-400">Transparent pricing mechanism determined purely by demand and supply.</p>
-              </div>
-              <div className="bg-black/40 p-6 rounded-xl border border-white/5">
-                <div className="text-[#4a00e0] font-bold mb-2">Value Protection</div>
-                <p className="text-sm text-gray-400">The curve design helps protect the floor price and value for existing holders.</p>
-              </div>
+              {(t('bonding_curve.features', { returnObjects: true }) as any[]).map((feature, i) => (
+                <div key={i} className="bg-black/40 p-6 rounded-xl border border-white/5">
+                  <div className={`${i === 0 ? 'text-[#ff0080]' : i === 1 ? 'text-[#7928ca]' : 'text-[#4a00e0]'} font-bold mb-2`}>
+                    {feature.title}
+                  </div>
+                  <p className="text-sm text-gray-400">{feature.description}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
