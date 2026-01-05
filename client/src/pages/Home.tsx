@@ -541,7 +541,7 @@ export default function Home() {
                     <div className="flex flex-col h-full relative z-10">
                       <div className="flex justify-between items-start mb-8">
                         {/* Icon Container */}
-                        <div className={`w-14 h-14 rounded-xl ${borderColor} border flex items-center justify-center ${iconBgColor} p-3`}>
+                        <div className={`w-20 h-20 rounded-2xl ${borderColor} border flex items-center justify-center ${iconBgColor} p-4`}>
                           <img src={iconPath} alt={item.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                         </div>
                         {/* Number */}
