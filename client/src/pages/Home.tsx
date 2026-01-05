@@ -504,7 +504,7 @@ export default function Home() {
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-5xl mx-auto">
               {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
                 const iconPath = [
                   "/images/icon-crown.webp",            // 実質無料利用権
@@ -532,24 +532,24 @@ export default function Home() {
                 return (
                   <motion.div 
                     key={i}
-                    className="relative p-8 rounded-[2rem] bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300"
+                    className="relative p-4 md:p-8 rounded-2xl md:rounded-[2rem] bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
                     <div className="flex flex-col h-full relative z-10">
-                      <div className="flex justify-between items-start mb-8">
+                      <div className="flex justify-between items-start mb-4 md:mb-8">
                         {/* Icon Container */}
-                        <div className={`w-20 h-20 rounded-2xl ${borderColor} border flex items-center justify-center ${iconBgColor} p-4`}>
+                        <div className={`w-12 h-12 md:w-20 md:h-20 rounded-xl md:rounded-2xl ${borderColor} border flex items-center justify-center ${iconBgColor} p-2 md:p-4`}>
                           <img src={iconPath} alt={item.title} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                         </div>
                         {/* Number */}
-                        <span className="text-gray-500 font-mono text-sm tracking-widest">0{i + 1}</span>
+                        <span className="text-gray-500 font-mono text-xs md:text-sm tracking-widest">0{i + 1}</span>
                       </div>
                       
-                      <h4 className="text-xl font-bold text-white mb-4">{item.title}</h4>
-                      <p className="text-gray-400 text-sm leading-relaxed">
+                      <h4 className="text-sm md:text-xl font-bold text-white mb-2 md:mb-4">{item.title}</h4>
+                      <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                         {item.description.split('*').map((part: string, index: number) => (
                           index === 0 ? part : <span key={index} className="text-gray-400">{part}</span>
                         ))}
