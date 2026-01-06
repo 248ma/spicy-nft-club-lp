@@ -970,7 +970,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-4">
               <img src="/logo.webp" alt="SPICY NFT CLUB" className="h-10 w-auto" loading="lazy" />
-              <span className="text-sm text-muted-foreground">© 2025 SPICY NFT CLUB</span>
+              <span className="text-sm text-muted-foreground">© 2026 SPICY NFT CLUB</span>
             </div>
             <div className="flex flex-col items-end gap-4">
               <div className="flex gap-8 text-sm text-muted-foreground">
