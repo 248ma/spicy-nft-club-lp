@@ -320,8 +320,8 @@
     "items": {
       "distributor": { "label": "販売業者", "value": "SPICY NFT CLUB 運営事務局" },
       "representative": { "label": "運営統括責任者", "value": "248ma" },
-      "location": { "label": "所在地", "value": "〒160-0022 東京都新宿区新宿3丁目 (詳細は請求があり次第遅滞なく開示いたします)" },
-      "contact": { "label": "連絡先", "value": "support@spicynft.club" },
+      "location": { "label": "所在地", "value": "〒171-0014 東京都豊島区 (詳細は請求があり次第遅滞なく開示いたします)" },
+      "contact": { "label": "連絡先", "value": "support@spicynftclub.com" },
       "price": { "label": "販売価格", "value": "各NFTの購入ページに表示された価格に基づきます（ETH/SOL建て）。" },
       "charges": { "label": "商品代金以外の必要料金", "value": "ブロックチェーンネットワークのガス代（Gas Fee）が別途必要となります。" },
       "payment_method": { "label": "お支払い方法", "value": "暗号資産（Ethereum / Solana）による決済" },
