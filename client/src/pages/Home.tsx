@@ -784,6 +784,17 @@ export default function Home() {
                   <span className="text-[#ff0080] font-bold tracking-wider text-sm uppercase mb-2 block">{t('team.ceo.role')}</span>
                   <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">{t('team.ceo.name')}</h3>
                   <p className="text-gray-300 leading-relaxed mb-6">{t('team.ceo.description')}</p>
+                  <a 
+                    href="https://x.com/spicy248ma" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[#ff0080] hover:text-[#ff0080]/80 transition-colors text-sm font-medium mb-2"
+                  >
+                    <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    @spicy248ma
+                  </a>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
