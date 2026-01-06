@@ -63,7 +63,7 @@ export default function Terms() {
           </div>
 
           <div className="mt-16 pt-8 border-t border-white/10 text-sm text-gray-500 text-center">
-            © 2025 SPICY NFT CLUB
+            © 2026 SPICY NFT CLUB
           </div>
         </motion.div>
       </div>
