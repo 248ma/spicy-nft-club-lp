@@ -1024,7 +1024,7 @@ export default function Home() {
           </div>
           <div className="mt-8 text-left text-xs text-muted-foreground/50 max-w-3xl mx-auto space-y-2">
             <p>{t('footer.disclaimer')}</p>
-            <div className="pt-4 border-t border-white/5 space-y-1 text-[10px] leading-relaxed opacity-70">
+            <div className="pt-4 border-t border-white/5 space-y-1 text-[10px] leading-relaxed">
               <p>{t('footer.investment_warning')}</p>
               <p>{t('footer.price_fluctuation')}</p>
               <p>{t('footer.service_change')}</p>
