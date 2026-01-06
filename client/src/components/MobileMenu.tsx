@@ -23,11 +23,11 @@ export function MobileMenu() {
   const menuItems = [
     { id: 'hero', label: 'Home' },
     { id: 'concept', label: 'Concept' },
-    { id: 'problem', label: 'Problem' },
     { id: 'solution', label: 'Solution' },
-    { id: 'nft', label: 'NFT' },
+    { id: 'whitepaper', label: 'Whitepaper' },
     { id: 'roadmap', label: 'Roadmap' },
     { id: 'team', label: 'Team' },
+    { id: 'how-to-buy', label: 'How to Buy' },
     { id: 'faq', label: 'FAQ' },
   ];
 
