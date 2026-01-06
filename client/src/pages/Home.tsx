@@ -620,10 +620,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
         <div className="container relative z-10">
           <div className="max-w-7xl mx-auto">
-            <motion.div {...fadeInUp} className="text-center lg:text-left mb-16">
+            <motion.div {...fadeInUp} className="text-center mb-16">
               <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('solution.subtitle')}</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">{t('solution.title')}</h2>
-              <p className="text-lg md:text-xl text-gray-400 leading-relaxed border-l-4 border-primary/50 pl-6 text-left mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
+              <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
                 {t('solution.description')}
               </p>
             </motion.div>
@@ -632,7 +632,7 @@ export default function Home() {
               {(t('solution.items', { returnObjects: true }) as any[]).map((item, i) => (
                 <motion.div 
                   key={i}
-                  className="glass-panel p-8 rounded-2xl flex flex-col gap-6 hover:bg-white/5 transition-colors text-left h-full border border-white/10 hover:border-[#ff0080]/30"
+                  className="glass-panel p-8 rounded-2xl flex flex-col gap-6 hover:bg-white/5 transition-colors text-center items-center h-full border border-white/10 hover:border-[#ff0080]/30"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.2 }}
