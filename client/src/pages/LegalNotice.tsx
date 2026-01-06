@@ -63,7 +63,7 @@ export default function LegalNotice() {
           </div>
 
           <div className="mt-12 text-sm text-gray-500 text-center">
-            © 2025 SPICY NFT CLUB
+            © 2026 SPICY NFT CLUB
           </div>
         </motion.div>
       </div>
