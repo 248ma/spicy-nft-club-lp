@@ -619,35 +619,35 @@ export default function Home() {
       <section id="solution" className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
         <div className="container relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center max-w-7xl mx-auto">
-            <motion.div {...fadeInUp} className="text-center lg:text-left">
+          <div className="max-w-7xl mx-auto">
+            <motion.div {...fadeInUp} className="text-center lg:text-left mb-16">
               <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('solution.subtitle')}</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">{t('solution.title')}</h2>
-              <p className="text-lg md:text-xl text-gray-400 mb-12 leading-relaxed border-l-4 border-primary/50 pl-6 text-left mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
+              <p className="text-lg md:text-xl text-gray-400 leading-relaxed border-l-4 border-primary/50 pl-6 text-left mx-auto lg:mx-0 max-w-2xl lg:max-w-none">
                 {t('solution.description')}
               </p>
-              
-              <div className="space-y-6">
-                {(t('solution.items', { returnObjects: true }) as any[]).map((item, i) => (
-                  <motion.div 
-                    key={i}
-                    className="glass-panel p-6 rounded-xl flex flex-col sm:flex-row gap-6 hover:bg-white/5 transition-colors items-center sm:items-start text-center sm:text-left"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.2 }}
-                    viewport={{ once: true }}
-                  >
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/30">
-                      <Check className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
-                      <p className="text-gray-400">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
+              
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {(t('solution.items', { returnObjects: true }) as any[]).map((item, i) => (
+                <motion.div 
+                  key={i}
+                  className="glass-panel p-8 rounded-2xl flex flex-col gap-6 hover:bg-white/5 transition-colors text-left h-full border border-white/10 hover:border-[#ff0080]/30"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/30">
+                    <Check className="w-7 h-7 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
+                    <p className="text-gray-400 leading-relaxed text-sm">{item.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
             
             {/* Image/Visual Column - Added for balance if needed, or keep empty if design intends single column on large screens */}
             <motion.div 
