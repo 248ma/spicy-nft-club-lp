@@ -139,14 +139,14 @@ export default function Home() {
         >
 
           
-          <motion.p 
+          <motion.div 
             className="text-xl md:text-3xl font-bold mb-6 tracking-[0.3em] uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-400 drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
             {t('hero.subtitle')}
-          </motion.p>
+          </motion.div>
 
           <motion.h1 
             className="text-5xl md:text-7xl lg:text-8xl font-black mb-10 tracking-tighter leading-none max-w-6xl mx-auto text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.9)]"
@@ -186,9 +186,9 @@ export default function Home() {
               />
               <div className="flex flex-col items-center mt-2">
                 <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">{t('hero.current_price')}</span>
-                <p className="text-sm text-white/80 font-mono tracking-wider drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
+                <div className="text-sm text-white/80 font-mono tracking-wider drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
                   ETH: #001 / 0.01eth
-                </p>
+                </div>
               </div>
               <div 
                 onClick={() => window.open("https://t.me/spicynftclub", "_blank")}
@@ -928,9 +928,9 @@ export default function Home() {
               </Button>
               <div className="flex flex-col items-center -mt-4 mb-2">
                 <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">{t('hero.current_price')}</span>
-                <p className="text-sm text-white/80 font-mono tracking-wider drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
+                <div className="text-sm text-white/80 font-mono tracking-wider drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
                   ETH: #001 / 0.01eth
-                </p>
+                </div>
               </div>
               <div className="flex flex-col gap-4 w-full max-w-md">
                 <a 
