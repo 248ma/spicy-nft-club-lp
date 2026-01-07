@@ -220,7 +220,7 @@ export function MintModal({ trigger, open, onOpenChange }: MintModalProps) {
                 exit={{ opacity: 0, x: -20 }}
                 className="flex flex-col gap-4 items-center"
               >
-                <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mb-4 animate-pulse">
+                <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mb-4">
                   <Wallet className="w-10 h-10 text-white/80" />
                 </div>
                 <p className="text-center text-gray-400 text-sm mb-2">
@@ -332,10 +332,10 @@ export function MintModal({ trigger, open, onOpenChange }: MintModalProps) {
                 className="flex flex-col items-center justify-center py-8 gap-6"
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#ff0080] to-[#7928ca] blur-xl opacity-50 animate-pulse" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#ff0080] to-[#7928ca] blur-xl opacity-50" />
                   <Loader2 className="w-16 h-16 text-white animate-spin relative z-10" />
                 </div>
-                <p className="text-lg font-medium animate-pulse">{t('purchase_modal.processing')}</p>
+                <p className="text-lg font-medium">{t('purchase_modal.processing')}</p>
                 <p className="text-sm text-gray-400 text-center">
                   Please confirm the transaction in your wallet
                 </p>

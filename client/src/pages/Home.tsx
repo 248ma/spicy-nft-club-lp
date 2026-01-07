@@ -151,18 +151,7 @@ export default function Home() {
           <motion.h1 
             className="text-5xl md:text-7xl lg:text-8xl font-black mb-10 tracking-tighter leading-none max-w-6xl mx-auto text-white drop-shadow-[0_0_5px_rgba(255,255,255,0.9)]"
             style={{
-              textShadow: useTransform(
-                scrollYProgress,
-                [0, 0.2, 0.4, 0.6, 0.8, 1],
-                [
-                  "0 0 20px rgba(180,0,80,0.9), 0 0 40px rgba(100,0,60,0.7), 0 0 80px rgba(80,0,120,0.5)", // Initial deep neon
-                  "0 0 25px rgba(200,0,90,0.9), 0 0 50px rgba(120,0,70,0.7), 0 0 90px rgba(90,0,130,0.5)", // Brighter
-                  "0 0 15px rgba(160,0,70,0.9), 0 0 30px rgba(90,0,50,0.7), 0 0 70px rgba(70,0,110,0.5)", // Dimmer
-                  "0 0 30px rgba(220,0,100,0.9), 0 0 60px rgba(140,0,80,0.7), 0 0 100px rgba(100,0,140,0.5)", // Brightest
-                  "0 0 20px rgba(180,0,80,0.9), 0 0 40px rgba(100,0,60,0.7), 0 0 80px rgba(80,0,120,0.5)", // Back to normal
-                  "0 0 10px rgba(140,0,60,0.9), 0 0 20px rgba(80,0,40,0.7), 0 0 60px rgba(60,0,100,0.5)"  // Fading out
-                ]
-              )
+              textShadow: "0 0 20px rgba(180,0,80,0.9), 0 0 40px rgba(100,0,60,0.7), 0 0 80px rgba(80,0,120,0.5)"
             }}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -213,18 +202,7 @@ export default function Home() {
           transition={{ duration: 1, delay: 1 }}
         >
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1 shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-            <motion.div 
-              className="w-1 h-2 bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,0.8)]"
-              animate={{ 
-                y: [0, 15, 0],
-                opacity: [1, 0, 0]
-              }}
-              transition={{ 
-                duration: 1.5, 
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+            <div className="w-1 h-2 bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,0.8)] mt-2" />
           </div>
         </motion.div>
       </section>
@@ -462,32 +440,36 @@ export default function Home() {
                 transition={{ duration: 1, type: "spring" }}
                 className="relative flex justify-center w-full md:w-auto"
               >
-                <div className="relative w-full max-w-sm aspect-[3/4] perspective-1000">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40 animate-pulse" />
-                  <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform hover:rotate-y-12 hover:rotate-x-12 duration-500 preserve-3d">
-                    <img 
-                      src="/nft-card.webp" loading="lazy" 
-                      alt="SPICY NFT Membership Card" 
-                      className="w-full h-full object-cover rounded-2xl shadow-2xl"
-                    />
-                    <div className="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <p className="text-xs text-gray-400 uppercase tracking-wider">Membership</p>
-                          <p className="text-lg font-bold text-white">Premium Pass</p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-xs text-gray-400 uppercase tracking-wider">ID</p>
-                          <p className="text-lg font-mono text-white">#001</p>
+                <div className="flex flex-col items-center w-full max-w-sm">
+                  <div className="relative w-full aspect-[3/4] perspective-1000 mb-8">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40" />
+                    <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform duration-500 preserve-3d">
+                      <img 
+                        src="/nft-card.webp" loading="lazy" 
+                        alt="SPICY NFT Membership Card" 
+                        className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                      />
+                      <div className="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl">
+                        <div className="flex justify-between items-center">
+                          <div>
+                            <p className="text-xs text-gray-400 uppercase tracking-wider">Membership</p>
+                            <p className="text-lg font-bold text-white">Premium Pass</p>
+                          </div>
+                          <div className="text-right">
+                            <p className="text-xs text-gray-400 uppercase tracking-wider">ID</p>
+                            <p className="text-lg font-mono text-white">#001</p>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center mt-8">
-                    <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2">{t('hero.current_price')}</span>
-                    <p className="text-center text-xl text-white font-mono tracking-wider drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] bg-white/5 px-6 py-2 rounded-full border border-white/10">
-                      ETH: #001 / 0.01eth
-                    </p>
+                  <div className="flex flex-col items-center w-full mt-4 mb-8 md:mb-0">
+                    <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block">{t('hero.current_price')}</span>
+                    <div className="w-full">
+                      <p className="text-center text-xl text-white font-mono tracking-wider drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] bg-white/5 px-6 py-4 rounded-full border border-white/10 w-full">
+                        ETH: #001 / 0.01eth
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -560,7 +542,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
                   <div className="relative z-10 flex flex-col items-center text-center h-full">
                     <div className="mb-8 relative">
-                      <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0 group-hover:opacity-30 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0" />
                       <img 
                         src={iconPath} 
                         alt={item.title}
@@ -649,17 +631,7 @@ export default function Home() {
               ))}
             </div>
             
-            {/* Image/Visual Column - Added for balance if needed, or keep empty if design intends single column on large screens */}
-            <motion.div 
-              className="hidden lg:block relative h-full min-h-[600px]"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-               <div className="absolute inset-0 bg-gradient-to-tr from-[#ff0080]/20 to-[#7928ca]/20 rounded-full blur-[100px] animate-pulse" />
-               {/* Placeholder for future image or 3D element */}
-            </motion.div>
+
           </div>
         </div>
       </section>
@@ -829,7 +801,7 @@ export default function Home() {
         </div>
       </section>      {/* How to Buy Section */}
       <section id="how-to-buy" className="py-12 md:py-20 relative bg-black/30">
-        <div className="container relative z-10">
+        <div className="container relative z-10 max-w-4xl">
           <motion.div 
             className="text-center mb-16"
             {...fadeInUp}
@@ -838,34 +810,47 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">{t('how_to_buy.title')}</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Wallet, step: 1 },
-              { icon: Coins, step: 2 },
-              { icon: LinkIcon, step: 3 },
-              { icon: ShoppingCart, step: 4 }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                className="relative group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/20 to-[#7928ca]/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <Card className="relative h-full bg-black/40 border-white/10 backdrop-blur-sm p-6 flex flex-col items-center text-center hover:border-[#ff0080]/50 transition-colors duration-300">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center mb-4 shadow-[0_0_15px_rgba(255,0,128,0.3)]">
-                    <item.icon className="w-6 h-6 text-white" />
+          <div className="relative">
+            {/* Vertical Line */}
+            <div className="absolute left-[27px] md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#ff0080] via-[#7928ca] to-[#4a00e0] opacity-30 -translate-x-1/2" />
+
+            <div className="flex flex-col gap-12">
+              {[
+                { icon: ShoppingCart, step: 1 },
+                { icon: Wallet, step: 2 },
+                { icon: Key, step: 3 },
+                { icon: Check, step: 4 },
+                { icon: Coins, step: "EX" }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  {/* Content Card */}
+                  <div className="flex-1 w-full pl-16 md:pl-0">
+                    <Card className={`relative bg-black/40 border-white/10 backdrop-blur-sm p-6 hover:border-[#ff0080]/50 transition-colors duration-300 ${index % 2 === 0 ? 'md:text-left' : 'md:text-right'}`}>
+                      <div className={`text-xs font-bold text-[#ff0080] mb-2 tracking-widest`}>STEP {item.step}</div>
+                      <h3 className="text-xl font-bold text-white mb-3">{t(`how_to_buy.steps.${index}.title`)}</h3>
+                      <p className="text-sm text-gray-400 leading-relaxed" dangerouslySetInnerHTML={{ __html: t(`how_to_buy.steps.${index}.description`) }} />
+                    </Card>
                   </div>
-                  <div className="text-xs font-bold text-[#ff0080] mb-2 tracking-widest">STEP {item.step}</div>
-                  <h3 className="text-lg font-bold text-white mb-3">{t(`how_to_buy.steps.${index}.title`)}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">
-                    {t(`how_to_buy.steps.${index}.description`)}
-                  </p>
-                </Card>
-              </motion.div>
-            ))}
+
+                  {/* Center Icon/Number */}
+                  <div className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex items-center justify-center z-10">
+                    <div className="w-14 h-14 rounded-full bg-black border-2 border-[#ff0080] flex items-center justify-center shadow-[0_0_15px_rgba(255,0,128,0.3)]">
+                      <span className="text-xl font-bold text-white">{item.step}</span>
+                    </div>
+                  </div>
+
+                  {/* Spacer for alternating layout */}
+                  <div className="hidden md:block flex-1" />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -999,7 +984,7 @@ export default function Home() {
                         <div className="space-y-6 text-left">
                           <div className="p-4 rounded-lg bg-white/5 border border-white/10">
                             <h3 className="text-lg font-semibold text-primary mb-2 flex items-center gap-2">
-                              <span className="inline-block w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                              <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
                               {t('footer.cookie_policy.title')}
                             </h3>
                             <p className="text-sm leading-relaxed text-gray-300">

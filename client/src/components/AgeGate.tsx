@@ -82,16 +82,13 @@ export function AgeGate() {
                   top: `${particle.y}%`,
                 }}
                 animate={{
-                  y: [0, -100, 0],
-                  x: [0, Math.random() * 50 - 25, 0],
-                  opacity: [0.1, 0.4, 0.1],
-                  scale: [1, 1.5, 1],
+                  y: 0,
+                  x: 0,
+                  opacity: 0.1,
+                  scale: 1,
                 }}
                 transition={{
-                  duration: particle.duration,
-                  repeat: Infinity,
-                  ease: "linear",
-                  delay: particle.delay,
+                  duration: 0
                 }}
               />
             ))}
@@ -99,29 +96,25 @@ export function AgeGate() {
             <motion.div
               className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff0080]/10 rounded-full blur-3xl"
               animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.3, 0.5, 0.3],
-                x: [0, 50, 0],
-                y: [0, 30, 0],
+                scale: 1,
+                opacity: 0.3,
+                x: 0,
+                y: 0,
               }}
               transition={{
-                duration: 15,
-                repeat: Infinity,
-                ease: "easeInOut",
+                duration: 0
               }}
             />
             <motion.div
               className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#7928ca]/10 rounded-full blur-3xl"
               animate={{
-                scale: [1.2, 1, 1.2],
-                opacity: [0.3, 0.5, 0.3],
-                x: [0, -50, 0],
-                y: [0, -30, 0],
+                scale: 1,
+                opacity: 0.3,
+                x: 0,
+                y: 0,
               }}
               transition={{
-                duration: 18,
-                repeat: Infinity,
-                ease: "easeInOut",
+                duration: 0
               }}
             />
           </div>

@@ -96,7 +96,7 @@ export const NftMeter = forwardRef<NftMeterHandle>((_, ref) => {
       {/* ステータステキスト */}
       <div className="mt-6 text-center">
         {loading ? (
-          <span className="text-gray-400 animate-pulse font-light tracking-widest text-sm">LOADING DATA...</span>
+          <span className="text-gray-400 font-light tracking-widest text-sm">LOADING DATA...</span>
         ) : error ? (
           <span className="text-red-400 font-light tracking-widest text-sm">DATA UNAVAILABLE</span>
         ) : (
@@ -109,7 +109,7 @@ export const NftMeter = forwardRef<NftMeterHandle>((_, ref) => {
               <span className="text-gray-400 text-xl font-mono tracking-wider">{MAX_SUPPLY}</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#00f2ea] shadow-[0_0_5px_#00f2ea] animate-pulse" />
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00f2ea] shadow-[0_0_5px_#00f2ea]" />
               <span className="text-[10px] text-gray-500 uppercase tracking-[0.3em] font-medium">Total Minted</span>
             </div>
           </div>
