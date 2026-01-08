@@ -61,7 +61,26 @@ export function useEthereumWallet() {
     if (!isMetaMaskInstalled()) {
       throw new Error('MetaMask is not installed');
     }
-    return new ethers.BrowserProvider(window.ethereum as Eip1193Provider);
+
+    // Handle multiple injected providers (e.g. MetaMask + Phantom)
+    // Phantom and other wallets might inject themselves as window.ethereum
+    // We need to be careful about which one we select if possible, or handle the conflict
+    let provider = window.ethereum;
+
+    // If multiple providers are injected, window.ethereum might be an object with providers array
+    // or we might need to look for specific flags
+    // @ts-ignore
+    if (window.ethereum?.providers?.length) {
+      // @ts-ignore
+      const providers = window.ethereum.providers;
+      // Prefer MetaMask if available
+      const metaMaskProvider = providers.find((p: any) => p.isMetaMask && !p.isPhantom);
+      if (metaMaskProvider) {
+        provider = metaMaskProvider;
+      }
+    }
+
+    return new ethers.BrowserProvider(provider as Eip1193Provider);
   }, [isMetaMaskInstalled]);
 
   // Get contract instance
@@ -91,7 +110,15 @@ export function useEthereumWallet() {
       const provider = getProvider();
       
       // Request account access
-      const accounts = await provider.send('eth_requestAccounts', []);
+      // Using .send('eth_requestAccounts', []) is standard
+      const accounts = await provider.send('eth_requestAccounts', []).catch((err) => {
+        throw err;
+      });
+      
+      if (!accounts || accounts.length === 0) {
+        throw new Error('No accounts found');
+      }
+      
       const address = accounts[0];
 
       // Get network info
@@ -99,8 +126,13 @@ export function useEthereumWallet() {
       const chainId = Number(network.chainId);
 
       // Get balance
-      const balance = await provider.getBalance(address);
-      const balanceInEth = ethers.formatEther(balance);
+      let balanceInEth = '0.0';
+      try {
+        const balance = await provider.getBalance(address);
+        balanceInEth = ethers.formatEther(balance);
+      } catch (balanceError) {
+        console.warn('Failed to fetch balance:', balanceError);
+      }
 
       setState({
         address,
@@ -114,10 +146,21 @@ export function useEthereumWallet() {
       return true;
     } catch (error: any) {
       console.error('Failed to connect wallet:', error);
+      
+      let errorMessage = error.message || 'Failed to connect wallet';
+      
+      // Handle common error codes
+      if (error.code === 4001 || error.info?.error?.code === 4001) {
+        errorMessage = 'User rejected the connection request';
+      } else if (errorMessage.includes('Unexpected error') || errorMessage.includes('User rejected')) {
+        // Handle Phantom/MetaMask conflict errors
+        errorMessage = 'Connection failed. Please check your wallet extension settings or try disabling conflicting wallets.';
+      }
+
       setState(prev => ({
         ...prev,
         isConnecting: false,
-        error: error.message || 'Failed to connect wallet',
+        error: errorMessage,
       }));
       return false;
     }
