@@ -70,14 +70,30 @@ export function useSolanaWallet() {
 
     try {
       const provider = window.solana!;
-      const response = await provider.connect();
+      // Phantom connect method might throw if user rejects or other errors occur
+      // We should handle the promise rejection properly
+      const response = await provider.connect().catch((err) => {
+        throw err;
+      });
+      
+      if (!response || !response.publicKey) {
+        throw new Error('Failed to retrieve public key from wallet');
+      }
+
       const publicKey = response.publicKey;
       const address = publicKey.toString();
 
       // Get balance
       const connection = getConnection();
-      const balance = await connection.getBalance(publicKey);
-      const balanceInSol = (balance / LAMPORTS_PER_SOL).toFixed(4);
+      let balanceInSol = '0.0000';
+      
+      try {
+        const balance = await connection.getBalance(publicKey);
+        balanceInSol = (balance / LAMPORTS_PER_SOL).toFixed(4);
+      } catch (balanceError) {
+        console.warn('Failed to fetch balance:', balanceError);
+        // Continue even if balance fetch fails, just show 0
+      }
 
       setState({
         address,
@@ -91,10 +107,23 @@ export function useSolanaWallet() {
       return true;
     } catch (error: any) {
       console.error('Failed to connect wallet:', error);
+      
+      // Handle specific Phantom errors
+      let errorMessage = error.message || 'Failed to connect wallet';
+      
+      // Check for common Phantom error codes/messages
+      if (error.code === 4001) {
+        errorMessage = 'User rejected the connection request';
+      } else if (errorMessage.includes('Unexpected error')) {
+        // This matches the user's reported error
+        // It might be due to extension conflict or internal state
+        errorMessage = 'Connection failed. Please try reloading the page or unlocking your wallet.';
+      }
+
       setState(prev => ({
         ...prev,
         isConnecting: false,
-        error: error.message || 'Failed to connect wallet',
+        error: errorMessage,
       }));
       return false;
     }
