@@ -206,12 +206,13 @@ export default function Home() {
               className="w-1 h-2 bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,0.8)]"
               animate={{ 
                 y: [0, 24],
-                opacity: [1, 0]
+                opacity: [0, 1, 0]
               }}
               transition={{ 
                 duration: 1.5, 
                 repeat: Infinity,
-                ease: "easeOut"
+                ease: "easeInOut",
+                times: [0, 0.2, 1]
               }}
             />
           </div>
