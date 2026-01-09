@@ -205,13 +205,13 @@ export default function Home() {
             <motion.div 
               className="w-1 h-2 bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,0.8)]"
               animate={{ 
-                y: [0, 12, 0],
-                opacity: [1, 0.5, 1]
+                y: [0, 24],
+                opacity: [1, 0]
               }}
               transition={{ 
                 duration: 1.5, 
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "easeOut"
               }}
             />
           </div>
