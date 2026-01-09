@@ -202,7 +202,18 @@ export default function Home() {
           transition={{ duration: 1, delay: 1 }}
         >
           <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1 shadow-[0_0_10px_rgba(255,255,255,0.3)]">
-            <div className="w-1 h-2 bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,0.8)] mt-2" />
+            <motion.div 
+              className="w-1 h-2 bg-white rounded-full shadow-[0_0_5px_rgba(255,255,255,0.8)]"
+              animate={{ 
+                y: [0, 12, 0],
+                opacity: [1, 0.5, 1]
+              }}
+              transition={{ 
+                duration: 1.5, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
           </div>
         </motion.div>
       </section>
