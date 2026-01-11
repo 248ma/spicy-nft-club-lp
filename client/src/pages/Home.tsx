@@ -42,6 +42,14 @@ export default function Home() {
     transition: { duration: 0.8 }
   };
 
+  // Simple fade in without movement for smoother appearance
+  const simpleFadeIn = {
+    initial: { opacity: 0 },
+    whileInView: { opacity: 1 },
+    viewport: { once: true, margin: "-50px" },
+    transition: { duration: 0.8 }
+  };
+
   const staggerContainer = {
     initial: {},
     whileInView: { transition: { staggerChildren: 0.1 } },
@@ -554,7 +562,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
                   <div className="relative z-10 flex flex-col items-center text-center h-full">
                     <div className="mb-8 relative">
-                      <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0" />
+                      <div className="absolute inset-0 bg-[#ff0080] blur-[40px] opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
                       <img 
                         src={iconPath} 
                         alt={item.title}
