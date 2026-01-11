@@ -412,11 +412,47 @@ export default function Home() {
                       animate={{ opacity: [0.4, 0.6, 0.4] }}
                       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     />
-                    <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform duration-500 preserve-3d">
+                    <motion.div 
+                      className="relative z-10 w-full h-full glass-card rounded-3xl p-4 transform transition-transform duration-500 preserve-3d overflow-hidden"
+                      animate={{ 
+                        boxShadow: [
+                          '0 0 20px rgba(255, 0, 128, 0.3), 0 0 40px rgba(121, 40, 202, 0.2), inset 0 0 20px rgba(255, 0, 128, 0.1)',
+                          '0 0 40px rgba(255, 0, 128, 0.6), 0 0 80px rgba(121, 40, 202, 0.4), inset 0 0 30px rgba(255, 0, 128, 0.2)',
+                          '0 0 20px rgba(255, 0, 128, 0.3), 0 0 40px rgba(121, 40, 202, 0.2), inset 0 0 20px rgba(255, 0, 128, 0.1)'
+                        ],
+                        borderColor: [
+                          'rgba(255, 0, 128, 0.3)',
+                          'rgba(255, 0, 128, 0.8)',
+                          'rgba(255, 0, 128, 0.3)'
+                        ]
+                      }}
+                      transition={{ 
+                        duration: 2, 
+                        repeat: Infinity, 
+                        ease: "easeInOut" 
+                      }}
+                      style={{ borderWidth: '2px', borderStyle: 'solid' }}
+                    >
+                      {/* Animated border glow overlay */}
+                      <motion.div 
+                        className="absolute inset-0 rounded-3xl pointer-events-none"
+                        animate={{ 
+                          background: [
+                            'linear-gradient(45deg, rgba(255,0,128,0) 0%, rgba(255,0,128,0.1) 50%, rgba(121,40,202,0) 100%)',
+                            'linear-gradient(45deg, rgba(255,0,128,0.1) 0%, rgba(255,0,128,0.3) 50%, rgba(121,40,202,0.1) 100%)',
+                            'linear-gradient(45deg, rgba(255,0,128,0) 0%, rgba(255,0,128,0.1) 50%, rgba(121,40,202,0) 100%)'
+                          ]
+                        }}
+                        transition={{ 
+                          duration: 2, 
+                          repeat: Infinity, 
+                          ease: "easeInOut" 
+                        }}
+                      />
                       <img 
                         src="/nft-card.webp" loading="lazy" 
                         alt="SPICY NFT Membership Card" 
-                        className="w-full h-full object-cover rounded-2xl shadow-2xl"
+                        className="w-full h-full object-cover rounded-2xl shadow-2xl relative z-10"
                       />
                       <div className="absolute bottom-8 left-8 right-8 glass-panel p-4 rounded-xl">
                         <div className="flex justify-between items-center">
@@ -430,7 +466,7 @@ export default function Home() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="flex flex-col items-center w-full mt-4 mb-8 md:mb-0">
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block">{t('hero.current_price')}</span>
