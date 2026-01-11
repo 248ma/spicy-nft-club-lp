@@ -456,7 +456,7 @@ export default function Home() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                 whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 1, type: "spring" }}
                 className="relative flex justify-center w-full md:w-auto"
               >
@@ -561,7 +561,7 @@ export default function Home() {
                   className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
@@ -592,7 +592,7 @@ export default function Home() {
               className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden mt-24"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8 }}
             >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca]" />
@@ -643,7 +643,7 @@ export default function Home() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.2, duration: 0.5 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, margin: "-50px" }}
                 >
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/30">
                     <Check className="w-7 h-7 text-white" />
