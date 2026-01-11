@@ -462,7 +462,12 @@ export default function Home() {
               >
                 <div className="flex flex-col items-center w-full max-w-sm">
                   <div className="relative w-full aspect-[3/4] perspective-1000 mb-8">
-                    <div className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40" />
+                    {/* Pulsing background effect for NFT emphasis */}
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40"
+                      animate={{ opacity: [0.4, 0.6, 0.4] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
                     <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform duration-500 preserve-3d">
                       <img 
                         src="/nft-card.webp" loading="lazy" 
@@ -583,13 +588,13 @@ export default function Home() {
           </div>
 
           {/* Bonding Curve Explanation */}
-          <motion.div 
-            className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden mt-24"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+            <motion.div 
+              className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden mt-24"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca]" />
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#7928ca] rounded-full blur-[100px] opacity-20" />
             
@@ -637,7 +642,7 @@ export default function Home() {
                   className="glass-panel p-8 rounded-2xl flex flex-col gap-6 hover:bg-white/5 transition-colors text-center items-center h-full border border-white/10 hover:border-[#ff0080]/30"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2 }}
+                  transition={{ delay: i * 0.2, duration: 0.5 }}
                   viewport={{ once: true }}
                 >
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/30">
