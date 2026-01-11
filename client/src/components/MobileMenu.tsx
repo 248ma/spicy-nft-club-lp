@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
 
@@ -114,7 +114,6 @@ export function MobileMenu() {
                         }}
                       >
                         {t('hero.cta')}
-                        <ArrowRight className="ml-2 h-3.5 w-3.5" />
                       </Button>
                     </motion.div>
 
