@@ -1,107 +1,182 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView, type Variants } from 'framer-motion';
 
 export const BondingCurveVisual = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(containerRef, { once: true, margin: '-100px' });
+
+  // アニメーション設定
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }
+    }
+  };
+
+  const lineVariants: Variants = {
+    hidden: { scaleX: 0 },
+    visible: { 
+      scaleX: 1,
+      transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }
+    }
+  };
+
+  const nodeVariants: Variants = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.4, ease: [0.34, 1.56, 0.64, 1] as [number, number, number, number] }
+    }
+  };
+
   return (
-    <div className="w-full bg-[#0a0a0a] rounded-2xl border border-white/10 p-6 md:p-10 overflow-hidden relative">
+    <motion.div 
+      ref={containerRef}
+      className="w-full bg-[#0a0a0a] rounded-2xl border border-white/10 p-6 md:p-10 overflow-hidden relative"
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+      <motion.div 
+        className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4"
+        variants={itemVariants}
+      >
         <h3 className="text-2xl font-bold text-white">Bonding Curve Model</h3>
         <div className="px-4 py-1.5 rounded-full bg-[#ff0080]/20 border border-[#ff0080]/30 text-[#ff0080] text-sm font-medium">
           Early Access Advantage
         </div>
-      </div>
+      </motion.div>
 
       {/* Flow Diagram (Top) - Scrollable on mobile */}
-      <div className="w-full overflow-x-auto pb-6 mb-12 scrollbar-hide">
+      <motion.div 
+        className="w-full overflow-x-auto pb-6 mb-12 scrollbar-hide"
+        variants={itemVariants}
+      >
         <div className="flex items-center min-w-[800px] justify-between relative z-10 px-4">
           {/* Start Node */}
-          <div 
+          <motion.div 
             className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#ff0080] flex items-center justify-center shadow-[0_0_20px_rgba(255,0,128,0.5)] z-10 shrink-0"
+            variants={nodeVariants}
           >
             <span className="text-white font-bold text-sm md:text-base">Start</span>
-          </div>
+          </motion.div>
 
           {/* Arrow 1 */}
-          <div 
+          <motion.div 
             className="h-0.5 w-12 md:flex-1 bg-gradient-to-r from-[#ff0080] to-gray-600 mx-2"
+            variants={lineVariants}
+            style={{ originX: 0 }}
           />
 
           {/* Sale #1 */}
-          <div 
+          <motion.div 
             className="px-4 py-2 md:px-6 md:py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10 shrink-0"
+            variants={nodeVariants}
           >
             <span className="text-white font-bold text-sm md:text-base">Sale #1</span>
-          </div>
+          </motion.div>
 
           {/* Arrow 2 (Price Up) */}
           <div className="w-24 md:flex-1 flex items-center mx-2 relative shrink-0">
-            <div 
+            <motion.div 
               className="h-0.5 w-full bg-gray-700"
+              variants={lineVariants}
+              style={{ originX: 0 }}
             />
-            <div 
+            <motion.div 
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 px-2 py-1 rounded text-[10px] md:text-xs text-gray-300 whitespace-nowrap border border-gray-700"
+              variants={itemVariants}
             >
               Price +0.01
-            </div>
+            </motion.div>
           </div>
 
           {/* Sale #2 */}
-          <div 
+          <motion.div 
             className="px-4 py-2 md:px-6 md:py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10 shrink-0"
+            variants={nodeVariants}
           >
             <span className="text-white font-bold text-sm md:text-base">Sale #2</span>
-          </div>
+          </motion.div>
 
           {/* Arrow 3 (Price Up) */}
           <div className="w-24 md:flex-1 flex items-center mx-2 relative shrink-0">
-            <div 
+            <motion.div 
               className="h-0.5 w-full bg-gray-700"
+              variants={lineVariants}
+              style={{ originX: 0 }}
             />
-            <div 
+            <motion.div 
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-800 px-2 py-1 rounded text-[10px] md:text-xs text-gray-300 whitespace-nowrap border border-gray-700"
+              variants={itemVariants}
             >
               Price +0.01
-            </div>
+            </motion.div>
           </div>
 
           {/* Sale #3 */}
-          <div 
+          <motion.div 
             className="px-4 py-2 md:px-6 md:py-3 bg-[#1a1a1a] border border-[#ff0080] rounded-lg shadow-[0_0_15px_rgba(255,0,128,0.2)] z-10 shrink-0"
+            variants={nodeVariants}
           >
             <span className="text-white font-bold text-sm md:text-base">Sale #3</span>
-          </div>
+          </motion.div>
 
           {/* Arrow 4 */}
-          <div 
+          <motion.div 
             className="h-0.5 w-8 md:flex-1 bg-gray-700 mx-2"
+            variants={lineVariants}
+            style={{ originX: 0 }}
           />
 
           {/* Dots */}
-          <div 
+          <motion.div 
             className="text-gray-500 font-bold mx-2 shrink-0"
+            variants={itemVariants}
           >
             ...
-          </div>
+          </motion.div>
 
           {/* Arrow 5 */}
-          <div 
+          <motion.div 
             className="h-0.5 w-8 md:flex-1 bg-gradient-to-r from-gray-700 to-[#7928ca] mx-2"
+            variants={lineVariants}
+            style={{ originX: 0 }}
           />
 
           {/* Sale #200 */}
-          <div 
+          <motion.div 
             className="px-4 py-2 md:px-6 md:py-3 bg-[#7928ca] rounded-lg shadow-[0_0_20px_rgba(121,40,202,0.5)] z-10 border border-white/20 shrink-0"
+            variants={nodeVariants}
           >
             <span className="text-white font-bold text-sm md:text-base">Sale #200</span>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Visual Representation (Bottom) - Flex on desktop, Stack on mobile */}
-      <div className="flex flex-col md:flex-row justify-between items-center relative gap-8 md:gap-4">
+      <motion.div 
+        className="flex flex-col md:flex-row justify-between items-center relative gap-8 md:gap-4"
+        variants={containerVariants}
+      >
         {/* Step 1 */}
-        <div 
+        <motion.div 
           className="flex flex-col items-center text-center group w-full md:w-auto"
+          variants={itemVariants}
         >
           <div className="w-24 h-32 rounded-xl border-2 border-white/20 bg-white/5 flex flex-col items-center justify-center mb-4 relative overflow-hidden group-hover:border-[#ff0080]/50 transition-colors duration-500">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#ff0080]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -114,10 +189,13 @@ export const BondingCurveVisual = () => {
           </div>
           <div className="text-[#ff0080] font-bold text-lg mb-1">0.01 ETH</div>
           <div className="text-gray-400 text-sm">0.2 SOL</div>
-        </div>
+        </motion.div>
 
         {/* Arrow & Label - Vertical on mobile, Horizontal on desktop */}
-        <div className="flex md:flex-col items-center justify-center md:-mt-8 w-full md:w-auto relative">
+        <motion.div 
+          className="flex md:flex-col items-center justify-center md:-mt-8 w-full md:w-auto relative"
+          variants={itemVariants}
+        >
           <span className="text-xs text-gray-400 mb-2 hidden md:block">1個販売</span>
           <span className="text-xs text-gray-400 mr-4 md:hidden">1個販売</span>
           
@@ -130,11 +208,12 @@ export const BondingCurveVisual = () => {
           <div className="md:hidden h-12 w-px bg-gradient-to-b from-[#ff0080] to-[#ff0080]/30 relative">
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 border-b border-r border-[#ff0080]/50 rotate-45" />
           </div>
-        </div>
+        </motion.div>
 
         {/* Step 2 */}
-        <div 
+        <motion.div 
           className="flex flex-col items-center text-center group w-full md:w-auto"
+          variants={itemVariants}
         >
           <div className="w-24 h-32 rounded-xl border-2 border-white/20 bg-white/5 flex flex-col items-center justify-center mb-4 relative overflow-hidden group-hover:border-[#ff0080]/50 transition-colors duration-500">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#ff0080]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -146,10 +225,13 @@ export const BondingCurveVisual = () => {
           </div>
           <div className="text-[#ff0080] font-bold text-lg mb-1">0.02 ETH</div>
           <div className="text-gray-400 text-sm">0.4 SOL</div>
-        </div>
+        </motion.div>
 
         {/* Arrow & Label - Vertical on mobile, Horizontal on desktop */}
-        <div className="flex md:flex-col items-center justify-center md:-mt-8 w-full md:w-auto relative">
+        <motion.div 
+          className="flex md:flex-col items-center justify-center md:-mt-8 w-full md:w-auto relative"
+          variants={itemVariants}
+        >
           <span className="text-xs text-gray-400 mb-2 hidden md:block">1個販売</span>
           <span className="text-xs text-gray-400 mr-4 md:hidden">1個販売</span>
           
@@ -162,11 +244,12 @@ export const BondingCurveVisual = () => {
           <div className="md:hidden h-12 w-px bg-gradient-to-b from-[#ff0080]/50 to-[#7928ca]/50 relative">
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 border-b border-r border-[#7928ca]/50 rotate-45" />
           </div>
-        </div>
+        </motion.div>
 
         {/* Step 3 */}
-        <div 
+        <motion.div 
           className="flex flex-col items-center text-center group w-full md:w-auto"
+          variants={itemVariants}
         >
           <div className="w-24 h-32 rounded-xl border-2 border-white/20 bg-white/5 flex flex-col items-center justify-center mb-4 relative overflow-hidden group-hover:border-[#7928ca]/50 transition-colors duration-500">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#7928ca]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -178,19 +261,22 @@ export const BondingCurveVisual = () => {
           </div>
           <div className="text-[#7928ca] font-bold text-lg mb-1">0.03 ETH</div>
           <div className="text-gray-400 text-sm">0.6 SOL</div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Footer Note */}
-      <div className="mt-12 text-center">
+      <motion.div 
+        className="mt-12 text-center"
+        variants={itemVariants}
+      >
         <p className="text-gray-500 text-sm">
           * 早期購入者が最大限のメリットを得る設計
         </p>
-      </div>
+      </motion.div>
 
       {/* Background Glows */}
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#ff0080] rounded-full blur-[120px] opacity-10 pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#7928ca] rounded-full blur-[120px] opacity-10 pointer-events-none" />
-    </div>
+    </motion.div>
   );
 };

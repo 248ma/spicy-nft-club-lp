@@ -17,10 +17,11 @@ import {
 import { ArrowRight, Check, Key, BarChart3, Scale, Wallet, Coins, Link as LinkIcon, ShoppingCart } from "lucide-react";
 import { Link } from "wouter";
 
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { BondingCurveVisual } from '../components/BondingCurveVisual';
 import { NftMeter, NftMeterHandle } from "@/components/NftMeter";
-import { useRef, useState, useEffect } from "react";
+import { AnimateOnce, AnimateCard } from "@/components/AnimateOnce";
+import { useRef } from "react";
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileMenu } from "@/components/MobileMenu";
@@ -28,32 +29,11 @@ import { AgeGate } from "@/components/AgeGate";
 import { MintModal } from "@/components/MintModal";
 import '../lib/i18n';
 
-// アニメーション済みの要素を追跡するカスタムフック
-function useAnimateOnce(ref: React.RefObject<Element | null>) {
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  
-  useEffect(() => {
-    if (isInView && !hasAnimated) {
-      setHasAnimated(true);
-    }
-  }, [isInView, hasAnimated]);
-  
-  return hasAnimated;
-}
-
 export default function Home() {
   const { t } = useTranslation();
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
-
-  // アニメーション設定 - 点滅を防ぐため、アニメーションを完全に無効化
-  // 代わりにCSSトランジションのみを使用
-  const noAnimation = {
-    initial: { opacity: 1, y: 0 },
-    animate: { opacity: 1, y: 0 },
-  };
 
   // コンテンツ定義はi18nに移行したため削除し、直接t関数を使用します
   const benefitsIcons = [Key, BarChart3, Scale];
@@ -227,14 +207,14 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-[#ff0080]/10 to-transparent pointer-events-none blur-3xl z-0" />
         
         <div className="container relative z-10">
-          {/* Section Header - 静的表示（アニメーションなし） */}
-          <div className="text-center mb-24">
+          {/* Section Header */}
+          <AnimateOnce className="text-center mb-24" variants="fadeInUp">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('concept.subtitle')}</span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">{t('concept.title')}</h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {t('concept.description')}
             </p>
-          </div>
+          </AnimateOnce>
 
           {/* Core Philosophy (Vision & Mission) */}
           <div className="relative mb-16">
@@ -253,8 +233,11 @@ export default function Home() {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/20 to-transparent hidden md:block z-10" />
             
             <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center relative z-10">
-              {/* Vision - 静的表示 */}
-              <div className="relative text-center md:text-right">
+              {/* Vision */}
+              <AnimateOnce 
+                className="relative text-center md:text-right"
+                variants="fadeInLeft"
+              >
                 <div className="inline-block p-1 rounded-2xl bg-gradient-to-br from-[#ff0080] to-transparent mb-6">
                   <div className="bg-black px-6 py-2 rounded-xl border border-[#ff0080]/30">
                     <h3 className="text-[#ff0080] text-sm font-bold tracking-[0.2em] uppercase">{t('concept.vision.label')}</h3>
@@ -264,10 +247,14 @@ export default function Home() {
                   {t('concept.vision.text')}
                 </p>
                 <div className="hidden md:block absolute top-1/2 -right-12 w-12 h-px bg-gradient-to-r from-white/20 to-[#ff0080]" />
-              </div>
+              </AnimateOnce>
 
-              {/* Mission - 静的表示 */}
-              <div className="relative text-center md:text-left">
+              {/* Mission */}
+              <AnimateOnce 
+                className="relative text-center md:text-left"
+                variants="fadeInRight"
+                delay={0.2}
+              >
                 <div className="hidden md:block absolute top-1/2 -left-12 w-12 h-px bg-gradient-to-l from-white/20 to-[#7928ca]" />
                 <div className="inline-block p-1 rounded-2xl bg-gradient-to-bl from-[#7928ca] to-transparent mb-6">
                   <div className="bg-black px-6 py-2 rounded-xl border border-[#7928ca]/30">
@@ -277,16 +264,16 @@ export default function Home() {
                 <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
                   {t('concept.mission.text')}
                 </p>
-              </div>
+              </AnimateOnce>
             </div>
           </div>
 
 
 
-          {/* 3 Core Features (Reasons) - 静的表示 */}
+          {/* 3 Core Features (Reasons) */}
           <div className="grid md:grid-cols-3 gap-8 mb-32">
             {(t('concept.features', { returnObjects: true }) as any[]).map((feature, i) => (
-              <div key={i} className="h-full">
+              <AnimateCard key={i} className="h-full" index={i}>
                 <div className="group relative h-full glass-card p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                   {/* Number Background */}
                   <div className="absolute -right-4 -top-4 text-[120px] font-bold text-white/[0.03] group-hover:text-white/[0.05] transition-colors select-none pointer-events-none">
@@ -310,7 +297,7 @@ export default function Home() {
                     {feature.description}
                   </p>
                 </div>
-              </div>
+              </AnimateCard>
             ))}
           </div>
 
@@ -327,24 +314,24 @@ export default function Home() {
       {/* NFT Section (Features + Tokenomics) */}
       <section id="nft" className="py-12 md:py-20 relative bg-black overflow-hidden">
         <div className="container relative z-10">
-          {/* Unified Section Header - 静的表示 */}
-          <div className="text-center mb-24">
+          {/* Unified Section Header */}
+          <AnimateOnce className="text-center mb-24" variants="fadeInUp">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">Want to join?</span>
             <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tight">NFT MEMBERSHIP</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
-          </div>
+          </AnimateOnce>
 
 
 
           {/* SPICY NFT CLUB Features Section */}
           <div className="mt-24 mb-32">
-            <div className="text-center mb-16">
+            <AnimateOnce className="text-center mb-16" variants="fadeInUp">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 {t('features_section.title')}
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
-            </div>
+            </AnimateOnce>
 
             <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-5xl mx-auto">
               {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
@@ -372,9 +359,10 @@ export default function Home() {
                 ][i];
 
                 return (
-                  <div 
+                  <AnimateCard 
                     key={i}
                     className="relative p-4 md:p-8 rounded-2xl md:rounded-[2rem] bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300"
+                    index={i}
                   >
                     <div className="flex flex-col h-full relative z-10">
                       <div className="flex justify-between items-start mb-4 md:mb-8">
@@ -393,7 +381,7 @@ export default function Home() {
                         ))}
                       </p>
                     </div>
-                  </div>
+                  </AnimateCard>
                 );
               })}
             </div>
@@ -401,22 +389,28 @@ export default function Home() {
 
           {/* Tokenomics Subsection */}
           <div className="mt-24 mb-32 pt-12 border-t border-white/10">
-            <div className="text-center mb-16">
+            <AnimateOnce className="text-center mb-16" variants="fadeInUp">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 {t('tokenomics.title')}
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
-            </div>
+            </AnimateOnce>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-12">
-              {/* NFT Card & Price Display - 静的表示 */}
-              <div className="relative flex justify-center w-full md:w-auto">
+              {/* NFT Card & Price Display */}
+              <AnimateOnce 
+                className="relative flex justify-center w-full md:w-auto"
+                variants="scaleIn"
+                duration={1}
+              >
                 <div className="flex flex-col items-center w-full max-w-sm">
                   <div className="relative w-full aspect-[3/4] perspective-1000 mb-8">
-                    {/* Static background effect for NFT emphasis (no animation) */}
-                    <div 
-                      className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-50"
+                    {/* Pulsing background effect for NFT emphasis */}
+                    <motion.div 
+                      className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40"
+                      animate={{ opacity: [0.4, 0.6, 0.4] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     />
                     <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform duration-500 preserve-3d">
                       <img 
@@ -447,39 +441,42 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </AnimateOnce>
 
-              {/* Tokenomics Details - 静的表示 */}
+              {/* Tokenomics Details */}
               <div className="w-full md:w-1/2 max-w-xl">
                 <div className="grid grid-cols-1 gap-6">
                   {Object.entries(t('tokenomics.items', { returnObjects: true }) as Record<string, { label: string, value: string }>).map(([key, item], i) => (
-                    <div 
+                    <AnimateCard 
                       key={key}
                       className="glass-card p-6 rounded-xl flex justify-between items-center border-l-4 border-[#ff0080]"
+                      index={i}
                     >
                       <span className="text-gray-400 font-medium">{item.label}</span>
                       <span className="text-white font-bold text-lg">{item.value}</span>
-                    </div>
+                    </AnimateCard>
                   ))}
                 </div>
                 {/* Note for Secondary Market */}
-                <p className="text-gray-500 text-xs mt-4 text-right">
-                  {t('tokenomics.note')}
-                </p>
+                <AnimateOnce variants="fadeIn" delay={0.5}>
+                  <p className="text-gray-500 text-xs mt-4 text-right">
+                    {t('tokenomics.note')}
+                  </p>
+                </AnimateOnce>
               </div>
             </div>
           </div>
 
-          {/* Member Exclusive Privileges Subsection - 静的表示 */}
+          {/* Member Exclusive Privileges Subsection */}
           <div className="w-full mb-32">
-            <div className="text-center mb-12">
+            <AnimateOnce className="text-center mb-12" variants="fadeInUp">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 {t('benefits.title')}
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
 
-            </div>
+            </AnimateOnce>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(t('benefits.items', { returnObjects: true }) as any[]).map((item, i) => {
@@ -493,9 +490,10 @@ export default function Home() {
               ][i];
 
               return (
-                <div 
+                <AnimateCard 
                   key={i} 
                   className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
+                  index={i}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
                   <div className="relative z-10 flex flex-col items-center text-center h-full">
@@ -514,15 +512,16 @@ export default function Home() {
                       {item.description}
                     </p>
                   </div>
-                </div>
+                </AnimateCard>
               );
             })}
             </div>
           </div>
 
-          {/* Bonding Curve Explanation - 静的表示 */}
-            <div 
+          {/* Bonding Curve Explanation */}
+            <AnimateOnce 
               className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden mt-24"
+              variants="fadeInUp"
             >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca]" />
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#7928ca] rounded-full blur-[100px] opacity-20" />
@@ -547,28 +546,29 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
+          </AnimateOnce>
         </div>
       </section>
 
-      {/* Solution Section - 静的表示 */}
+      {/* Solution Section */}
       <section id="solution" className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
         <div className="container relative z-10">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <AnimateOnce className="text-center mb-16" variants="fadeInUp">
               <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('solution.subtitle')}</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">{t('solution.title')}</h2>
               <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
                 {t('solution.description')}
               </p>
-            </div>
+            </AnimateOnce>
               
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {(t('solution.items', { returnObjects: true }) as any[]).map((item, i) => (
-                <div 
+                <AnimateCard 
                   key={i}
                   className="glass-panel p-8 rounded-2xl flex flex-col gap-6 hover:bg-white/5 transition-colors text-center items-center h-full border border-white/10 hover:border-[#ff0080]/30"
+                  index={i}
                 >
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/30">
                     <Check className="w-7 h-7 text-white" />
@@ -577,7 +577,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                     <p className="text-gray-400 leading-relaxed text-sm">{item.description}</p>
                   </div>
-                </div>
+                </AnimateCard>
               ))}
             </div>
             
@@ -586,12 +586,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Whitepaper Section - 静的表示 */}
+      {/* Whitepaper Section */}
       <section id="whitepaper" className="py-24 relative bg-black overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-[#111] to-black opacity-80" />
         <div className="container relative z-10">
-          <div 
+          <AnimateOnce 
             className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl border border-white/10"
+            variants="scaleIn"
           >
             <span className="text-gray-400 tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('whitepaper.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{t('whitepaper.title')}</h2>
@@ -613,18 +614,18 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </motion.a>
-          </div>
+          </AnimateOnce>
         </div>
       </section>
 
-      {/* Roadmap Section - 静的表示 */}
+      {/* Roadmap Section */}
       <section id="roadmap" className="py-10 md:py-16 relative bg-black overflow-hidden">
         <div className="absolute inset-0 aurora-bg opacity-20" />
         <div className="container relative z-10">
-          <div className="text-center mb-32">
+          <AnimateOnce className="text-center mb-32" variants="fadeInUp">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('roadmap.subtitle')}</span>
             <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">{t('roadmap.title')}</h2>
-          </div>
+          </AnimateOnce>
 
           <div className="max-w-7xl mx-auto relative">
             {/* Horizontal Line for Desktop */}
@@ -635,9 +636,10 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative md:h-[480px]">
               {(t('roadmap.items', { returnObjects: true }) as any[]).map((item, i) => (
-                <div 
+                <AnimateCard 
                   key={i}
                   className={`relative flex md:block h-full`}
+                  index={i}
                 >
                   {/* Desktop Dot - Centered on the horizontal line */}
                   <div className="hidden md:block absolute left-1/2 top-1/2 w-6 h-6 rounded-full bg-[#ff0080] shadow-[0_0_20px_#ff0080] -translate-x-1/2 -translate-y-1/2 z-10 border-4 border-black" />
@@ -654,24 +656,25 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
                   </div>
-                </div>
+                </AnimateCard>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section - 静的表示 */}
+      {/* Team Section */}
       <section id="team" className="py-10 md:py-16 relative overflow-hidden">
         <div className="container relative z-10 max-w-5xl">
-          <div className="text-center mb-16">
+          <AnimateOnce className="text-center mb-16" variants="fadeInUp">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('team.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">{t('team.title')}</h2>
-          </div>
+          </AnimateOnce>
 
           {/* CEO Profile */}
-          <div 
+          <AnimateOnce 
             className="glass-card p-8 md:p-12 rounded-3xl mb-12 relative overflow-hidden group"
+            variants="fadeInUp"
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] opacity-50" />
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -712,29 +715,30 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </AnimateOnce>
 
-          {/* Advisors Grid - 静的表示 */}
+          {/* Advisors Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {(t('team.members', { returnObjects: true }) as any[]).map((member, i) => (
-              <div 
+              <AnimateCard 
                 key={i}
                 className="glass-card p-6 rounded-xl text-center hover:bg-white/5 transition-colors duration-300 flex flex-col items-center justify-center"
+                index={i}
               >
                 <h3 className="text-lg font-bold text-white mb-1">{member.name}</h3>
                 <span className="text-[#ff0080] text-xs font-bold mb-2 block">{member.role}</span>
                 <p className="text-gray-400 text-xs">{member.description}</p>
-              </div>
+              </AnimateCard>
             ))}
           </div>
         </div>
-      </section>      {/* How to Buy Section - 静的表示 */}
+      </section>      {/* How to Buy Section */}
       <section id="how-to-buy" className="py-12 md:py-20 relative bg-black/30">
         <div className="container relative z-10 max-w-4xl">
-          <div className="text-center mb-16">
+          <AnimateOnce className="text-center mb-16" variants="fadeInUp">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('how_to_buy.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">{t('how_to_buy.title')}</h2>
-          </div>
+          </AnimateOnce>
 
           <div className="relative">
             {/* Vertical Line */}
@@ -748,9 +752,10 @@ export default function Home() {
                 { icon: Check, step: 4 },
                 { icon: Coins, step: "EX" }
               ].map((item, index) => (
-                <div
+                <AnimateCard
                   key={index}
                   className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                  index={index}
                 >
                   {/* Content Card */}
                   <div className="flex-1 w-full pl-16 md:pl-0">
@@ -770,23 +775,27 @@ export default function Home() {
 
                   {/* Spacer for alternating layout */}
                   <div className="hidden md:block flex-1" />
-                </div>
+                </AnimateCard>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section - 静的表示 */}
+      {/* FAQ Section */}
       <section id="faq" className="py-12 md:py-20 relative bg-black/50 overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#ff0080]/10 to-transparent pointer-events-none" />
         <div className="container relative z-10">
-          <div className="text-center mb-12">
+          <AnimateOnce className="text-center mb-12" variants="fadeInUp">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-xs font-bold mb-2 block">{t('faq.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{t('faq.title')}</h2>
-          </div>
+          </AnimateOnce>
 
-          <div className="max-w-4xl mx-auto">
+          <AnimateOnce 
+            className="max-w-4xl mx-auto"
+            variants="fadeInUp"
+            delay={0.2}
+          >
             <div className="w-full border border-white/10 rounded-2xl bg-[#0a0a0a] overflow-hidden shadow-2xl">
               <Accordion type="single" collapsible className="w-full">
                 {(t('faq.items', { returnObjects: true }) as any[]).map((item, i) => (
@@ -801,17 +810,17 @@ export default function Home() {
                 ))}
               </Accordion>
             </div>
-          </div>
+          </AnimateOnce>
         </div>
       </section>
 
-      {/* CTA Section - 静的表示 */}
+      {/* CTA Section */}
       <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
         
         <div className="container relative z-10 text-center">
-          <div>
+          <AnimateOnce variants="scaleIn">
             <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
               {t('cta.title')}
             </h2>
@@ -864,7 +873,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          </div>
+          </AnimateOnce>
         </div>
       </section>
 
