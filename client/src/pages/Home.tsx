@@ -873,7 +873,6 @@ export default function Home() {
                 onClick={() => nftMeterRef.current?.incrementSupply()}
               >
                 {t('cta.button')}
-                <ArrowRight className="ml-2 h-6 w-6" />
               </Button>
               <div className="flex flex-col items-center -mt-4 mb-2">
                 <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">{t('hero.current_price')}</span>
