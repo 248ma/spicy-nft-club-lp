@@ -17,10 +17,10 @@ import {
 import { ArrowRight, Check, Key, BarChart3, Scale, Wallet, Coins, Link as LinkIcon, ShoppingCart } from "lucide-react";
 import { Link } from "wouter";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { BondingCurveVisual } from '../components/BondingCurveVisual';
 import { NftMeter, NftMeterHandle } from "@/components/NftMeter";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileMenu } from "@/components/MobileMenu";
@@ -28,38 +28,31 @@ import { AgeGate } from "@/components/AgeGate";
 import { MintModal } from "@/components/MintModal";
 import '../lib/i18n';
 
+// アニメーション済みの要素を追跡するカスタムフック
+function useAnimateOnce(ref: React.RefObject<Element | null>) {
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  
+  useEffect(() => {
+    if (isInView && !hasAnimated) {
+      setHasAnimated(true);
+    }
+  }, [isInView, hasAnimated]);
+  
+  return hasAnimated;
+}
+
 export default function Home() {
   const { t } = useTranslation();
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
 
-  // アニメーション設定
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 0.8 }
-  };
-
-  // Simple fade in without movement for smoother appearance
-  const simpleFadeIn = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true, margin: "-50px" },
-    transition: { duration: 0.8 }
-  };
-
-  const staggerContainer = {
-    initial: {},
-    whileInView: { transition: { staggerChildren: 0.1 } },
-    viewport: { once: true, margin: "-100px" }
-  };
-
-  const staggerItem = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+  // アニメーション設定 - 点滅を防ぐため、アニメーションを完全に無効化
+  // 代わりにCSSトランジションのみを使用
+  const noAnimation = {
+    initial: { opacity: 1, y: 0 },
+    animate: { opacity: 1, y: 0 },
   };
 
   // コンテンツ定義はi18nに移行したため削除し、直接t関数を使用します
@@ -234,17 +227,14 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-t from-[#ff0080]/10 to-transparent pointer-events-none blur-3xl z-0" />
         
         <div className="container relative z-10">
-          {/* Section Header */}
-          <motion.div 
-            className="text-center mb-24"
-            {...fadeInUp}
-          >
+          {/* Section Header - 静的表示（アニメーションなし） */}
+          <div className="text-center mb-24">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('concept.subtitle')}</span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">{t('concept.title')}</h2>
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {t('concept.description')}
             </p>
-          </motion.div>
+          </div>
 
           {/* Core Philosophy (Vision & Mission) */}
           <div className="relative mb-16">
@@ -263,14 +253,8 @@ export default function Home() {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/20 to-transparent hidden md:block z-10" />
             
             <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-center relative z-10">
-              {/* Vision */}
-              <motion.div 
-                className="relative text-center md:text-right"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-              >
+              {/* Vision - 静的表示 */}
+              <div className="relative text-center md:text-right">
                 <div className="inline-block p-1 rounded-2xl bg-gradient-to-br from-[#ff0080] to-transparent mb-6">
                   <div className="bg-black px-6 py-2 rounded-xl border border-[#ff0080]/30">
                     <h3 className="text-[#ff0080] text-sm font-bold tracking-[0.2em] uppercase">{t('concept.vision.label')}</h3>
@@ -280,16 +264,10 @@ export default function Home() {
                   {t('concept.vision.text')}
                 </p>
                 <div className="hidden md:block absolute top-1/2 -right-12 w-12 h-px bg-gradient-to-r from-white/20 to-[#ff0080]" />
-              </motion.div>
+              </div>
 
-              {/* Mission */}
-              <motion.div 
-                className="relative text-center md:text-left"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
+              {/* Mission - 静的表示 */}
+              <div className="relative text-center md:text-left">
                 <div className="hidden md:block absolute top-1/2 -left-12 w-12 h-px bg-gradient-to-l from-white/20 to-[#7928ca]" />
                 <div className="inline-block p-1 rounded-2xl bg-gradient-to-bl from-[#7928ca] to-transparent mb-6">
                   <div className="bg-black px-6 py-2 rounded-xl border border-[#7928ca]/30">
@@ -299,22 +277,16 @@ export default function Home() {
                 <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light">
                   {t('concept.mission.text')}
                 </p>
-              </motion.div>
+              </div>
             </div>
           </div>
 
 
 
-          {/* 3 Core Features (Reasons) */}
-          <motion.div 
-            className="grid md:grid-cols-3 gap-8 mb-32"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="whileInView"
-            viewport={{ once: true }}
-          >
+          {/* 3 Core Features (Reasons) - 静的表示 */}
+          <div className="grid md:grid-cols-3 gap-8 mb-32">
             {(t('concept.features', { returnObjects: true }) as any[]).map((feature, i) => (
-              <motion.div key={i} variants={staggerItem} className="h-full">
+              <div key={i} className="h-full">
                 <div className="group relative h-full glass-card p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-2 overflow-hidden">
                   {/* Number Background */}
                   <div className="absolute -right-4 -top-4 text-[120px] font-bold text-white/[0.03] group-hover:text-white/[0.05] transition-colors select-none pointer-events-none">
@@ -338,14 +310,13 @@ export default function Home() {
                     {feature.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* New Features Section (4 Cards) - REMOVED (Moved to NFT section) */}
         </div>
       </section>
-
 
 
 
@@ -356,30 +327,24 @@ export default function Home() {
       {/* NFT Section (Features + Tokenomics) */}
       <section id="nft" className="py-12 md:py-20 relative bg-black overflow-hidden">
         <div className="container relative z-10">
-          {/* Unified Section Header */}
-          <motion.div 
-            className="text-center mb-24"
-            {...fadeInUp}
-          >
+          {/* Unified Section Header - 静的表示 */}
+          <div className="text-center mb-24">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">Want to join?</span>
             <h2 className="text-5xl md:text-7xl font-black text-white mb-8 tracking-tight">NFT MEMBERSHIP</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] mx-auto rounded-full" />
-          </motion.div>
+          </div>
 
 
 
           {/* SPICY NFT CLUB Features Section */}
           <div className="mt-24 mb-32">
-            <motion.div 
-              className="text-center mb-16"
-              {...fadeInUp}
-            >
+            <div className="text-center mb-16">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 {t('features_section.title')}
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-2 gap-3 md:gap-6 max-w-5xl mx-auto">
               {(t('features_section.items', { returnObjects: true }) as any[]).map((item, i) => {
@@ -407,13 +372,9 @@ export default function Home() {
                 ][i];
 
                 return (
-                  <motion.div 
+                  <div 
                     key={i}
                     className="relative p-4 md:p-8 rounded-2xl md:rounded-[2rem] bg-black border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-300"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
                     <div className="flex flex-col h-full relative z-10">
                       <div className="flex justify-between items-start mb-4 md:mb-8">
@@ -432,7 +393,7 @@ export default function Home() {
                         ))}
                       </p>
                     </div>
-                  </motion.div>
+                  </div>
                 );
               })}
             </div>
@@ -440,33 +401,22 @@ export default function Home() {
 
           {/* Tokenomics Subsection */}
           <div className="mt-24 mb-32 pt-12 border-t border-white/10">
-            <motion.div 
-              className="text-center mb-16"
-              {...fadeInUp}
-            >
+            <div className="text-center mb-16">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 {t('tokenomics.title')}
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
-            </motion.div>
+            </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 mb-12">
-              {/* NFT Card & Price Display */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 1, type: "spring" }}
-                className="relative flex justify-center w-full md:w-auto"
-              >
+              {/* NFT Card & Price Display - 静的表示 */}
+              <div className="relative flex justify-center w-full md:w-auto">
                 <div className="flex flex-col items-center w-full max-w-sm">
                   <div className="relative w-full aspect-[3/4] perspective-1000 mb-8">
-                    {/* Pulsing background effect for NFT emphasis */}
-                    <motion.div 
-                      className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-40"
-                      animate={{ opacity: [0.4, 0.6, 0.4] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    {/* Static background effect for NFT emphasis (no animation) */}
+                    <div 
+                      className="absolute inset-0 bg-gradient-to-tr from-[#ff0080] via-[#7928ca] to-[#4a00e0] rounded-3xl blur-[100px] opacity-50"
                     />
                     <div className="relative z-10 w-full h-full glass-card rounded-3xl border border-white/20 p-4 transform transition-transform duration-500 preserve-3d">
                       <img 
@@ -497,52 +447,39 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
 
-              {/* Tokenomics Details */}
+              {/* Tokenomics Details - 静的表示 */}
               <div className="w-full md:w-1/2 max-w-xl">
                 <div className="grid grid-cols-1 gap-6">
                   {Object.entries(t('tokenomics.items', { returnObjects: true }) as Record<string, { label: string, value: string }>).map(([key, item], i) => (
-                    <motion.div 
+                    <div 
                       key={key}
                       className="glass-card p-6 rounded-xl flex justify-between items-center border-l-4 border-[#ff0080]"
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 }}
                     >
                       <span className="text-gray-400 font-medium">{item.label}</span>
                       <span className="text-white font-bold text-lg">{item.value}</span>
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
                 {/* Note for Secondary Market */}
-                <motion.p 
-                  className="text-gray-500 text-xs mt-4 text-right"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
+                <p className="text-gray-500 text-xs mt-4 text-right">
                   {t('tokenomics.note')}
-                </motion.p>
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Member Exclusive Privileges Subsection */}
+          {/* Member Exclusive Privileges Subsection - 静的表示 */}
           <div className="w-full mb-32">
-            <motion.div 
-              className="text-center mb-12"
-              {...fadeInUp}
-            >
+            <div className="text-center mb-12">
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
                 {t('benefits.title')}
                 <span className="w-8 h-[2px] bg-[#ff0080]"></span>
               </h3>
 
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(t('benefits.items', { returnObjects: true }) as any[]).map((item, i) => {
@@ -556,13 +493,9 @@ export default function Home() {
               ][i];
 
               return (
-                <motion.div 
+                <div 
                   key={i} 
                   className="group relative p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-[#ff0080]/0 to-[#7928ca]/0 group-hover:from-[#ff0080]/10 group-hover:to-[#7928ca]/10 rounded-3xl transition-all duration-500" />
                   <div className="relative z-10 flex flex-col items-center text-center h-full">
@@ -581,19 +514,15 @@ export default function Home() {
                       {item.description}
                     </p>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
             </div>
           </div>
 
-          {/* Bonding Curve Explanation */}
-            <motion.div 
+          {/* Bonding Curve Explanation - 静的表示 */}
+            <div 
               className="max-w-5xl mx-auto text-center glass-card p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden mt-24"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8 }}
             >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca]" />
             <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-[#7928ca] rounded-full blur-[100px] opacity-20" />
@@ -618,32 +547,28 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* Solution Section - 静的表示 */}
       <section id="solution" className="py-16 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
         <div className="container relative z-10">
           <div className="max-w-7xl mx-auto">
-            <motion.div {...fadeInUp} className="text-center mb-16">
+            <div className="text-center mb-16">
               <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('solution.subtitle')}</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 text-white leading-tight">{t('solution.title')}</h2>
               <p className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto">
                 {t('solution.description')}
               </p>
-            </motion.div>
+            </div>
               
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {(t('solution.items', { returnObjects: true }) as any[]).map((item, i) => (
-                <motion.div 
+                <div 
                   key={i}
                   className="glass-panel p-8 rounded-2xl flex flex-col gap-6 hover:bg-white/5 transition-colors text-center items-center h-full border border-white/10 hover:border-[#ff0080]/30"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.2, duration: 0.5 }}
-                  viewport={{ once: true, margin: "-50px" }}
                 >
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center shrink-0 shadow-lg shadow-purple-500/30">
                     <Check className="w-7 h-7 text-white" />
@@ -652,7 +577,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                     <p className="text-gray-400 leading-relaxed text-sm">{item.description}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
             
@@ -661,16 +586,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Whitepaper Section */}
+      {/* Whitepaper Section - 静的表示 */}
       <section id="whitepaper" className="py-24 relative bg-black overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-[#111] to-black opacity-80" />
         <div className="container relative z-10">
-          <motion.div 
+          <div 
             className="max-w-4xl mx-auto text-center glass-card p-12 rounded-3xl border border-white/10"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
           >
             <span className="text-gray-400 tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('whitepaper.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{t('whitepaper.title')}</h2>
@@ -692,21 +613,18 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </motion.a>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Roadmap Section */}
+      {/* Roadmap Section - 静的表示 */}
       <section id="roadmap" className="py-10 md:py-16 relative bg-black overflow-hidden">
         <div className="absolute inset-0 aurora-bg opacity-20" />
         <div className="container relative z-10">
-          <motion.div 
-            className="text-center mb-32"
-            {...fadeInUp}
-          >
+          <div className="text-center mb-32">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('roadmap.subtitle')}</span>
             <h2 className="text-5xl md:text-7xl font-bold text-white mb-6">{t('roadmap.title')}</h2>
-          </motion.div>
+          </div>
 
           <div className="max-w-7xl mx-auto relative">
             {/* Horizontal Line for Desktop */}
@@ -717,13 +635,9 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-4 relative md:h-[480px]">
               {(t('roadmap.items', { returnObjects: true }) as any[]).map((item, i) => (
-                <motion.div 
+                <div 
                   key={i}
                   className={`relative flex md:block h-full`}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.6, delay: i * 0.2 }}
                 >
                   {/* Desktop Dot - Centered on the horizontal line */}
                   <div className="hidden md:block absolute left-1/2 top-1/2 w-6 h-6 rounded-full bg-[#ff0080] shadow-[0_0_20px_#ff0080] -translate-x-1/2 -translate-y-1/2 z-10 border-4 border-black" />
@@ -740,30 +654,24 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">{item.description}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Section - 静的表示 */}
       <section id="team" className="py-10 md:py-16 relative overflow-hidden">
         <div className="container relative z-10 max-w-5xl">
-          <motion.div 
-            className="text-center mb-16"
-            {...fadeInUp}
-          >
+          <div className="text-center mb-16">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('team.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">{t('team.title')}</h2>
-          </motion.div>
+          </div>
 
           {/* CEO Profile */}
-          <motion.div 
+          <div 
             className="glass-card p-8 md:p-12 rounded-3xl mb-12 relative overflow-hidden group"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff0080] to-[#7928ca] opacity-50" />
             <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
@@ -804,36 +712,29 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Advisors Grid */}
+          {/* Advisors Grid - 静的表示 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {(t('team.members', { returnObjects: true }) as any[]).map((member, i) => (
-              <motion.div 
+              <div 
                 key={i}
                 className="glass-card p-6 rounded-xl text-center hover:bg-white/5 transition-colors duration-300 flex flex-col items-center justify-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <h3 className="text-lg font-bold text-white mb-1">{member.name}</h3>
                 <span className="text-[#ff0080] text-xs font-bold mb-2 block">{member.role}</span>
                 <p className="text-gray-400 text-xs">{member.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
-      </section>      {/* How to Buy Section */}
+      </section>      {/* How to Buy Section - 静的表示 */}
       <section id="how-to-buy" className="py-12 md:py-20 relative bg-black/30">
         <div className="container relative z-10 max-w-4xl">
-          <motion.div 
-            className="text-center mb-16"
-            {...fadeInUp}
-          >
+          <div className="text-center mb-16">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('how_to_buy.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">{t('how_to_buy.title')}</h2>
-          </motion.div>
+          </div>
 
           <div className="relative">
             {/* Vertical Line */}
@@ -847,13 +748,9 @@ export default function Home() {
                 { icon: Check, step: 4 },
                 { icon: Coins, step: "EX" }
               ].map((item, index) => (
-                <motion.div
+                <div
                   key={index}
                   className={`relative flex flex-col md:flex-row gap-8 items-start md:items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Content Card */}
                   <div className="flex-1 w-full pl-16 md:pl-0">
@@ -873,32 +770,23 @@ export default function Home() {
 
                   {/* Spacer for alternating layout */}
                   <div className="hidden md:block flex-1" />
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section - 静的表示 */}
       <section id="faq" className="py-12 md:py-20 relative bg-black/50 overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-[#ff0080]/10 to-transparent pointer-events-none" />
         <div className="container relative z-10">
-          <motion.div 
-            className="text-center mb-12"
-            {...fadeInUp}
-          >
+          <div className="text-center mb-12">
             <span className="text-gradient-primary tracking-[0.3em] uppercase text-xs font-bold mb-2 block">{t('faq.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">{t('faq.title')}</h2>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div className="max-w-4xl mx-auto">
             <div className="w-full border border-white/10 rounded-2xl bg-[#0a0a0a] overflow-hidden shadow-2xl">
               <Accordion type="single" collapsible className="w-full">
                 {(t('faq.items', { returnObjects: true }) as any[]).map((item, i) => (
@@ -913,22 +801,17 @@ export default function Home() {
                 ))}
               </Accordion>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA Section - 静的表示 */}
       <section className="py-12 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-primary/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
         
         <div className="container relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div>
             <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
               {t('cta.title')}
             </h2>
@@ -981,7 +864,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
