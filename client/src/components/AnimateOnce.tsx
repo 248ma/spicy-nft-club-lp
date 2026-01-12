@@ -35,11 +35,7 @@ const animationVariants: Record<string, Variants> = {
   },
   staggerContainer: {
     hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
+    visible: {}
   }
 };
 
@@ -104,8 +100,7 @@ export function StaggerItem({ children, className = '', index = 0 }: StaggerItem
           opacity: 1, 
           y: 0,
           transition: {
-            duration: 0.6,
-            delay: index * 0.1
+            duration: 0.6
           }
         }
       }}

@@ -8,12 +8,7 @@ export const BondingCurveVisual = () => {
   // アニメーション設定
   const containerVariants: Variants = {
     hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+    visible: {}
   };
 
   const itemVariants: Variants = {
