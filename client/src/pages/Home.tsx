@@ -601,10 +601,9 @@ export default function Home() {
               
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {(t('solution.items', { returnObjects: true }) as any[]).map((item, i) => (
-                <AnimateCard 
+                <div 
                   key={i}
                   className="glass-panel p-8 rounded-2xl flex flex-col gap-6 hover:bg-white/5 transition-colors text-center items-center h-full border border-white/10 hover:border-[#ff0080]/30"
-                  index={i}
                 >
                   <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[#ff0080] to-[#7928ca] flex items-center justify-center shrink-0">
                     <Check className="w-7 h-7 text-white" />
@@ -613,7 +612,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
                     <p className="text-gray-400 leading-relaxed text-sm">{item.description}</p>
                   </div>
-                </AnimateCard>
+                </div>
               ))}
             </div>
             
