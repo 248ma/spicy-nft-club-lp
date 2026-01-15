@@ -24,6 +24,8 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
     switch (lang) {
       case 'en': return { label: 'English', flag: '🇺🇸' };
       case 'zh': return { label: '中文', flag: '🇨🇳' };
+      case 'ko': return { label: '한국어', flag: '🇰🇷' };
+      case 'es': return { label: 'Español', flag: '🇪🇸' };
       default: return { label: '日本語', flag: '🇯🇵' };
     }
   };
@@ -66,11 +68,27 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         </DropdownMenuItem>
         <DropdownMenuItem 
           onClick={() => changeLanguage('zh')} 
-          className={`text-white hover:bg-white/10 cursor-pointer rounded-lg py-2.5 px-3 flex items-center gap-3 transition-colors ${i18n.language === 'zh' ? 'bg-white/10 font-bold text-[#ff0080]' : ''}`}
+          className={`text-white hover:bg-white/10 cursor-pointer rounded-lg py-2.5 px-3 mb-1 flex items-center gap-3 transition-colors ${i18n.language === 'zh' ? 'bg-white/10 font-bold text-[#ff0080]' : ''}`}
         >
           <span className="text-xl leading-none">🇨🇳</span>
           <span className="text-sm">中文</span>
           {i18n.language === 'zh' && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-[#ff0080] shadow-[0_0_5px_#ff0080]" />}
+        </DropdownMenuItem>
+        <DropdownMenuItem 
+          onClick={() => changeLanguage('ko')} 
+          className={`text-white hover:bg-white/10 cursor-pointer rounded-lg py-2.5 px-3 mb-1 flex items-center gap-3 transition-colors ${i18n.language === 'ko' ? 'bg-white/10 font-bold text-[#ff0080]' : ''}`}
+        >
+          <span className="text-xl leading-none">🇰🇷</span>
+          <span className="text-sm">한국어</span>
+          {i18n.language === 'ko' && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-[#ff0080] shadow-[0_0_5px_#ff0080]" />}
+        </DropdownMenuItem>
+        <DropdownMenuItem 
+          onClick={() => changeLanguage('es')} 
+          className={`text-white hover:bg-white/10 cursor-pointer rounded-lg py-2.5 px-3 flex items-center gap-3 transition-colors ${i18n.language === 'es' ? 'bg-white/10 font-bold text-[#ff0080]' : ''}`}
+        >
+          <span className="text-xl leading-none">🇪🇸</span>
+          <span className="text-sm">Español</span>
+          {i18n.language === 'es' && <div className="ml-auto w-1.5 h-1.5 rounded-full bg-[#ff0080] shadow-[0_0_5px_#ff0080]" />}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

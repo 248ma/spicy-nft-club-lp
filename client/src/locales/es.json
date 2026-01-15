@@ -1,0 +1,753 @@
+{
+  "hero": {
+    "subtitle": "Innovando el entretenimiento para adultos contigo",
+    "title": "Membresía premium de entretenimiento para adultos<br />NFT",
+    "cta": "Comprar NFT",
+    "current_price": "Precio actual"
+  },
+  "concept": {
+    "subtitle": "Concepto",
+    "title": "El primer NFT de membresía premium para entretenimiento para adultos del mundo",
+    "description": "SPICY NFT CLUB es un proyecto que revoluciona la membresía premium en el sector del entretenimiento para adultos mediante tecnología Web3. Bajo el concepto “Disfrutar buen entretenimiento para adultos. Poseerlo, convertirlo en un activo.”, evoluciona la industria hacia un entretenimiento premium seguro y sostenible.",
+    "vision": {
+      "label": "VISIÓN",
+      "text": "Un buen entretenimiento para adultos innovador contigo"
+    },
+    "mission": {
+      "label": "MISIÓN",
+      "text": "Evolucionar la industria del entretenimiento para adultos en un sector seguro, justo y atractivo mediante tecnología y gestión especializada, ofreciendo experiencias valiosas y posibilidades a los stakeholders globales."
+    },
+    "features": [
+      {
+        "title": "Legalidad y seguridad",
+        "description": "Cumplimos estrictamente la Ley de Negocios de Entretenimiento para Adultos de Japón y garantizamos una operación limpia excluyendo a grupos antisociales."
+      },
+      {
+        "title": "Estructura de beneficio mutuo",
+        "description": "Un ecosistema “donde todos ganan” que permite que todos los stakeholders disfruten de beneficios."
+      },
+      {
+        "title": "Evolución mediante DX",
+        "description": "Promovemos la eficiencia y transparencia operativa, mejorando la rentabilidad y posibilitando una devolución activa."
+      }
+    ]
+  },
+  "features_section": {
+    "title": "Características de SPICY NFT CLUB",
+    "items": [
+      {
+        "title": "Derecho de uso prácticamente gratuito*",
+        "description": "Solo por poseer el NFT, se planea distribuir derechos VIP equivalentes a 500,000 yenes anuales. Solo con poseerlo se genera valor."
+      },
+      {
+        "title": "Posibilidad de reventa secundaria",
+        "description": "Al ser una compra mediante NFT, es posible venderlo o realizar reventa secundaria en plataformas como OpenSea."
+      },
+      {
+        "title": "Participación en la gestión",
+        "description": "Mediante derechos de voto en la gestión (gobernanza), puedes participar en la toma de decisiones del proyecto."
+      },
+      {
+        "title": "Devolución por tenencia y utilidad",
+        "description": "Devoluciones basadas en los ingresos de los establecimientos y utilidades que aumentan según el periodo de tenencia. Puedes disfrutar directamente del crecimiento del negocio."
+      }
+    ]
+  },
+  "problem": {
+    "subtitle": "El Problema",
+    "title": "Rompiendo los paradigmas tradicionales con Web3.",
+    "items": [
+      {
+        "title": "Barreras para la financiación",
+        "description": "Era difícil obtener préstamos de instituciones financieras tradicionales, constituyendo un gran obstáculo para la expansión del negocio. Rompemos esto con nuevos métodos de financiación mediante Web3."
+      },
+      {
+        "title": "Gestión opaca",
+        "description": "Existían problemas estructurales debido a la dificultad para visualizar la realidad de la gestión y la dificultad para ganar la confianza de los stakeholders. Construimos confianza con transparencia mediante blockchain."
+      },
+      {
+        "title": "Colapso del equilibrio oferta-demanda",
+        "description": "Estructuras de explotación, sobrecarga laboral del personal y tendencia a la reducción del sector. Resolvemos estos problemas con digitalización (DX) y modelos justos de devolución, evolucionando hacia una industria sostenible."
+      }
+    ]
+  },
+  "solution": {
+    "subtitle": "La Solución",
+    "title": "Razones para utilizar NFT",
+    "description": "SPICY NFT CLUB membresía premium. No es solo una membresía. Es una nueva posibilidad que resuelve los problemas y vacíos de la industria del entretenimiento para adultos mediante NFT.",
+    "items": [
+      {
+        "title": "Posibilidad de participación minoritaria y escalabilidad",
+        "description": "Hasta ahora, quienes querían involucrarse mínimamente en la gestión del entretenimiento para adultos tenían opciones muy limitadas, principalmente abrir como propietario, lo cual es complejo en modelo y eficiencia. Con la aparición de NFT, surge una nueva forma de participar en el proyecto desde pequeñas inversiones."
+      },
+      {
+        "title": "Mejora del valor con una base de ingresos sólida",
+        "description": "Basado en un negocio real de servicios de acompañantes, una base de ingresos sólida guía el proyecto hacia un desarrollo constante. Es un proyecto con existencia real basada en negocios reales, a diferencia de otros proyectos digitales."
+      },
+      {
+        "title": "Creación de nuevo valor en la reventa secundaria",
+        "description": "La dificultad para “salir” (EXIT) y la falta de mercado en la gestión del entretenimiento para adultos han sido problemas. La circulación mediante blockchain crea nuevos valores como transparencia y mejora del mercado."
+      }
+    ]
+  },
+  "benefits": {
+    "subtitle": "Privilegios",
+    "title": "Privilegios exclusivos para miembros",
+    "items": [
+      {
+        "title": "Derechos VIP equivalentes a 500,000 yenes anuales",
+        "description": "Incluye uso gratuito en establecimientos operados por el proyecto y descuentos especiales en establecimientos asociados. Solo por poseerlo, se ofrece un valor superior al precio de compra."
+      },
+      {
+        "title": "Derecho de reserva prioritaria",
+        "description": "Reservas prioritarias incluso para personal popular o en temporadas altas. Un escritorio de conserjería exclusivo para miembros se encarga de la gestión."
+      },
+      {
+        "title": "Soporte para uso durante viajes",
+        "description": "Puedes usar servicios seleccionados a través de la red de socios incluso durante viajes o desplazamientos de negocios de forma fluida."
+      },
+      {
+        "title": "Derecho a participar en eventos exclusivos",
+        "description": "Invitación a eventos especiales solo para holders, como fiestas secretas o encuentros con el personal."
+      },
+      {
+        "title": "Devolución de ingresos de establecimientos",
+        "description": "Compartimos el éxito del negocio con los holders. Se planea un programa de devolución basado en el 5% de los ingresos de los establecimientos."
+      },
+      {
+        "title": "Derechos de voto en la gestión",
+        "description": "Se otorgan derechos de voto para participar en decisiones importantes del proyecto, como ubicación de nuevos establecimientos y contenido de servicios."
+      }
+    ]
+  },
+  "market": {
+    "subtitle": "Oportunidad de Mercado",
+    "title": "Un mercado gigante sin explotar.",
+    "description": "Mercado japonés de entretenimiento para adultos (~7.8 billones de yenes) × mercado Web3 (~7 billones de yenes). Un océano azul donde se cruzan dos mercados gigantes."
+  },
+  "whitepaper": {
+    "title": "Whitepaper de SPICY NFT CLUB",
+    "subtitle": "Membresía NFT",
+    "version": "1 de enero de 2026 (última versión)",
+    "download_pdf": "Descargar PDF",
+    "overview": "Resumen del proyecto: Primer proyecto mundial de NFT de membresía premium para entretenimiento para adultos que revoluciona la industria con tecnología Web3. Centrado en seguridad, legalidad y uso tecnológico, promovemos la apertura y operación de establecimientos de acompañantes de alta gama en Tokio. Emitimos 500 NFTs de membresía premium limitados y operamos en cadenas duales Ethereum y Solana. Ofrecemos a los holders experiencias premium, derechos de uso prioritarios y potencial de valorización. Cumplimos estrictamente la Ley de Negocios de Entretenimiento para Adultos de Japón y las leyes de criptomonedas de cada país, excluyendo cualquier relación con organizaciones antisociales. Como club de membresía transparente, creamos una industria limpia y entretenimiento sostenible.",
+    "vision": "Un buen entretenimiento para adultos innovador contigo",
+    "mission": "Evolucionar la industria del entretenimiento para adultos en un sector seguro, justo y atractivo mediante tecnología y gestión especializada, ofreciendo experiencias valiosas y posibilidades a los stakeholders globales.",
+    "toc": {
+      "title": "Índice",
+      "items": [
+        {
+          "id": "executive-summary",
+          "label": "Resumen Ejecutivo (Resumen y Concepto)"
+        },
+        {
+          "id": "background",
+          "label": "Antecedentes del Proyecto"
+        },
+        {
+          "id": "nft-overview",
+          "label": "Resumen del NFT"
+        },
+        {
+          "id": "business-model",
+          "label": "Modelo de Negocio"
+        },
+        {
+          "id": "market-analysis",
+          "label": "Análisis de Mercado"
+        },
+        {
+          "id": "technical-details",
+          "label": "Detalles Técnicos"
+        },
+        {
+          "id": "compliance",
+          "label": "Cumplimiento Legal y Gestión de Riesgos"
+        },
+        {
+          "id": "team",
+          "label": "Equipo"
+        },
+        {
+          "id": "roadmap",
+          "label": "Hoja de Ruta"
+        },
+        {
+          "id": "faq",
+          "label": "Preguntas Frecuentes"
+        },
+        {
+          "id": "contact",
+          "label": "Contacto"
+        },
+        {
+          "id": "tokenomics",
+          "label": "Tokenómica"
+        },
+        {
+          "id": "disclaimer",
+          "label": "Aviso Legal"
+        }
+      ]
+    },
+    "sections": {
+      "executive_summary": {
+        "title": "1. Resumen Ejecutivo (Resumen y Concepto)",
+        "content": "SPICY NFT CLUB es el primer proyecto mundial de NFT de membresía premium para entretenimiento para adultos. Bajo el concepto “Disfrutar buen entretenimiento para adultos. Poseerlo como activo.”, evoluciona la industria hacia un entretenimiento premium transparente y sostenible.",
+        "concept_title": "Núcleo del concepto: “Buen entretenimiento para adultos”",
+        "concept_intro": "El “buen entretenimiento para adultos” que busca el proyecto cumple con los siguientes tres elementos:",
+        "pillars": [
+          {
+            "title": "1. Disfrute seguro",
+            "items": [
+              "Eliminación de abusos, sistema de membresía completamente cerrado sin vínculos con el mundo subterráneo",
+              "Ambiente limpio y seguro gestionado por expertos confiables"
+            ]
+          },
+          {
+            "title": "2. Legalidad",
+            "items": [
+              "Operación legal conforme a la Ley de Negocios de Entretenimiento para Adultos de Japón (claramente separado de prostitución, proxenetismo y trata de personas)",
+              "Participación voluntaria del personal mediante reclutamiento web, eliminación de prostitución infantil y coerción",
+              "Fortalecimiento del ambiente limpio y único del trabajo sexual en Japón reconocido mundialmente"
+            ]
+          },
+          {
+            "title": "3. Beneficio mutuo (todos los stakeholders ganan)",
+            "items": [
+              "Estructura donde usuarios, personal, holders y gestión no pierden",
+              "Liquidez asegurada y devolución sólida mediante fraccionamiento NFT",
+              "Mejora de eficiencia operativa con DX → aumento de rentabilidad → devolución activa a personal y holders"
+            ]
+          }
+        ],
+        "closing": "Al poseer uno de los 500 NFTs premium limitados, se obtienen privilegios como uso preferente en establecimientos de acompañantes de alta gama en Tokio, reservas prioritarias, derechos VIP anuales, además de la posibilidad de valorización y formación de activos mediante reventa secundaria. Liderado por un CEO con 12 años en la industria y experiencia en negocios de decenas de miles de millones de yenes, se planea la apertura en Tokio en 2026. Se asegura transparencia con cadenas duales Ethereum/Solana.",
+        "highlights": [
+          {
+            "label": "Experiencia premium",
+            "value": "Beneficios exclusivos para miembros, derechos de uso anual, participación en eventos"
+          },
+          {
+            "label": "Potencial de valor",
+            "value": "Rareza del NFT, consideración de recompra, vinculación con ingresos de establecimientos"
+          },
+          {
+            "label": "Confiabilidad",
+            "value": "Cumplimiento legal, gestión experimentada, transparencia"
+          }
+        ]
+      },
+      "background": {
+        "title": "2. Antecedentes del Proyecto",
+        "intro": "La industria del entretenimiento para adultos en Japón es un mercado enorme con un tamaño estimado de 5 a 7 billones de yenes (estimación 2025), pero enfrenta numerosos desafíos tradicionales.",
+        "challenges_title": "Principales desafíos",
+        "challenges": [
+          {
+            "title": "Dificultad para financiar",
+            "description": "Imposibilidad de obtener préstamos bancarios, brecha de expectativas con inversionistas (ingresos vs ganancias de capital)"
+          },
+          {
+            "title": "Riesgos operativos",
+            "description": "Expansión imprudente y frecuentes fracasos por falta de comprensión del sector, concentración de riesgos legales"
+          },
+          {
+            "title": "Imagen social",
+            "description": "Barreras de entrada por zonas grises y prejuicios"
+          },
+          {
+            "title": "Colapso del equilibrio oferta-demanda",
+            "description": "Estructuras de explotación, sobrecarga laboral del personal, tendencia a la reducción del sector"
+          }
+        ],
+        "ceo_story_title": "Historia y solución del CEO",
+        "ceo_story": "El CEO (248ma) trabajó en una gran empresa de publicidad de empleo → falló en emprendimiento independiente → ingresó a la industria del entretenimiento para adultos (12 años de experiencia, fundó 10 establecimientos con ingresos anuales de 3 mil millones de yenes). Percibió inconformidades en la industria (fracasos de gestión, brechas de inversión, riesgos de derechos humanos) y diseñó un nuevo modelo utilizando NFT.",
+        "innovation_title": "Innovación mediante NFT/Web3:",
+        "innovations": [
+          "Fraccionamiento para facilitar inversión individual y proveer liquidez (reventa secundaria)",
+          "Derechos de gobernanza para participación, con gestión delegada a expertos (diversificación de riesgos)",
+          "Digitalización (app y sistema de reservas) para reducción de costos → aumento de ganancias → mayor devolución",
+          "Conjunto de gestión limpia para acelerar la salud y diversidad de la industria"
+        ],
+        "closing": "Partiendo de la apertura de un establecimiento de acompañantes de alta gama en Tokio, se apunta a un crecimiento estable con un modelo de “conjunto de pequeños establecimientos sólidos”. Los holders pueden participar como una inversión de la que sentirse orgullosos. El entorno legal y limpio del entretenimiento para adultos en Japón es único mundialmente, y este proyecto es un desafío para evolucionarlo aún más con Web3."
+      },
+      "nft_overview": {
+        "title": "3. Resumen del NFT",
+        "intro": "El NFT de membresía SPICY NFT CLUB es el primer NFT de membresía premium en la industria del entretenimiento para adultos, con una emisión limitada de 500 unidades (400 para venta + 100 para gestión). Se ofrecen beneficios exclusivos como reservas prioritarias y derechos anuales a los holders. Se emite en cadenas duales Ethereum y Solana, dividiendo las 400 unidades de venta en 200 para cada cadena.",
+        "pricing_title": "Fijación de precios (precio dinámico con curva de vinculación)",
+        "pricing_description": "El precio inicial es 0.01 ETH para Ethereum y 0.2 SOL para Solana, aumentando automáticamente 0.01 ETH o 0.2 SOL por cada unidad vendida. Este método maximiza la ventaja para compradores tempranos con precios bajos.",
+        "specs": [
+          {
+            "label": "Nombre",
+            "value": "SPICY NFT CLUB Membership NFT"
+          },
+          {
+            "label": "Cantidad emitida",
+            "value": "Limitado a 500 unidades (sin emisión adicional, garantizando rareza)"
+          },
+          {
+            "label": "Unidades para venta",
+            "value": "400 unidades (Ethereum 200 + Solana 200)"
+          },
+          {
+            "label": "Unidades para gestión",
+            "value": "100 unidades (para equipo, marketing y alianzas)"
+          }
+        ],
+        "utility_title": "Utilidad (común a ambas cadenas)",
+        "utilities": [
+          {
+            "title": "Beneficios VIP",
+            "description": "Reservas prioritarias en acompañantes de alta gama en Tokio, derechos anuales (equivalente a 500,000 yenes/año), soporte para uso durante viajes, eventos exclusivos (ejemplo: subasta de derechos de nombrar establecimientos, fiestas premium), varios descuentos"
+          },
+          {
+            "title": "Rareza",
+            "description": "Potencial de aumento de valor debido a la limitación máxima de 500 unidades"
+          },
+          {
+            "title": "Gobernanza",
+            "description": "Derechos de voto en decisiones de gestión como nuevas propuestas de servicios y expansión de establecimientos"
+          }
+        ],
+        "sale_schedule_title": "Calendario de venta",
+        "sale_schedule": [
+          {
+            "label": "Venta pública",
+            "value": "Inicio en enero de 2026 (200 unidades por cadena)"
+          },
+          {
+            "label": "Visualización de precios",
+            "value": "Precio en tiempo real mostrado en sitio oficial y panel"
+          },
+          {
+            "label": "Variación de precios",
+            "value": "Precio aumenta automáticamente hasta agotar existencias (se muestra cantidad restante y precio actual)"
+          }
+        ]
+      },
+      "business_model": {
+        "title": "4. Modelo de Negocio",
+        "intro": "SPICY NFT CLUB abrirá un establecimiento de acompañantes de alta gama en Tokio, revolucionando el enorme mercado del entretenimiento para adultos con Web3. Se prevé una facturación de 60 millones de yenes en el primer año (5 millones mensuales) y 120 millones en el tercer año, ofreciendo a inversionistas potencial de ingresos y valorización del NFT. Se comparte información trimestral del proyecto y mensual de la gestión del establecimiento en una comunidad exclusiva, con transparencia en el uso de fondos. Redefinimos el entretenimiento premium con un modelo sólido.",
+        "store_overview_title": "Resumen del establecimiento",
+        "store_details": [
+          {
+            "label": "Tipo de negocio",
+            "value": "Acompañantes de alta gama (precio estimado 30,000-50,000 yenes por sesión de 90 minutos, con diversos conceptos de nicho)"
+          },
+          {
+            "label": "Concepto",
+            "value": "Se recluta también entre miembros para participar en la creación del establecimiento ideal"
+          },
+          {
+            "label": "Ubicación",
+            "value": "Tokio"
+          }
+        ],
+        "revenue_title": "Proyección de ingresos",
+        "revenue": [
+          {
+            "label": "Primer año",
+            "value": "60 millones de yenes (5 millones mensuales)"
+          },
+          {
+            "label": "Tercer año",
+            "value": "120 millones de yenes (10 millones mensuales, con planes de expansión a múltiples establecimientos)"
+          }
+        ]
+      },
+      "market_analysis": {
+        "title": "5. Análisis de Mercado",
+        "content": "El mercado del entretenimiento para adultos en Japón tiene un tamaño estimado de 5.8 a 7.8 billones de yenes. Combinado con el crecimiento del mercado NFT, se posiciona como una oportunidad atractiva para inversionistas individuales con altos rendimientos. Resuelve la dificultad tradicional de financiación con Web3, ofreciendo transparencia y liquidez para atraer nuevos participantes."
+      },
+      "technical_details": {
+        "title": "6. Detalles Técnicos",
+        "content": "Se adoptan dualmente Ethereum (ERC721) y Solana (Metaplex). Se logran bajas comisiones y transacciones rápidas, con planes futuros de compatibilidad cross-chain. Los smart contracts aseguran regalías (3% en reventa secundaria) y autenticación. Se prioriza la experiencia de usuario en compra, transacción y uso."
+      },
+      "compliance": {
+        "title": "7. Cumplimiento Legal y Gestión de Riesgos",
+        "content": "Cumplimos estrictamente la Ley de Negocios de Entretenimiento para Adultos y leyes de criptomonedas. El NFT está diseñado como membresía premium (sin garantía de inversión). Se excluye cualquier relación con organizaciones antisociales, se previenen fraudes, se gestionan riesgos de mercado y se contrarrestan prejuicios sociales. La transparencia se mantiene en una comunidad exclusiva."
+      },
+      "team": {
+        "title": "8. Equipo",
+        "intro": "El equipo de SPICY NFT CLUB reúne expertos en la industria del entretenimiento para adultos y en Web3.",
+        "members": [
+          {
+            "role": "CEO",
+            "name": "248ma",
+            "description": "12 años en la industria del entretenimiento para adultos, con experiencia en fundar y operar más de 10 establecimientos (facturación anual de 2 mil millones de yenes). Participan otros expertos (con experiencia en proyectos Web3, abogados, administrativos, desarrolladores de IA). Se planea aumentar miembros dedicados conforme crece el proyecto."
+          }
+        ]
+      },
+      "roadmap": {
+        "title": "9. Hoja de Ruta",
+        "items": [
+          {
+            "date": "Enero 2026",
+            "title": "Inicio de venta pública y construcción de comunidad"
+          },
+          {
+            "date": "Q1 2026",
+            "title": "Apertura de sitio exclusivo para miembros y preparación para gran apertura del establecimiento"
+          },
+          {
+            "date": "Q2 2026",
+            "title": "Gran apertura en Tokio, inicio de reparto de ingresos, implementación de staking y puente cross-chain"
+          },
+          {
+            "date": "Desde Q3 2026",
+            "title": "Expansión a múltiples establecimientos, inicio de gobernanza DAO, ampliación de utilidades"
+          }
+        ]
+      },
+      "faq": {
+        "title": "10. Preguntas Frecuentes",
+        "items": [
+          {
+            "question": "¿Es seguro el proyecto?",
+            "answer": "Cumplimiento legal, liderado por un CEO experimentado y supervisado por expertos."
+          },
+          {
+            "question": "¿Cuál es el potencial de ingresos?",
+            "answer": "Vinculado a ingresos de establecimientos, valorización en reventa secundaria, consideración de recompra (sin garantía)."
+          },
+          {
+            "question": "¿Existe riesgo de fraude?",
+            "answer": "Comunicación oficial y medidas exhaustivas."
+          }
+        ],
+        "note": "Otros: Se construye transparencia para enfrentar fluctuaciones de mercado y prejuicios sociales."
+      },
+      "contact": {
+        "title": "11. Contacto",
+        "content": "Atención mediante sitio oficial / X / Telegram / correo electrónico. Se planean sesiones AMA."
+      },
+      "tokenomics": {
+        "title": "12. Tokenómica",
+        "items": [
+          {
+            "label": "Cantidad emitida",
+            "value": "Limitado a 500 unidades"
+          },
+          {
+            "label": "Distribución",
+            "value": "80% para venta (400 unidades), 20% para equipo (100 unidades)"
+          },
+          {
+            "label": "Compartición de ingresos",
+            "value": "Se planea devolución basada en ingresos de establecimientos"
+          },
+          {
+            "label": "Regalías",
+            "value": "3% en reventa secundaria"
+          }
+        ]
+      },
+      "disclaimer": {
+        "title": "13. Aviso Legal",
+        "content": "Este proyecto no garantiza ingresos ni valorización. La participación es bajo responsabilidad propia. Existen riesgos de mercado, operativos y regulatorios. Este documento no constituye una oferta de inversión.",
+        "note": "Este documento es la última versión del whitepaper al 1 de enero de 2026. Consulte los canales oficiales para información actualizada."
+      }
+    }
+  },
+  "bonding_curve": {
+    "title": "Método de Venta con Curva de Vinculación",
+    "description": "Los NFTs de SPICY NFT CLUB tienen precios determinados por una curva de vinculación. No hay listas blancas ni sorteos, es una venta pública simultánea. El precio sube inmediatamente 0.01 ETH (o 0.2 SOL) por cada unidad vendida.",
+    "features": [
+      {
+        "title": "Mecanismo de aumento de precio",
+        "description": "Ethereum: 1ª unidad → 0.01 ETH, 2ª → 0.02 ETH, 100ª → 1.00 ETH, 200ª → 2.00 ETH (agotado) / Solana: 1ª unidad → 0.2 SOL, 2ª → 0.4 SOL, 100ª → 20 SOL, 200ª → 40 SOL (agotado)"
+      },
+      {
+        "title": "Ventajas de comprar temprano",
+        "description": "Al inicio de la venta se puede adquirir al precio mínimo. Cuanto antes se compre, mucho más barato, y en la segunda mitad el precio sube mucho, por lo que los holders tempranos disfrutan de grandes diferencias de precio."
+      },
+      {
+        "title": "¡Minta ahora y asegura el precio más bajo “ahora”!",
+        "description": "Solo 400 unidades (200 ETH + 200 SOL) — el precio seguirá subiendo conforme se vendan."
+      }
+    ]
+  },
+  "tokenomics": {
+    "subtitle": "Tokenómica",
+    "title": "NFT",
+    "chart_label": "Devolución de ingresos",
+    "items": {
+      "supply": {
+        "label": "Suministro total",
+        "value": "500 unidades (sin planes de emisión adicional)"
+      },
+      "sale": {
+        "label": "Unidades para venta",
+        "value": "400 unidades (ETH 200 / SOL 200)"
+      },
+      "price": {
+        "label": "Precio",
+        "value": "Desde 0.01ETH/0.2SOL, aumenta con cada unidad vendida (curva de vinculación)"
+      }
+    },
+    "note": "※En reventa secundaria se aplica una regalía del 3%"
+  },
+  "roadmap": {
+    "subtitle": "Hoja de Ruta",
+    "title": "De la Visión a la Realidad.",
+    "items": [
+      {
+        "date": "2026.01",
+        "title": "Inicio de Venta Pública de NFT",
+        "description": "Venta de 400 membresías premium limitadas (ETH 200 + SOL 200)"
+      },
+      {
+        "date": "2026.Q1",
+        "title": "Lanzamiento de app exclusiva y gran apertura del primer establecimiento",
+        "description": "Lanzamiento de la app para miembros y comienzo de operaciones del establecimiento de acompañantes de alta gama en Tokio"
+      },
+      {
+        "date": "2026.Q2",
+        "title": "Inicio de utilidades varias",
+        "description": "Inicio del programa de devoluciones para holders"
+      },
+      {
+        "date": "2026.Q3~",
+        "title": "Segundo establecimiento / Expansión de utilidades",
+        "description": "Expansión a múltiples establecimientos y ampliación de beneficios para holders"
+      }
+    ]
+  },
+  "how_to_buy": {
+    "subtitle": "CÓMO COMPRAR",
+    "title": "Proceso desde la compra hasta el uso",
+    "steps": [
+      {
+        "title": "Compra el NFT",
+        "description": "Compra la membresía NFT desde el botón “Comprar NFT”. Puedes elegir la blockchain preferida entre ETH y SOL.<br /><span class=\"text-xs text-gray-400\">※Ten en cuenta que el precio actual puede variar según el estado de venta en cada cadena.</span>"
+      },
+      {
+        "title": "Lanzamiento de la app exclusiva",
+        "description": "Se lanzará una app exclusiva conforme avance el proyecto. El personal de membresía te apoyará completamente desde la instalación hasta el uso.<br /><span class=\"text-xs text-gray-400\">※Se anunciará oportunamente y se explicará mediante sistemas web, etc.</span>"
+      },
+      {
+        "title": "Asignación del NFT de derecho de uso y reserva",
+        "description": "Conforme avance el proyecto, aumentarán los “establecimientos gestionados” y “establecimientos asociados”. Según la membresía que poseas, recibirás el NFT de derecho de uso para hacer reservas.<br /><span class=\"text-xs text-gray-400\">※Cada servicio puede requerir pagos adicionales según monto y frecuencia.<br />※Dentro del monto del derecho de uso, puedes usar el servicio sin pagos adicionales.</span>"
+      },
+      {
+        "title": "Soporte para el uso",
+        "description": "El personal del establecimiento se pondrá en contacto para apoyarte en el uso de los servicios."
+      },
+      {
+        "title": "Expansión de servicios complementarios",
+        "description": "Con el avance del proyecto, aumentarán los servicios complementarios gratuitos o con descuento. Disfruta de una vida CLUB enriquecida."
+      }
+    ]
+  },
+  "team": {
+    "subtitle": "Equipo",
+    "title": "Equipo Profesional",
+    "ceo": {
+      "name": "248ma",
+      "role": "Fundador / CEO",
+      "description": "12 años en la industria del entretenimiento para adultos. Miembro fundador de un gran grupo con experiencia en más de 10 establecimientos, construyendo un grupo con facturación anual de 2 mil millones de yenes desde cero. Desafía la integración de Web3 y entretenimiento para adultos para resolver problemas estructurales del sector.",
+      "achievements": [
+        {
+          "label": "Experiencia en la industria",
+          "value": "12 años"
+        },
+        {
+          "label": "Experiencia en gestión",
+          "value": "Más de 10 establecimientos"
+        },
+        {
+          "label": "Facturación del grupo",
+          "value": "2 mil millones de yenes"
+        }
+      ]
+    },
+    "members": [
+      {
+        "name": "Ingeniero Web3",
+        "role": "Asesor Técnico",
+        "description": "Especialista en tecnología blockchain"
+      },
+      {
+        "name": "Equipo Legal",
+        "role": "Asesor Legal",
+        "description": "Supervisión legal por abogados y administrativos"
+      },
+      {
+        "name": "Experto en IA",
+        "role": "Asesor Técnico",
+        "description": "Apoyo en la implementación de tecnología AI avanzada"
+      }
+    ]
+  },
+  "faq": {
+    "subtitle": "Preguntas Frecuentes",
+    "title": "Preguntas Comunes",
+    "items": [
+      {
+        "question": "¿Existen riesgos legales?",
+        "answer": "Este proyecto cumple con la Ley de Negocios de Entretenimiento para Adultos, la Ley de Liquidación de Fondos, la Ley de Instrumentos Financieros y otras regulaciones relevantes. Se ha construido un esquema legal bajo la supervisión de abogados y administrativos dedicados. Sin embargo, las regulaciones sobre criptomonedas y NFT pueden cambiar, por lo que se recomienda comprender completamente los riesgos."
+      },
+      {
+        "question": "¿Se puede revender el NFT?",
+        "answer": "Sí, es posible la reventa secundaria en mercados principales de NFT como OpenSea y Magic Eden. En la reventa secundaria, el 3% del monto de la transacción se devuelve al proyecto como regalía, destinada a fondos operativos y devoluciones a holders."
+      },
+      {
+        "question": "¿Realmente abrirán un establecimiento físico?",
+        "answer": "Sí, ya se están preparando la selección de local y la contratación de personal para la gran apertura del primer establecimiento en el Q1 de 2026. Se aprovecha la amplia experiencia y red del CEO para asegurar un lanzamiento exitoso."
+      },
+      {
+        "question": "¿Se necesita criptomoneda para comprar?",
+        "answer": "Principalmente se compra con Ethereum (ETH) o Solana (SOL), pero también se está considerando la introducción de pagos con transferencia bancaria o tarjeta de crédito. Para consultas, contáctanos vía Telegram o DM."
+      },
+      {
+        "question": "¿Qué es la curva de vinculación?",
+        "answer": "Es un mecanismo donde el precio aumenta automáticamente según la cantidad vendida. En este proyecto, el precio sube 0.01 ETH (o 0.2 SOL) por cada unidad vendida, permitiendo que quienes participen temprano obtengan NFTs a precios más ventajosos, maximizando los beneficios por apoyar en la fase inicial."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Únete a la Revolución.",
+    "description": "Tú eres el primer revolucionario.",
+    "button": "Comprar NFT"
+  },
+  "purchase_modal": {
+    "title": "Selecciona método de compra",
+    "eth": "Comprar con ETH",
+    "sol": "Comprar con SOL",
+    "connect_wallet": "Conectar billetera",
+    "connect_metamask": "Conectar MetaMask",
+    "connect_phantom": "Conectar Phantom",
+    "mint_title": "Mint NFT",
+    "current_price": "Precio actual",
+    "next_price": "Precio siguiente",
+    "quantity": "Cantidad",
+    "total": "Total",
+    "mint_button": "Comprar",
+    "processing": "Procesando...",
+    "success_title": "¡Compra completada!",
+    "success_desc": "Bienvenido a SPICY NFT CLUB. El NFT ha sido enviado a tu billetera.",
+    "view_etherscan": "Ver en Etherscan",
+    "view_solscan": "Ver en Solscan",
+    "close": "Cerrar"
+  },
+  "footer": {
+    "terms": "Términos de Uso",
+    "privacy": "Política de Privacidad",
+    "cookie_policy": {
+      "title": "Uso de Cookies y Almacenamiento",
+      "content": "Este sitio respeta al máximo la privacidad del usuario y no utiliza cookies de seguimiento. Solo utiliza almacenamiento local del navegador (localStorage) para funciones como verificación de edad y configuración de idioma. No se realiza seguimiento individual ni se comparte información con terceros."
+    },
+    "law": "Información conforme a la Ley de Transacciones Comerciales Específicas",
+    "disclaimer": "Este proyecto no garantiza ingresos ni valorización de NFT. Existen riesgos específicos en criptomonedas y la industria del entretenimiento para adultos. Todas las decisiones de inversión son bajo responsabilidad propia.",
+    "investment_warning": "Este NFT no es un producto de inversión. No garantiza aumento de valor o beneficios futuros.",
+    "price_fluctuation": "Los precios de las criptomonedas fluctúan constantemente, por lo que el valor del NFT puede variar respecto al momento de compra.",
+    "service_change": "Los beneficios y servicios asociados al NFT pueden cambiar o terminarse por decisión operativa.",
+    "secondary_market": "Las transacciones en mercados secundarios no están garantizadas en contenido o precio por nuestra parte.",
+    "liability_disclaimer": "No asumimos responsabilidad por daños derivados del uso de este servicio más allá de lo permitido por la ley."
+  },
+  "terms": {
+    "title": "Términos de Uso",
+    "last_updated": "Última actualización: 1 de enero de 2026",
+    "sections": {
+      "intro": {
+        "title": "Introducción",
+        "content": "Estos términos de uso (en adelante “los términos”) establecen las condiciones para el uso de los NFTs y servicios relacionados (en adelante “el servicio”) proporcionados por SPICY NFT CLUB (en adelante “el proyecto”). Al usar el servicio, el usuario acepta estos términos."
+      },
+      "definitions": {
+        "title": "Definiciones",
+        "content": "1. “NFT” se refiere a tokens no fungibles emitidos en blockchain.\n2. “Holder” es quien posee legítimamente un NFT emitido por el proyecto.\n3. “Wallet” es el software para gestionar criptomonedas y NFTs."
+      },
+      "nft_rights": {
+        "title": "Derechos sobre el NFT",
+        "content": "1. El holder tiene derecho a usar y mostrar el NFT para fines personales.\n2. La posesión del NFT no concede derechos de voto ni participación en la gestión del proyecto.\n3. Los derechos de propiedad intelectual pertenecen al proyecto y no se transfieren al holder."
+      },
+      "prohibitions": {
+        "title": "Prohibiciones",
+        "content": "El usuario no debe realizar las siguientes acciones:\n1. Violaciones legales o de moral pública\n2. Participar en lavado de dinero u otros actos criminales\n3. Interferir con la operación del proyecto\n4. Molestar a otros usuarios"
+      },
+      "disclaimer": {
+        "title": "Aviso Legal",
+        "content": "1. El proyecto no garantiza el valor ni ingresos futuros del NFT.\n2. No nos responsabilizamos por fallos en la red blockchain o aumento de tarifas.\n3. No intervenimos en disputas entre usuarios."
+      },
+      "modifications": {
+        "title": "Modificación de términos",
+        "content": "El proyecto puede cambiar estos términos sin previo aviso si lo considera necesario. Los términos modificados entrarán en vigor al ser publicados en el sitio."
+      },
+      "governing_law": {
+        "title": "Ley aplicable y jurisdicción",
+        "content": "Estos términos se interpretan conforme a la ley japonesa. En caso de disputa, el tribunal exclusivo será el Tribunal de Distrito de Tokio."
+      }
+    }
+  },
+  "legal_notice": {
+    "title": "Información conforme a la Ley de Transacciones Comerciales Específicas",
+    "items": {
+      "distributor": {
+        "label": "Distribuidor",
+        "value": "Oficina de Operaciones de SPICY NFT CLUB"
+      },
+      "representative": {
+        "label": "Responsable de Operaciones",
+        "value": "248ma"
+      },
+      "location": {
+        "label": "Ubicación",
+        "value": "〒171-0014 Distrito Toshima, Tokio (se revelará sin demora ante solicitud)"
+      },
+      "contact": {
+        "label": "Contacto",
+        "value": "support@spicynftclub.com"
+      },
+      "price": {
+        "label": "Precio de venta",
+        "value": "Basado en el precio mostrado en la página de compra de cada NFT (en ETH/SOL)."
+      },
+      "charges": {
+        "label": "Cargos adicionales",
+        "value": "Se requieren tarifas de red blockchain (Gas Fee) aparte."
+      },
+      "payment_method": {
+        "label": "Método de pago",
+        "value": "Pago con criptomonedas (Ethereum / Solana)"
+      },
+      "delivery": {
+        "label": "Tiempo de entrega",
+        "value": "Tras la confirmación de la transacción en blockchain, se envía inmediatamente al wallet."
+      },
+      "return": {
+        "label": "Devoluciones y cancelaciones",
+        "value": "Debido a la naturaleza digital, no se aceptan devoluciones, cancelaciones ni cambios tras la compra."
+      },
+      "system_requirements": {
+        "label": "Requisitos del sistema",
+        "value": "Navegador compatible con wallets Web3 como MetaMask (Chrome, Firefox, Brave, etc.)"
+      }
+    }
+  },
+  "age_gate": {
+    "title": "VERIFICACIÓN DE EDAD",
+    "description": "Este sitio contiene contenido para adultos.<br />¿Tienes 18 años o más?",
+    "enter": "ENTRAR",
+    "exit": "SALIR",
+    "warning": "Este servicio está estrictamente prohibido para menores de 18 años. La compra de NFTs y el uso de servicios relacionados están limitados a mayores de 18 años."
+  },
+  "exit_page": {
+    "title": "Hacia el entretenimiento del futuro",
+    "subtitle": "SPICY NFT CLUB es un proyecto innovador que utiliza tecnología Web3 para transparentar y promover el desarrollo saludable de la industria.",
+    "features": {
+      "security": {
+        "title": "Seguridad y transparencia",
+        "desc": "La tecnología blockchain asegura la transparencia total de todas las transacciones y operaciones, creando un ecosistema limpio sin fraudes."
+      },
+      "global": {
+        "title": "Estándares globales",
+        "desc": "Implementamos cumplimiento y gobernanza conforme a estándares internacionales, desafiando la creación de nuevo valor más allá de fronteras."
+      },
+      "tech": {
+        "title": "Innovación tecnológica",
+        "desc": "Combinamos tecnología Web3 de vanguardia con negocios reales para lograr un modelo sostenible y justo."
+      }
+    },
+    "note": "※El contenido principal de este sitio está restringido para menores de 18 años conforme a la ley.",
+    "back_button": "Volver a la página principal"
+  }
+}

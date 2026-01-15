@@ -11,9 +11,11 @@ export function MobileMenu() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const languages = [
-    { code: 'en', label: 'English', flag: '🇺🇸' },
     { code: 'ja', label: '日本語', flag: '🇯🇵' },
+    { code: 'en', label: 'English', flag: '🇺🇸' },
     { code: 'zh', label: '中文', flag: '🇨🇳' },
+    { code: 'ko', label: '한국어', flag: '🇰🇷' },
+    { code: 'es', label: 'Español', flag: '🇪🇸' },
   ];
 
   const changeLanguage = (lng: string) => {
