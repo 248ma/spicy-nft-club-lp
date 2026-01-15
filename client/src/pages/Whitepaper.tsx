@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Download, Menu, X, ChevronRight } from 'lucide-react';
 import { Link } from 'wouter';
+import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 
 const Whitepaper = () => {
   const { t, i18n } = useTranslation();
@@ -68,7 +69,11 @@ const Whitepaper = () => {
             <img src="/logo.png" alt="SPICY NFT CLUB" className="h-10" />
           </Link>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
+            {/* 言語切り替えボタン */}
+            <LanguageSwitcher className="hidden sm:flex" />
+            
+            {/* PDFダウンロードボタン (PC版) */}
             <button
               onClick={handleDownloadPDF}
               className="hidden md:flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 rounded-lg hover:from-pink-600 hover:to-purple-700 transition-all"
@@ -77,6 +82,16 @@ const Whitepaper = () => {
               <span className="text-sm font-medium">{wpData.download_pdf}</span>
             </button>
             
+            {/* PDFダウンロードボタン (モバイル版) */}
+            <button
+              onClick={handleDownloadPDF}
+              className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
+              title={wpData.download_pdf}
+            >
+              <Download className="h-5 w-5" />
+            </button>
+            
+            {/* メニューボタン (モバイル版) */}
             <button
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
               className="lg:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
