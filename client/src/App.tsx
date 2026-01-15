@@ -8,11 +8,13 @@ import Home from "./pages/Home";
 import LegalNotice from "./pages/LegalNotice";
 import Exit from "./pages/Exit";
 import Terms from "./pages/Terms";
+import Whitepaper from "./pages/Whitepaper";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/whitepaper" component={Whitepaper} />
       <Route path="/legal-notice" component={LegalNotice} />
       <Route path="/exit" component={Exit} />
       <Route path="/terms" component={Terms} />

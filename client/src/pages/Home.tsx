@@ -636,7 +636,7 @@ export default function Home() {
             </p>
             
             <motion.a
-              href="#"
+              href="/whitepaper"
               className="inline-flex items-center justify-center px-10 py-5 text-lg font-bold text-white border-2 border-transparent rounded-full transition-all duration-300 group shadow-[0_0_20px_rgba(255,0,128,0.3)] hover:shadow-[0_0_30px_rgba(255,0,128,0.6)]"
               style={{
                 background: 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)) padding-box, linear-gradient(to right, #ff0080, #7928ca) border-box',

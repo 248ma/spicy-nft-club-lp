@@ -124,7 +124,7 @@ export function MobileMenu() {
                       transition={{ delay: 0.45 }}
                     >
                       <a
-                        href="#"
+                        href="/whitepaper"
                         className="flex items-center justify-center w-full px-4 py-2.5 text-xs font-bold text-white border-2 border-transparent rounded-full transition-all duration-300 group shadow-[0_0_10px_rgba(255,0,128,0.2)] hover:shadow-[0_0_20px_rgba(255,0,128,0.4)]"
                         style={{
                           background: 'linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)) padding-box, linear-gradient(to right, #ff0080, #7928ca) border-box',
