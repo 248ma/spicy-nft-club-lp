@@ -631,9 +631,6 @@ export default function Home() {
           >
             <span className="text-gray-400 tracking-[0.3em] uppercase text-sm font-bold mb-4 block">{t('whitepaper.subtitle')}</span>
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{t('whitepaper.title')}</h2>
-            <p className="text-gray-300 leading-relaxed mb-10 max-w-2xl mx-auto">
-              {t('whitepaper.description')}
-            </p>
             
             <motion.a
               href="/whitepaper"
@@ -645,9 +642,6 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
             >
               {t('whitepaper.button')}
-              <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform drop-shadow-[0_0_5px_rgba(255,0,128,0.8)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
             </motion.a>
           </AnimateOnce>
         </div>
