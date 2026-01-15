@@ -9,20 +9,8 @@ const Whitepaper = () => {
   const [activeSection, setActiveSection] = useState('executive-summary');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // ホワイトペーパーデータを読み込み
-  const [wpData, setWpData] = useState<any>(null);
-
-  useEffect(() => {
-    const loadWhitepaperData = async () => {
-      try {
-        const data = await import(`../locales/whitepaper_ja.json`);
-        setWpData(data.whitepaper);
-      } catch (error) {
-        console.error('Failed to load whitepaper data:', error);
-      }
-    };
-    loadWhitepaperData();
-  }, [i18n.language]);
+  // ホワイトペーパーデータをi18nから取得
+  const wpData = t('whitepaper', { returnObjects: true }) as any;
 
   // スクロール監視
   useEffect(() => {
@@ -69,15 +57,7 @@ const Whitepaper = () => {
     document.body.removeChild(link);
   };
 
-  if (!wpData) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
-      </div>
-    );
-  }
-
-  const tocItems = wpData.toc.items;
+  const tocItems = wpData?.toc?.items || [];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900">

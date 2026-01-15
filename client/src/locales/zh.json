@@ -107,10 +107,327 @@
     ]
   },
   "whitepaper": {
-    "subtitle": "Whitepaper",
-    "title": "解读项目详情",
-    "description": "我们公开了涵盖 SPICY NFT CLUB 的愿景、商业模式、代币经济学和详细路线图的白皮书。请查看我们的创新方法。",
-    "button": "查看白皮书"
+    "title": "SPICY NFT CLUB 白皮书",
+    "subtitle": "NFT 会员资格",
+    "version": "2026年1月1日（最新版）",
+    "download_pdf": "下载 PDF",
+    "overview": "项目概述：利用 Web3 技术革新风俗行业首个高级会员资格，全球首个高端会员制风俗 NFT 项目。以安全性、合法性及技术应用为核心，推动东京高端外送服务店铺的开业与运营。发行限量500个高级会员资格 NFT，采用 Ethereum 与 Solana 双链运营。为持有者（持币者）提供高级体验、优先使用权及价值提升可能。严格遵守日本风俗营业法及各国加密资产法规，完全排除与反社会组织的关联。作为透明的会员制俱乐部，创造行业净化与可持续娱乐。",
+    "vision": "与您共同创新优质风俗",
+    "mission": "通过技术与专业经营，将风俗业发展为安全、公平且具吸引力的产业，为全球利益相关者提供有价值的体验与可能性。",
+    "toc": {
+      "title": "目录",
+      "items": [
+        {
+          "id": "executive-summary",
+          "label": "执行摘要（概要与理念）"
+        },
+        {
+          "id": "background",
+          "label": "项目背景"
+        },
+        {
+          "id": "nft-overview",
+          "label": "NFT 概述"
+        },
+        {
+          "id": "business-model",
+          "label": "商业模式"
+        },
+        {
+          "id": "market-analysis",
+          "label": "市场分析"
+        },
+        {
+          "id": "technical-details",
+          "label": "技术细节"
+        },
+        {
+          "id": "compliance",
+          "label": "合规与风险管理"
+        },
+        {
+          "id": "team",
+          "label": "团队"
+        },
+        {
+          "id": "roadmap",
+          "label": "路线图"
+        },
+        {
+          "id": "faq",
+          "label": "常见问题"
+        },
+        {
+          "id": "contact",
+          "label": "联系方式"
+        },
+        {
+          "id": "tokenomics",
+          "label": "代币经济学"
+        },
+        {
+          "id": "disclaimer",
+          "label": "免责声明"
+        }
+      ]
+    },
+    "sections": {
+      "executive_summary": {
+        "title": "1. 执行摘要（概要与理念）",
+        "content": "SPICY NFT CLUB 是全球首个高端会员制风俗会员资格 NFT 项目。以“享受优质风俗，资产化持有”为理念，推动风俗行业向透明且可持续的高级娱乐方向演进。",
+        "concept_title": "理念核心：“优质风俗”定义",
+        "concept_intro": "本项目追求的“优质风俗”实现以下三大要素：",
+        "pillars": [
+          {
+            "title": "1. 安全享受",
+            "items": [
+              "杜绝宰客，零黑社会的完全会员制",
+              "由可信赖的专业运营提供清洁且安心的环境"
+            ]
+          },
+          {
+            "title": "2. 合法合规",
+            "items": [
+              "遵守日本风俗营业法合法运营（明确区分卖春、管理卖春及人口贩卖）",
+              "通过网络招聘实现演员自愿参与，坚决排除儿童买春与强迫",
+              "强化日本全球罕见的清洁性性工作环境"
+            ]
+          },
+          {
+            "title": "3. 多方共赢（所有利益相关者皆获利）",
+            "items": [
+              "用户、演员、持有者与运营皆无损失的结构",
+              "通过 NFT 小额化确保流动性及稳健利润回馈",
+              "数字化转型提升运营效率 → 利润率提升 → 积极回馈演员与持有者"
+            ]
+          }
+        ],
+        "closing": "持有限量500个高级会员资格 NFT，可享东京高端外送服务优先使用、优先预约、年度 VIP 权利，及 NFT 价值提升与二级流通资产形成的可能。由拥有12年风俗行业经验、年营业额数十亿日元的 CEO 主导，计划于2026年东京门店盛大开业。采用 Ethereum/Solana 双链确保透明性。",
+        "highlights": [
+          {
+            "label": "高级体验",
+            "value": "会员专属特典、年度使用权、活动参与"
+          },
+          {
+            "label": "价值潜力",
+            "value": "NFT 稀缺性、回购计划考量、门店收益挂钩"
+          },
+          {
+            "label": "可信赖性",
+            "value": "法律合规、经验丰富运营、信息公开"
+          }
+        ]
+      },
+      "background": {
+        "title": "2. 项目背景",
+        "intro": "日本风俗行业市场规模约为5至7万亿日元（2025年预估），但传统问题层出不穷。",
+        "challenges_title": "主要挑战",
+        "challenges": [
+          {
+            "title": "资金筹措难题",
+            "description": "银行贷款不可行，投资者期待差异（收益型 vs 资本增值型）"
+          },
+          {
+            "title": "运营风险",
+            "description": "行业理解不足导致盲目扩张与频繁失败，法律风险集中"
+          },
+          {
+            "title": "社会形象",
+            "description": "灰色地带及偏见造成准入障碍"
+          },
+          {
+            "title": "供需失衡",
+            "description": "剥削结构、演员过劳、行业萎缩趋势"
+          }
+        ],
+        "ceo_story_title": "CEO 背景与解决方案",
+        "ceo_story": "CEO（248ma）曾任职大型招聘广告公司 → 独立失败 → 进入风俗行业（12年经验，创办10家店铺，年营业额约30亿日元）。深感行业内管理失败、投资差距及人权风险，构思利用 NFT 的新模式。",
+        "innovation_title": "NFT/Web3 创新点：",
+        "innovations": [
+          "小额化便于个人投资，提供流动性（二级市场）",
+          "保留治理参与权，运营委托专业团队（分散风险）",
+          "数字化转型（应用程序与预约系统）降低成本 → 提升利润 → 增加回馈",
+          "作为清洁经营集合体，加速行业健康与多样化"
+        ],
+        "closing": "以东京高端外送服务开业为起点，采用“小型稳健门店集合体”模式实现稳定成长。持有者可作为“值得炫耀的投资对象”参与。日本风俗环境具备全球罕见的合法性与清洁性，借助 Web3 进一步进化的挑战。"
+      },
+      "nft_overview": {
+        "title": "3. NFT 概述",
+        "intro": "SPICY NFT CLUB 会员资格 NFT 作为风俗行业首个高级会员资格，限量发行500个（销售400个＋运营100个）。为会员（持币者）提供优先预约及年度使用权等独家特典。采用 Ethereum 与 Solana 双链发行，销售部分各200个。",
+        "pricing_title": "定价机制（基于绑定曲线的动态定价）",
+        "pricing_description": "起始价格为 Ethereum 侧0.01ETH，Solana 侧0.2SOL，每售出1个，价格自动分别上调0.01ETH或0.2SOL。此机制使早期购买者以较低价格入手，最大化先行参与优势。",
+        "specs": [
+          {
+            "label": "名称",
+            "value": "SPICY NFT CLUB 会员资格 NFT"
+          },
+          {
+            "label": "发行量",
+            "value": "限量500个（无追加发行，保障稀缺性）"
+          },
+          {
+            "label": "销售数量",
+            "value": "400个（Ethereum 200个 ＋ Solana 200个）"
+          },
+          {
+            "label": "运营保留",
+            "value": "100个（团队、市场营销及联盟用）"
+          }
+        ],
+        "utility_title": "实用功能（链通用）",
+        "utilities": [
+          {
+            "title": "VIP 特权",
+            "description": "东京高端外送优先预约、年度使用权（价值约50万日元/年）、旅行时使用支持、限定活动（如店铺命名权拍卖、高级派对等）、各类折扣"
+          },
+          {
+            "title": "稀缺性",
+            "description": "限量最多500个，具备价值提升潜力"
+          },
+          {
+            "title": "治理权",
+            "description": "新服务方案及店铺扩展等经营投票权"
+          }
+        ],
+        "sale_schedule_title": "销售时间表",
+        "sale_schedule": [
+          {
+            "label": "公开销售",
+            "value": "2026年1月开始（各链200个）"
+          },
+          {
+            "label": "价格显示",
+            "value": "实时价格显示（官网及仪表盘）"
+          },
+          {
+            "label": "价格变动",
+            "value": "售罄前价格自动上升（实时显示剩余数量及当前价格）"
+          }
+        ]
+      },
+      "business_model": {
+        "title": "4. 商业模式",
+        "intro": "SPICY NFT CLUB 在东京开设高端外送服务，利用 Web3 改革风俗行业庞大市场。预测首年销售额6000万日元（月均500万），第三年达1.2亿日元，向投资者展示收益潜力及 NFT 价值增长。通过限量社区季度项目报告及月度门店经营状况共享，公开资金用途。以稳健模式重新定义高端娱乐。",
+        "store_overview_title": "门店概况",
+        "store_details": [
+          {
+            "label": "业态",
+            "value": "高端外送服务（预计单次3～5万日元/约90分钟，涵盖多样化细分概念店）"
+          },
+          {
+            "label": "理念",
+            "value": "会员参与招募，共同打造理想门店"
+          },
+          {
+            "label": "地点",
+            "value": "东京"
+          }
+        ],
+        "revenue_title": "销售预测",
+        "revenue": [
+          {
+            "label": "首年",
+            "value": "6000万日元（月均500万）"
+          },
+          {
+            "label": "第三年",
+            "value": "1.2亿日元（月均1000万，计划多店铺扩展）"
+          }
+        ]
+      },
+      "market_analysis": {
+        "title": "5. 市场分析",
+        "content": "日本风俗行业市场规模约为5.8至7.8万亿日元（估算）。结合 NFT 市场增长，定位为个人投资者具吸引力的高收益项目。通过 Web3 解决传统融资难题，提供透明度与流动性，吸引新参与者。"
+      },
+      "technical_details": {
+        "title": "6. 技术细节",
+        "content": "采用 Ethereum（ERC721）与 Solana（Metaplex）双链。实现低手续费与高速交易，未来计划跨链兼容。智能合约保障版税（二级流通3%）及认证。重视用户体验的购买、交易及使用流程。"
+      },
+      "compliance": {
+        "title": "7. 合规与风险管理",
+        "content": "严格遵守风俗营业法及加密资产法。NFT 设计为高级会员资格（不保证投资回报）。排除反社会组织，防范诈骗，管理市场波动及社会偏见。通过限量社区确保透明度。"
+      },
+      "team": {
+        "title": "8. 团队",
+        "intro": "SPICY NFT CLUB 团队汇聚风俗行业与 Web3 专家。",
+        "members": [
+          {
+            "role": "CEO",
+            "name": "248ma",
+            "description": "拥有12年风俗行业经验，创办并运营10家店铺（年营业额约20亿日元），其他成员包括 Web3 项目专家、律师、行政书士及 AI 开发者。项目扩展中计划增加专职成员。"
+          }
+        ]
+      },
+      "roadmap": {
+        "title": "9. 路线图",
+        "items": [
+          {
+            "date": "2026年1月",
+            "title": "公开销售启动，社区建设"
+          },
+          {
+            "date": "2026年第一季度",
+            "title": "会员专用网站上线，门店盛大开业准备"
+          },
+          {
+            "date": "2026年第二季度",
+            "title": "东京门店盛大开业，首次收益共享启动，实施质押及跨链桥"
+          },
+          {
+            "date": "2026年第三季度起",
+            "title": "多店铺扩展，启动 DAO 治理，拓展额外实用功能"
+          }
+        ]
+      },
+      "faq": {
+        "title": "10. 常见问题",
+        "items": [
+          {
+            "question": "项目安全吗？",
+            "answer": "严格合规，由经验丰富的 CEO 领导，专家审核确认。"
+          },
+          {
+            "question": "收益可能性如何？",
+            "answer": "与门店收益挂钩，二级市场价格上涨，考虑回购计划（无保证）。"
+          },
+          {
+            "question": "存在诈骗风险吗？",
+            "answer": "通过官方渠道广泛宣传，采取严格防范措施。"
+          }
+        ],
+        "note": "其他：针对市场波动及社会偏见的应对也通过透明度构建。"
+      },
+      "contact": {
+        "title": "11. 联系方式",
+        "content": "通过官方网站 / X / Telegram / 邮件接受咨询。计划举办 AMA 活动。"
+      },
+      "tokenomics": {
+        "title": "12. 代币经济学",
+        "items": [
+          {
+            "label": "发行量",
+            "value": "限量500个"
+          },
+          {
+            "label": "分配",
+            "value": "销售80%（400个）、团队20%（100个）"
+          },
+          {
+            "label": "收益共享",
+            "value": "计划返还部分门店销售额"
+          },
+          {
+            "label": "版税",
+            "value": "二级流通3%"
+          }
+        ]
+      },
+      "disclaimer": {
+        "title": "13. 免责声明",
+        "content": "本项目不保证收益或价值提升，参与请自行承担风险。存在市场波动、运营风险及法规变更可能。本文档非投资招揽材料。",
+        "note": "本文件为2026年1月1日最新版白皮书。最新信息请关注官方渠道。"
+      }
+    }
   },
   "how_to_buy": {
     "subtitle": "HOW TO BUY",
@@ -143,22 +460,56 @@
     "subtitle": "Tokenomics",
     "title": "与项目共同成长。",
     "items": {
-      "supply": { "label": "总供应量", "value": "400 个 (无增发)" },
-      "sale": { "label": "销售部分", "value": "400 个 (ETH 200 / SOL 200)" },
-      "team": { "label": "团队保留", "value": "0 个 (全部销售)" },
-      "price": { "label": "价格", "value": "联合曲线" },
-      "revenue": { "label": "收益返还", "value": "店铺收益的 5%" },
-      "royalty": { "label": "二级流通", "value": "版税 3%" }
+      "supply": {
+        "label": "总供应量",
+        "value": "400 个 (无增发)"
+      },
+      "sale": {
+        "label": "销售部分",
+        "value": "400 个 (ETH 200 / SOL 200)"
+      },
+      "team": {
+        "label": "团队保留",
+        "value": "0 个 (全部销售)"
+      },
+      "price": {
+        "label": "价格",
+        "value": "联合曲线"
+      },
+      "revenue": {
+        "label": "收益返还",
+        "value": "店铺收益的 5%"
+      },
+      "royalty": {
+        "label": "二级流通",
+        "value": "版税 3%"
+      }
     }
   },
   "roadmap": {
     "subtitle": "Roadmap",
     "title": "Vision to Reality.",
     "items": [
-      { "date": "2026.01", "title": "NFT 公开发售开始", "description": "限量 400 个高级会员权发售（ETH 200 + SOL 200）" },
-      { "date": "2026.02", "title": "1号店 Grand Open", "description": "东京高级上门服务店铺开始运营" },
-      { "date": "2026.03", "title": "首次收益返还开始", "description": "持有者返还计划启动" },
-      { "date": "2026.Q3~", "title": "2号店 / DAO化", "description": "多店铺扩展及向自律分散型组织过渡" }
+      {
+        "date": "2026.01",
+        "title": "NFT 公开发售开始",
+        "description": "限量 400 个高级会员权发售（ETH 200 + SOL 200）"
+      },
+      {
+        "date": "2026.02",
+        "title": "1号店 Grand Open",
+        "description": "东京高级上门服务店铺开始运营"
+      },
+      {
+        "date": "2026.03",
+        "title": "首次收益返还开始",
+        "description": "持有者返还计划启动"
+      },
+      {
+        "date": "2026.Q3~",
+        "title": "2号店 / DAO化",
+        "description": "多店铺扩展及向自律分散型组织过渡"
+      }
     ]
   },
   "team": {
@@ -166,10 +517,26 @@
     "title": "熟知行业与 Web3 的专业人士。",
     "description": "CEO: 248ma - 行业经历 12 年，10 家店铺创业经验，总年商 30 亿日元规模集团创业实绩。",
     "members": [
-      { "name": "Web3 工程师", "role": "Advisor", "description": "区块链技术专家" },
-      { "name": "律师", "role": "Advisor", "description": "风营法、资金结算法法律监管" },
-      { "name": "行政书士", "role": "Advisor", "description": "许可认证、合规管理" },
-      { "name": "AI 开发者", "role": "Advisor", "description": "最新技术导入支援" }
+      {
+        "name": "Web3 工程师",
+        "role": "Advisor",
+        "description": "区块链技术专家"
+      },
+      {
+        "name": "律师",
+        "role": "Advisor",
+        "description": "风营法、资金结算法法律监管"
+      },
+      {
+        "name": "行政书士",
+        "role": "Advisor",
+        "description": "许可认证、合规管理"
+      },
+      {
+        "name": "AI 开发者",
+        "role": "Advisor",
+        "description": "最新技术导入支援"
+      }
     ]
   },
   "faq": {
