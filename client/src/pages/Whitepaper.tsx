@@ -50,12 +50,8 @@ const Whitepaper = () => {
 
   const handleDownloadPDF = () => {
     const pdfUrl = '/documents/whitepaper-ja.pdf';
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = 'SPICY_NFT_CLUB_Whitepaper.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // 新しいタブでPDFを開く（より確実なダウンロード方法）
+    window.open(pdfUrl, '_blank');
   };
 
   const tocItems = wpData?.toc?.items || [];
@@ -70,8 +66,8 @@ const Whitepaper = () => {
           </Link>
           
           <div className="flex items-center space-x-3">
-            {/* 言語切り替えボタン */}
-            <LanguageSwitcher className="hidden sm:flex" />
+            {/* 言語切り替えボタン（PC・モバイル両対応） */}
+            <LanguageSwitcher />
             
             {/* PDFダウンロードボタン (PC版) */}
             <button
