@@ -8,5 +8,24 @@
       "source": "/((?!documents/|assets/|logo.png|favicon.ico).*)",
       "destination": "/index.html"
     }
+  ],
+  "headers": [
+    {
+      "source": "/documents/(.*).pdf",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
+        },
+        {
+          "key": "Content-Disposition",
+          "value": "inline; filename=\"whitepaper.pdf\""
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
   ]
 }

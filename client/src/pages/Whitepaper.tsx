@@ -49,15 +49,9 @@ const Whitepaper = () => {
   };
 
   const handleDownloadPDF = () => {
-    const pdfUrl = '/documents/whitepaper-ja.pdf';
-    // aタグを使用した確実なダウンロード方法（モバイル対応）
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Vercelのヘッダー設定でContent-Disposition: inlineを設定済み
+    // モバイルでもネイティブPDFビューアーで開く
+    window.open('/documents/whitepaper-ja.pdf', '_blank');
   };
 
   const tocItems = wpData?.toc?.items || [];
