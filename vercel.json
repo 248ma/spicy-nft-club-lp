@@ -4,6 +4,9 @@
   "outputDirectory": "dist",
   "installCommand": "pnpm install",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!documents/|assets/|logo.png|favicon.ico).*)",
+      "destination": "/index.html"
+    }
   ]
 }
