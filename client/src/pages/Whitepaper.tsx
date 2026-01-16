@@ -50,8 +50,14 @@ const Whitepaper = () => {
 
   const handleDownloadPDF = () => {
     const pdfUrl = '/documents/whitepaper-ja.pdf';
-    // 新しいタブでPDFを開く（より確実なダウンロード方法）
-    window.open(pdfUrl, '_blank');
+    // aタグを使用した確実なダウンロード方法（モバイル対応）
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const tocItems = wpData?.toc?.items || [];
