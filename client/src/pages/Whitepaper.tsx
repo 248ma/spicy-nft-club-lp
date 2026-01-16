@@ -49,7 +49,7 @@ const Whitepaper = () => {
   };
 
   const handleDownloadPDF = () => {
-    const pdfUrl = 'https://248ma.github.io/spicy-nft-club-lp/documents/whitepaper-ja.pdf';
+    const pdfUrl = '/documents/whitepaper-ja.pdf';
     // aタグを使用した確実なダウンロード方法（モバイル対応）
     const link = document.createElement('a');
     link.href = pdfUrl;
