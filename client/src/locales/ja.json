@@ -614,6 +614,8 @@
     "title": "購入方法を選択",
     "eth": "ETHで購入",
     "sol": "SOLで購入",
+    "coming_soon": "準備中",
+    "sol_coming_soon_tooltip": "Solanaチェーンは現在準備中です。リリースまでお待ちください。",
     "connect_wallet": "ウォレットを接続",
     "connect_metamask": "MetaMaskを接続",
     "connect_phantom": "Phantomを接続",

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogTrigger } from "@/components/ui/dialog";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -195,20 +196,34 @@ export function MintModal({ trigger, open, onOpenChange }: MintModalProps) {
                   </div>
                   <ArrowRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Button>
-                <Button 
-                  className="w-full h-20 text-lg font-bold bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:opacity-90 text-white flex items-center justify-between px-6 transition-all hover:scale-[1.02] group"
-                  onClick={() => handleChainSelect('SOL')}
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
-                      <svg viewBox="0 0 32 32" className="w-6 h-6 fill-current">
-                        <path d="M4.77 18.52h4.96l.04-.26c.32-2.18 2.38-3.34 4.56-2.58.56.2.98.64 1.16 1.2l.04.14h4.82c-.22-1.86-1.32-3.48-2.98-4.38l-.18-.1-4.4-2.3-4.42 2.32c-2.08 1.08-3.38 3.24-3.5 5.58l-.1.38zm22.46-5.04h-4.96l-.04.26c-.32 2.18-2.38 3.34-4.56 2.58-.56-.2-.98-.64-1.16-1.2l-.04-.14h-4.82c.22 1.86 1.32 3.48 2.98 4.38l.18.1 4.4 2.3 4.42-2.32c2.08-1.08 3.38-3.24 3.5-5.58l.1-.38z"/>
-                      </svg>
-                    </div>
-                    <span>{t('purchase_modal.sol')}</span>
-                  </div>
-                  <ArrowRight className="w-6 h-6 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Button>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button 
+                        className="w-full h-20 text-lg font-bold bg-gradient-to-r from-[#9945FF] to-[#14F195] hover:opacity-90 text-white flex items-center justify-between px-6 transition-all hover:scale-[1.02] group relative"
+                        onClick={() => handleChainSelect('SOL')}
+                        disabled
+                      >
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                            <svg viewBox="0 0 32 32" className="w-6 h-6 fill-current">
+                              <path d="M4.77 18.52h4.96l.04-.26c.32-2.18 2.38-3.34 4.56-2.58.56.2.98.64 1.16 1.2l.04.14h4.82c-.22-1.86-1.32-3.48-2.98-4.38l-.18-.1-4.4-2.3-4.42 2.32c-2.08 1.08-3.38 3.24-3.5 5.58l-.1.38zm22.46-5.04h-4.96l-.04.26c-.32 2.18-2.38 3.34-4.56 2.58-.56-.2-.98-.64-1.16-1.2l-.04-.14h-4.82c.22 1.86 1.32 3.48 2.98 4.38l.18.1 4.4 2.3 4.42-2.32c2.08-1.08 3.38-3.24 3.5-5.58l.1-.38z"/>
+                            </svg>
+                          </div>
+                          <div className="flex flex-col items-start">
+                            <span>{t('purchase_modal.sol')}</span>
+                          </div>
+                        </div>
+                        <div className="absolute top-2 right-2 bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-full">
+                          {t('purchase_modal.coming_soon')}
+                        </div>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent side="bottom" className="max-w-xs">
+                      <p>{t('purchase_modal.sol_coming_soon_tooltip')}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </motion.div>
             )}
 

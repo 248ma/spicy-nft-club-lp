@@ -718,5 +718,27 @@
     },
     "note": "*Access to the main content of this site is restricted to those under 18 in accordance with laws and regulations.",
     "back_button": "Back to Top"
+  },
+  "purchase_modal": {
+    "title": "Select Purchase Method",
+    "eth": "Buy with ETH",
+    "sol": "Buy with SOL",
+    "coming_soon": "Coming Soon",
+    "sol_coming_soon_tooltip": "Solana chain is currently under preparation. Please wait until release.",
+    "connect_wallet": "Connect Wallet",
+    "connect_metamask": "Connect MetaMask",
+    "connect_phantom": "Connect Phantom",
+    "mint_title": "Mint NFT",
+    "current_price": "Current Price",
+    "next_price": "Next Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "mint_button": "Purchase",
+    "processing": "Processing...",
+    "success_title": "Purchase Complete!",
+    "success_desc": "Welcome to SPICY NFT CLUB. The NFT has been sent to your wallet.",
+    "view_etherscan": "View on Etherscan",
+    "view_solscan": "View on Solscan",
+    "close": "Close"
   }
 }

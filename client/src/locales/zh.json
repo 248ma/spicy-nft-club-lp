@@ -576,5 +576,27 @@
     "privacy": "隐私政策",
     "law": "基于特定商交易法的标记",
     "disclaimer": "本项目不保证收益或 NFT 价值的上升。存在加密资产及风俗行业特有的风险。所有投资判断请自行承担责任。"
+  },
+  "purchase_modal": {
+    "title": "选择购买方式",
+    "eth": "使用ETH购买",
+    "sol": "使用SOL购买",
+    "coming_soon": "即将推出",
+    "sol_coming_soon_tooltip": "Solana链目前正在准备中。请等待发布。",
+    "connect_wallet": "连接钱包",
+    "connect_metamask": "连接MetaMask",
+    "connect_phantom": "连接Phantom",
+    "mint_title": "铸造NFT",
+    "current_price": "当前价格",
+    "next_price": "下次价格",
+    "quantity": "数量",
+    "total": "总计",
+    "mint_button": "购买",
+    "processing": "处理中...",
+    "success_title": "购买完成！",
+    "success_desc": "欢迎来到SPICY NFT CLUB。NFT已发送到您的钱包。",
+    "view_etherscan": "在Etherscan上查看",
+    "view_solscan": "在Solscan上查看",
+    "close": "关闭"
   }
 }

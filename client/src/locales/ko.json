@@ -614,6 +614,8 @@
     "title": "구매 방법 선택",
     "eth": "ETH로 구매",
     "sol": "SOL로 구매",
+    "coming_soon": "준비 중",
+    "sol_coming_soon_tooltip": "Solana 체인은 현재 준비 중입니다. 출시까지 기다려 주세요.",
     "connect_wallet": "지갑 연결",
     "connect_metamask": "MetaMask 연결",
     "connect_phantom": "Phantom 연결",

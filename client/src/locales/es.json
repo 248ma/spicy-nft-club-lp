@@ -614,6 +614,8 @@
     "title": "Selecciona método de compra",
     "eth": "Comprar con ETH",
     "sol": "Comprar con SOL",
+    "coming_soon": "Próximamente",
+    "sol_coming_soon_tooltip": "La cadena Solana está actualmente en preparación. Por favor, espere hasta el lanzamiento.",
     "connect_wallet": "Conectar billetera",
     "connect_metamask": "Conectar MetaMask",
     "connect_phantom": "Conectar Phantom",
