@@ -7,6 +7,7 @@ import { MintModal } from './MintModal';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMintModalOpen, setIsMintModalOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -114,11 +115,17 @@ export function MobileMenu() {
                         trigger={
                           <Button 
                             className="w-full bg-gradient-to-r from-[#ff0080] to-[#7928ca] text-white font-bold py-4 text-sm rounded-full shadow-[0_0_15px_rgba(255,0,128,0.3)] hover:shadow-[0_0_25px_rgba(255,0,128,0.5)] transition-all h-auto"
-                            onClick={() => setIsOpen(false)}
                           >
                             {t('hero.cta')}
                           </Button>
                         }
+                        open={isMintModalOpen}
+                        onOpenChange={(open) => {
+                          setIsMintModalOpen(open);
+                          if (open) {
+                            setIsOpen(false);
+                          }
+                        }}
                       />
                     </motion.div>
 
