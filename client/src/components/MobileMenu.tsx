@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useTranslation } from 'react-i18next';
+import { MintModal } from './MintModal';
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -109,14 +110,18 @@ export function MobileMenu() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
                     >
-                      <Button 
-                        className="w-full bg-gradient-to-r from-[#ff0080] to-[#7928ca] text-white font-bold py-4 text-sm rounded-full shadow-[0_0_15px_rgba(255,0,128,0.3)] hover:shadow-[0_0_25px_rgba(255,0,128,0.5)] transition-all h-auto"
-                        onClick={() => {
-                          setIsOpen(false);
+                      <MintModal 
+                        trigger={
+                          <Button 
+                            className="w-full bg-gradient-to-r from-[#ff0080] to-[#7928ca] text-white font-bold py-4 text-sm rounded-full shadow-[0_0_15px_rgba(255,0,128,0.3)] hover:shadow-[0_0_25px_rgba(255,0,128,0.5)] transition-all h-auto"
+                          >
+                            {t('hero.cta')}
+                          </Button>
+                        }
+                        onOpenChange={(open) => {
+                          if (open) setIsOpen(false);
                         }}
-                      >
-                        {t('hero.cta')}
-                      </Button>
+                      />
                     </motion.div>
 
                     {/* Whitepaper Button */}

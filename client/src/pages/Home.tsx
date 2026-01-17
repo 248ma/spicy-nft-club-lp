@@ -860,13 +860,16 @@ export default function Home() {
             <NftMeter ref={nftMeterRef} />
 
             <div className="flex flex-col items-center gap-6">
-              <Button 
-                size="lg" 
-                className="text-xl px-12 py-8 bg-gradient-to-r from-[#ff0080] to-[#7928ca] hover:from-[#ff0080]/90 hover:to-[#7928ca]/90 text-white transition-all hover:scale-105 shadow-[0_0_30px_rgba(255,0,128,0.4)] rounded-full border-0"
-                onClick={() => nftMeterRef.current?.incrementSupply()}
-              >
-                {t('cta.button')}
-              </Button>
+              <MintModal 
+                trigger={
+                  <Button 
+                    size="lg" 
+                    className="text-xl px-12 py-8 bg-gradient-to-r from-[#ff0080] to-[#7928ca] hover:from-[#ff0080]/90 hover:to-[#7928ca]/90 text-white transition-all hover:scale-105 shadow-[0_0_30px_rgba(255,0,128,0.4)] rounded-full border-0"
+                  >
+                    {t('cta.button')}
+                  </Button>
+                }
+              />
               <div className="flex flex-col items-center -mt-4 mb-2">
                 <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">{t('hero.current_price')}</span>
                 <div className="text-sm text-white/80 font-mono tracking-wider drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
