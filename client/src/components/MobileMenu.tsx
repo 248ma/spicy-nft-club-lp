@@ -111,21 +111,18 @@ export function MobileMenu() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
                     >
-                      <MintModal 
-                        trigger={
-                          <Button 
-                            className="w-full bg-gradient-to-r from-[#ff0080] to-[#7928ca] text-white font-bold py-4 text-sm rounded-full shadow-[0_0_15px_rgba(255,0,128,0.3)] hover:shadow-[0_0_25px_rgba(255,0,128,0.5)] transition-all h-auto"
-                          >
-                            {t('hero.cta')}
-                          </Button>
-                        }
-                        open={isMintModalOpen}
-                        onOpenChange={(open) => {
-                          setIsMintModalOpen(open);
-                          if (open) {
-                            setIsOpen(false);
-                          }
+                      <Button 
+                        className="w-full bg-gradient-to-r from-[#ff0080] to-[#7928ca] text-white font-bold py-4 text-sm rounded-full shadow-[0_0_15px_rgba(255,0,128,0.3)] hover:shadow-[0_0_25px_rgba(255,0,128,0.5)] transition-all h-auto"
+                        onClick={() => {
+                          setIsOpen(false);
+                          setTimeout(() => setIsMintModalOpen(true), 300);
                         }}
+                      >
+                        {t('hero.cta')}
+                      </Button>
+                      <MintModal 
+                        open={isMintModalOpen}
+                        onOpenChange={setIsMintModalOpen}
                       />
                     </motion.div>
 
