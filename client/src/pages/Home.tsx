@@ -79,7 +79,7 @@ export default function Home() {
 
       {/* Dot Navigation */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col gap-4">
-        {['hero', 'concept', 'solution', 'nft', 'roadmap', 'team', 'how-to-buy', 'faq'].map((id) => (
+        {['hero', 'concept', 'nft', 'solution', 'whitepaper', 'roadmap', 'team', 'how-to-buy', 'faq'].map((id) => (
           <a
             key={id}
             href={`#${id}`}
