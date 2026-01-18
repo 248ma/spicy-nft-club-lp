@@ -13,7 +13,7 @@ export const CONTRACTS = {
 // RPC endpoints
 export const RPC_ENDPOINTS = {
   ethereum: {
-    sepolia: "https://rpc.sepolia.org",
+    sepolia: "https://eth-sepolia.g.alchemy.com/v2/demo",
     mainnet: "https://eth.llamarpc.com",
   },
   solana: {
