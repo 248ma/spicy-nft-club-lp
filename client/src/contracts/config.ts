@@ -10,10 +10,14 @@ export const CONTRACTS = {
   },
 };
 
-// RPC endpoints
+// RPC endpoints (multiple endpoints for fallback)
 export const RPC_ENDPOINTS = {
   ethereum: {
-    sepolia: "https://eth-sepolia.g.alchemy.com/v2/demo",
+    sepolia: [
+      "https://rpc.sepolia.org",
+      "https://ethereum-sepolia-rpc.publicnode.com",
+      "https://1rpc.io/sepolia",
+    ],
     mainnet: "https://eth.llamarpc.com",
   },
   solana: {

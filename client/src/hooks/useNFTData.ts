@@ -49,30 +49,51 @@ export const useNFTData = () => {
         throw new Error('Contract address not configured');
       }
 
-      const provider = new ethers.JsonRpcProvider(
-        RPC_ENDPOINTS.ethereum[CURRENT_ENV as keyof typeof RPC_ENDPOINTS.ethereum]
-      );
+      const rpcEndpoints = RPC_ENDPOINTS.ethereum[CURRENT_ENV as keyof typeof RPC_ENDPOINTS.ethereum];
+      const endpoints = Array.isArray(rpcEndpoints) ? rpcEndpoints : [rpcEndpoints];
       
-      const contract = new ethers.Contract(contractAddress, contractABI, provider);
+      let lastError: Error | null = null;
+      
+      // Try each RPC endpoint until one succeeds
+      for (const endpoint of endpoints) {
+        try {
+          const provider = new ethers.JsonRpcProvider(endpoint);
+          const contract = new ethers.Contract(contractAddress, contractABI, provider);
 
-      // Fetch data from contract
-      const [currentPrice, totalMinted, maxSupply] = await Promise.all([
-        contract.getCurrentPrice(),
-        contract.totalMinted(),
-        contract.MAX_SUPPLY(),
-      ]);
-
-      setData((prev) => ({
-        ...prev,
-        eth: {
-          currentPrice: ethers.formatEther(currentPrice),
-          totalMinted: Number(totalMinted),
-          maxSupply: Number(maxSupply),
-          nextTokenId: Number(totalMinted) + 1,
-          isLoading: false,
-          error: null,
-        },
-      }));
+          // Fetch data from contract with timeout
+          const [currentPrice, totalMinted, maxSupply] = await Promise.race([
+            Promise.all([
+              contract.getCurrentPrice(),
+              contract.totalMinted(),
+              contract.MAX_SUPPLY(),
+            ]),
+            new Promise((_, reject) => 
+              setTimeout(() => reject(new Error('RPC timeout')), 5000)
+            ),
+          ]) as [bigint, bigint, bigint];
+          
+          // Success! Update state and return
+          setData((prev) => ({
+            ...prev,
+            eth: {
+              currentPrice: ethers.formatEther(currentPrice),
+              totalMinted: Number(totalMinted),
+              maxSupply: Number(maxSupply),
+              nextTokenId: Number(totalMinted) + 1,
+              isLoading: false,
+              error: null,
+            },
+          }));
+          return;
+        } catch (error) {
+          console.warn(`Failed to fetch from ${endpoint}:`, error);
+          lastError = error instanceof Error ? error : new Error('Unknown error');
+          // Continue to next endpoint
+        }
+      }
+      
+      // All endpoints failed
+      throw lastError || new Error('All RPC endpoints failed');
     } catch (error) {
       console.error('Error fetching Ethereum NFT data:', error);
       setData((prev) => ({
