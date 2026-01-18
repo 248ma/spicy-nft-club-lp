@@ -1,64 +1,27 @@
-import { useEffect, useState, useImperativeHandle, forwardRef } from 'react';
-import { ethers } from 'ethers';
+import { useImperativeHandle, forwardRef } from 'react';
+import { useNFTData } from '../hooks/useNFTData';
 
 // 設定値
-const CONTRACT_ADDRESS = "0xYourContractAddressHere..."; // 後で実際の値に変更
 const MAX_SUPPLY = 400;
-const RPC_URL = "https://eth.llamarpc.com";
-
-// ABI
-const ABI = [
-  "function totalSupply() view returns (uint256)"
-];
 
 export interface NftMeterHandle {
   incrementSupply: () => void;
 }
 
 export const NftMeter = forwardRef<NftMeterHandle>((_, ref) => {
-  const [supply, setSupply] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
+  const { eth } = useNFTData();
+  
+  const supply = eth.totalMinted;
+  const loading = eth.isLoading;
+  const error = eth.error !== null;
 
-  // 外部からsupplyを増加させる関数を公開
+  // 外部からsupplyを増加させる関数を公開（現在は使用されていないが、互換性のために残す）
   useImperativeHandle(ref, () => ({
     incrementSupply: () => {
-      setSupply(prev => Math.min(prev + 1, MAX_SUPPLY));
+      // useNFTDataフックが自動的に更新するため、この関数は何もしない
+      console.log('incrementSupply called, but data is managed by useNFTData hook');
     }
   }));
-
-  useEffect(() => {
-    const fetchSupply = async () => {
-      try {
-        // プロバイダーを作成（ウォレット接続不要で読み取り専用）
-        const provider = new ethers.JsonRpcProvider(RPC_URL);
-        
-        // コントラクトのインスタンス化
-        // 注: 実際のアドレスが設定されるまではダミーデータを使用
-        if (CONTRACT_ADDRESS === "0xYourContractAddressHere...") {
-          // デモ用：ランダムな数値を設定（実際の実装時は削除）
-          setTimeout(() => {
-            setSupply(0); // デモ値
-            setLoading(false);
-          }, 1000);
-          return;
-        }
-
-        const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, provider);
-
-        // 現在の販売数を取得
-        const supplyBN = await contract.totalSupply();
-        setSupply(Number(supplyBN));
-        setLoading(false);
-      } catch (err) {
-        console.error("データの取得に失敗しました:", err);
-        setError(true);
-        setLoading(false);
-      }
-    };
-
-    fetchSupply();
-  }, []);
 
   // パーセンテージ計算
   let percentage = (supply / MAX_SUPPLY) * 100;
