@@ -27,10 +27,12 @@ import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { MobileMenu } from "@/components/MobileMenu";
 import { AgeGate } from "@/components/AgeGate";
 import { MintModal } from "@/components/MintModal";
+import { useNFTData } from "@/hooks/useNFTData";
 import '../lib/i18n';
 
 export default function Home() {
   const { t } = useTranslation();
+  const nftData = useNFTData();
   const { scrollYProgress } = useScroll();
   const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const heroScale = useTransform(scrollYProgress, [0, 0.2], [1, 0.95]);
@@ -157,7 +159,13 @@ export default function Home() {
               <div className="flex flex-col items-center mt-2">
                 <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">{t('hero.current_price')}</span>
                 <div className="text-sm text-white/80 font-mono tracking-wider drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
-                  ETH: #001 / 0.01eth
+                  {nftData.eth.isLoading ? (
+                    <span>Loading...</span>
+                  ) : nftData.eth.error ? (
+                    <span>ETH: #001 / 0.01eth</span>
+                  ) : (
+                    <span>ETH: #{String(nftData.eth.nextTokenId).padStart(3, '0')} / {parseFloat(nftData.eth.currentPrice).toFixed(2)}eth</span>
+                  )}
                 </div>
               </div>
               <div 
@@ -472,7 +480,13 @@ export default function Home() {
                     <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-2 block">{t('hero.current_price')}</span>
                     <div className="w-full">
                       <p className="text-center text-xl text-white font-mono tracking-wider drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] bg-white/5 px-6 py-4 rounded-full border border-white/10 w-full">
-                        ETH: #001 / 0.01eth
+                        {nftData.eth.isLoading ? (
+                          <span>Loading...</span>
+                        ) : nftData.eth.error ? (
+                          <span>ETH: #001 / 0.01eth</span>
+                        ) : (
+                          <span>ETH: #{String(nftData.eth.nextTokenId).padStart(3, '0')} / {parseFloat(nftData.eth.currentPrice).toFixed(2)}eth</span>
+                        )}
                       </p>
                     </div>
                   </div>
@@ -873,7 +887,13 @@ export default function Home() {
               <div className="flex flex-col items-center -mt-4 mb-2">
                 <span className="text-[10px] text-gray-400 uppercase tracking-widest mb-1">{t('hero.current_price')}</span>
                 <div className="text-sm text-white/80 font-mono tracking-wider drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
-                  ETH: #001 / 0.01eth
+                  {nftData.eth.isLoading ? (
+                    <span>Loading...</span>
+                  ) : nftData.eth.error ? (
+                    <span>ETH: #001 / 0.01eth</span>
+                  ) : (
+                    <span>ETH: #{String(nftData.eth.nextTokenId).padStart(3, '0')} / {parseFloat(nftData.eth.currentPrice).toFixed(2)}eth</span>
+                  )}
                 </div>
               </div>
               <div className="flex flex-col gap-4 w-full max-w-md">
