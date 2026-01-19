@@ -33,5 +33,5 @@ export const RPC_ENDPOINTS = {
 // Current environment (change to 'mainnet' for production)
 export const CURRENT_ENV = "mainnet";
 
-// Mint site URL (to be configured after custom domain setup)
-export const MINT_SITE_URL = ""; // TODO: Add custom domain URL here
+// Mint site URL
+export const MINT_SITE_URL = "https://mint.spicynftclub.com";
