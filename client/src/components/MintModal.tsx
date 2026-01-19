@@ -25,9 +25,7 @@ export function MintModal({ trigger, open, onOpenChange }: MintModalProps) {
           <DialogTitle className="text-2xl font-bold text-center bg-gradient-to-r from-[#ff0080] to-[#7928ca] bg-clip-text text-transparent">
             {t('purchase_modal.title')}
           </DialogTitle>
-          <DialogDescription className="text-center text-gray-400">
-            {t('purchase_modal.description') || 'Select your preferred blockchain to purchase NFT'}
-          </DialogDescription>
+
         </DialogHeader>
 
         <div className="py-4 flex flex-col gap-4">
