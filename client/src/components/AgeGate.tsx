@@ -12,15 +12,13 @@ export function AgeGate() {
   const [isVisible, setIsVisible] = useState(false);
   const [isExiting, setIsExiting] = useState(false);
 
-  // Generate random particles
+  // Generate random particles (reduced for performance)
   const particles = useMemo(() => {
-    return Array.from({ length: 30 }).map((_, i) => ({
+    return Array.from({ length: 10 }).map((_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
       size: Math.random() * 4 + 2,
-      duration: Math.random() * 10 + 10,
-      delay: Math.random() * 5,
       color: ['#ff0080', '#7928ca', '#0088cc'][Math.floor(Math.random() * 3)]
     }));
   }, []);
@@ -42,7 +40,7 @@ export function AgeGate() {
     setTimeout(() => {
       setIsVisible(false);
       document.body.style.overflow = 'unset';
-    }, 500);
+    }, 300);
   };
 
   const [, setLocation] = useLocation();
@@ -53,7 +51,7 @@ export function AgeGate() {
       setLocation('/exit');
       setIsVisible(false);
       document.body.style.overflow = 'unset';
-    }, 500);
+    }, 300);
   };
 
   if (!isVisible) return null;
@@ -65,7 +63,7 @@ export function AgeGate() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3 }}
           className="fixed inset-0 z-[9999] flex items-center justify-center bg-white/90 backdrop-blur-xl overflow-hidden"
         >
           {/* Dynamic Background Particles */}
@@ -81,47 +79,19 @@ export function AgeGate() {
                   left: `${particle.x}%`,
                   top: `${particle.y}%`,
                 }}
-                animate={{
-                  y: 0,
-                  x: 0,
-                  opacity: 0.1,
-                  scale: 1,
-                }}
-                transition={{
-                  duration: 0
+                style={{
+                  opacity: 0.15
                 }}
               />
             ))}
-            {/* Ambient Light Orbs */}
-            <motion.div
-              className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff0080]/10 rounded-full blur-3xl"
-              animate={{
-                scale: 1,
-                opacity: 0.3,
-                x: 0,
-                y: 0,
-              }}
-              transition={{
-                duration: 0
-              }}
-            />
-            <motion.div
-              className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#7928ca]/10 rounded-full blur-3xl"
-              animate={{
-                scale: 1,
-                opacity: 0.3,
-                x: 0,
-                y: 0,
-              }}
-              transition={{
-                duration: 0
-              }}
-            />
+            {/* Ambient Light Orbs - Static for performance */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#ff0080]/10 rounded-full blur-3xl opacity-30" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#7928ca]/10 rounded-full blur-3xl opacity-30" />
           </div>
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
+            initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
             className="relative w-full max-w-md mx-4 p-[1px] rounded-2xl bg-gradient-to-br from-[#ff0080]/30 via-[#7928ca]/30 to-[#0088cc]/30 shadow-2xl"
           >
             <div className="bg-white/90 rounded-xl p-8 text-center border border-white/50 shadow-lg backdrop-blur-sm relative">
@@ -131,9 +101,9 @@ export function AgeGate() {
                 </div>
               </div>
               <motion.div
-                initial={{ y: -20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.15, duration: 0.3 }}
                 className="flex justify-center mb-6"
               >
                 <div className="w-60 h-32 flex items-center justify-center">
@@ -142,26 +112,26 @@ export function AgeGate() {
               </motion.div>
 
               <motion.h2
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.5 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.3 }}
                 className="text-2xl font-bold text-gray-800 mb-4 tracking-widest"
               >
                 {t('age_gate.title')}
               </motion.h2>
 
               <motion.p
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.25, duration: 0.3 }}
                 className="text-gray-600 mb-8 leading-relaxed font-medium"
                 dangerouslySetInnerHTML={{ __html: t('age_gate.description') }}
               />
 
               <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.7 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3, duration: 0.3 }}
                 className="flex flex-col gap-4"
               >
                 <Button
@@ -183,7 +153,7 @@ export function AgeGate() {
               <motion.p
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
+                transition={{ delay: 0.35, duration: 0.3 }}
                 className="mt-6 text-xs text-gray-500"
               >
                 {t('age_gate.warning')}

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+/* Fonts are now imported in main.tsx using @fontsource */
 
 @custom-variant dark (&:is(.dark *));
 
