@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import analytics from '@/lib/analytics';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +18,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {
+    analytics.trackLanguageSwitch(lng);
     i18n.changeLanguage(lng);
   };
 

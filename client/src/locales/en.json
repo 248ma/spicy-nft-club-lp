@@ -608,7 +608,7 @@
     "privacy": "Privacy Policy",
     "cookie_policy": {
       "title": "Cookie & Storage Usage",
-      "content": "This site respects your privacy and does not use tracking cookies. We only use browser local storage (localStorage) to maintain essential functions such as age verification and language settings. No personal tracking or data sharing with third parties occurs."
+      "content": "This site respects your privacy and does not use tracking cookies. We only use browser local storage (localStorage) to maintain essential functions such as age verification and language settings. For site improvement, we use a privacy-focused analytics tool (Plausible Analytics), but no personal information is collected or shared with third parties."
     },
     "law": "Legal Notice",
     "disclaimer": "This project does not guarantee revenue or increase in NFT value. Risks specific to crypto assets and the adult entertainment industry exist. All investment decisions are at your own risk."

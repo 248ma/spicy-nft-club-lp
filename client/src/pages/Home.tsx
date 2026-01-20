@@ -28,6 +28,7 @@ import { MobileMenu } from "@/components/MobileMenu";
 import { AgeGate } from "@/components/AgeGate";
 import { MintModal } from "@/components/MintModal";
 import { useNFTData } from "@/hooks/useNFTData";
+import analytics from '@/lib/analytics';
 import '../lib/i18n';
 
 export default function Home() {
@@ -169,7 +170,10 @@ export default function Home() {
                 </div>
               </div>
               <div 
-                onClick={() => window.open("https://t.me/spicynftclub", "_blank")}
+                onClick={() => {
+                  analytics.trackTelegramJoin();
+                  window.open("https://t.me/spicynftclub", "_blank");
+                }}
                 className="flex items-center gap-2 text-white/80 hover:text-white transition-colors group cursor-pointer"
               >
                 <div className="w-8 h-8 rounded-full bg-[#0088cc] flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -901,6 +905,7 @@ export default function Home() {
                   href="https://t.me/spicynftclub" 
                   target="_blank" 
                   rel="noopener noreferrer"
+                  onClick={() => analytics.trackTelegramJoin()}
                   className="flex items-center justify-center gap-3 text-white transition-all group bg-black/40 px-6 py-4 rounded-full hover:bg-black/60 border border-[#0088cc] shadow-[0_0_15px_rgba(0,136,204,0.3)] hover:shadow-[0_0_25px_rgba(0,136,204,0.5)] w-full"
                 >
                   <div className="w-6 h-6 rounded-full bg-[#0088cc] flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_10px_#0088cc]">
@@ -915,6 +920,7 @@ export default function Home() {
                   href="https://x.com/spicynftclub?s=21&t=L0-eN0Ni_qYCds8Mlp3xRA" 
                   target="_blank" 
                   rel="noopener noreferrer"
+                  onClick={() => analytics.trackXFollow()}
                   className="flex items-center justify-center gap-3 text-white transition-all group bg-black/40 px-6 py-4 rounded-full hover:bg-black/60 border border-white shadow-[0_0_15px_rgba(255,255,255,0.3)] hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] w-full"
                 >
                   <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 group-hover:scale-110 transition-transform drop-shadow-[0_0_5px_rgba(255,255,255,0.8)]">

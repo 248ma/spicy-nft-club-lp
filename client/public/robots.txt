@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://spicynftclub.com/sitemap.xml
+
+# Disallow sensitive paths (if any)
+Disallow: /api/
+Disallow: /.env
