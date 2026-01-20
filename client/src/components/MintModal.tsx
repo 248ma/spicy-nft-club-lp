@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { MINT_SITE_URL } from '@/contracts/config';
+import analytics from '@/lib/analytics';
 
 interface MintModalProps {
   trigger?: React.ReactNode;
@@ -33,7 +34,10 @@ export function MintModal({ trigger, open, onOpenChange }: MintModalProps) {
           {MINT_SITE_URL ? (
             <Button 
               className="w-full h-20 text-lg font-bold bg-[#627EEA] hover:bg-[#627EEA]/90 text-white flex items-center justify-between px-6 transition-all hover:scale-[1.02] group"
-              onClick={() => window.open(MINT_SITE_URL, '_blank')}
+              onClick={() => {
+                analytics.trackNFTPurchaseClick();
+                window.open(MINT_SITE_URL, '_blank');
+              }}
             >
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
