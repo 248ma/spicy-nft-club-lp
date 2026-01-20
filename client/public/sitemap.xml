@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://spicynftclub.com/</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://spicynftclub.com/?lang=ja" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://spicynftclub.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="ko" href="https://spicynftclub.com/?lang=ko" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://spicynftclub.com/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://spicynftclub.com/?lang=zh" />
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://spicynftclub.com/terms</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://spicynftclub.com/privacy</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Commercial Transaction Act -->
+  <url>
+    <loc>https://spicynftclub.com/transaction</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
