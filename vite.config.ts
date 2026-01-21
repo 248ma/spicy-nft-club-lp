@@ -24,14 +24,15 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
     rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['framer-motion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-accordion'],
-          'i18n-vendor': ['react-i18next', 'i18next'],
-          'web3-vendor': ['wagmi', 'viem', '@tanstack/react-query'],
-        },
-      },
+      // Commented out manualChunks to avoid "Could not resolve entry module" errors
+      // output: {
+      //   manualChunks: {
+      //     'react-vendor': ['react', 'react-dom'],
+      //     'ui-vendor': ['framer-motion', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-accordion'],
+      //     'i18n-vendor': ['react-i18next', 'i18next'],
+      //     'web3-vendor': ['wagmi', 'viem', '@tanstack/react-query'],
+      //   },
+      // },
     },
     chunkSizeWarningLimit: 500,
     minify: 'terser',

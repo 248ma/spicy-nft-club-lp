@@ -78,8 +78,6 @@ export function AgeGate() {
                   height: particle.size,
                   left: `${particle.x}%`,
                   top: `${particle.y}%`,
-                }}
-                style={{
                   opacity: 0.15
                 }}
               />
