@@ -501,21 +501,9 @@
         "label": "For Sale",
         "value": "400 (ETH 200 / SOL 200)"
       },
-      "team": {
-        "label": "Team Reserve",
-        "value": "0 (All for sale)"
-      },
       "price": {
         "label": "Price",
         "value": "Bonding Curve"
-      },
-      "revenue": {
-        "label": "Revenue Share",
-        "value": "5% of Store Revenue"
-      },
-      "royalty": {
-        "label": "Secondary Market",
-        "value": "Royalty 3%"
       }
     }
   },
