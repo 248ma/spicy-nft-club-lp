@@ -1,8 +1,8 @@
 {
   "framework": "vite",
-  "buildCommand": "pnpm build",
-  "outputDirectory": "dist",
-  "installCommand": "pnpm install",
+  "buildCommand": "cd client && pnpm build",
+  "outputDirectory": "client/dist",
+  "installCommand": "cd client && pnpm install",
   "rewrites": [
     {
       "source": "/((?!documents/|assets/|logo.png|favicon.ico).*)",
