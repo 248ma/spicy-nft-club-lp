@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Shield, Database, Lock, Globe, Users, FileText } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Privacy() {
@@ -18,183 +18,246 @@ export default function Privacy() {
           <Link href="/">
             <Button variant="ghost" className="mb-8 text-gray-400 hover:text-white pl-0 hover:bg-transparent">
               <ArrowLeft className="mr-2 h-4 w-4" />
-              {t('common.back_to_home') || 'Back to Home'}
+              {t('common.back_to_home')}
             </Button>
           </Link>
 
           <h1 className="text-3xl md:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#ff0080] to-[#7928ca]">
-            Privacy Policy
+            {t('privacy_policy.title')}
           </h1>
           <p className="text-gray-400 mb-12">
-            Last Updated: January 21, 2026
+            {t('privacy_policy.last_updated')}
           </p>
 
-          <div className="space-y-12 text-gray-300 leading-relaxed">
+          <div className="space-y-12">
             {/* Introduction */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">01.</span>
-                Introduction
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  SPICY NFT CLUB (hereinafter referred to as "the Project", "we", "us", or "our") respects your privacy and is committed to protecting your personal information in accordance with the Act on the Protection of Personal Information (Japan) and other applicable laws.
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.introduction.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white">
+                  {t('privacy_policy.sections.introduction.title')}
+                </h2>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6 border border-white/10 space-y-4">
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.introduction.content_1')}
                 </p>
-                <p>
-                  This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (spicynftclub.com), NFT minting site (mint.spicynftclub.com), and interact with our social media channels including Discord, Telegram, and X (Twitter).
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.introduction.content_2')}
                 </p>
               </div>
             </section>
 
             {/* Information We Collect */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">02.</span>
-                Information We Collect
-              </h2>
-              
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.information_collect.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <Database className="w-6 h-6" />
+                  {t('privacy_policy.sections.information_collect.title')}
+                </h2>
+              </div>
+
               <div className="space-y-6">
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">a) Automatically Collected Information</h3>
-                  <p className="mb-2">When you visit our website, we automatically collect certain information:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                    <li>IP address</li>
-                    <li>Browser type and version</li>
-                    <li>Device information (operating system, screen resolution)</li>
-                    <li>Access date and time</li>
-                    <li>Referring URL</li>
-                    <li>Pages visited and time spent on each page</li>
+                {/* Auto Collected */}
+                <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                  <h3 className="font-semibold text-white mb-3">
+                    {t('privacy_policy.sections.information_collect.auto_collected.subtitle')}
+                  </h3>
+                  <p className="text-gray-300 mb-3">
+                    {t('privacy_policy.sections.information_collect.auto_collected.intro')}
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    {t('privacy_policy.sections.information_collect.auto_collected.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[#ff0080] mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">b) Information You Provide</h3>
-                  <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                    <li>Email address (when subscribing to newsletters or updates)</li>
-                    <li>Wallet address (when purchasing NFTs)</li>
-                    <li>Discord/Telegram username (when joining our community)</li>
-                    <li>Event participation information</li>
+                {/* User Provided */}
+                <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                  <h3 className="font-semibold text-white mb-3">
+                    {t('privacy_policy.sections.information_collect.user_provided.subtitle')}
+                  </h3>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    {t('privacy_policy.sections.information_collect.user_provided.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[#ff0080] mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">c) Blockchain Information</h3>
-                  <p className="mb-2">When you interact with our NFT smart contracts:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                    <li>Wallet address</li>
-                    <li>Transaction history</li>
-                    <li>NFT ownership status</li>
-                    <li>Smart contract interaction history</li>
+                {/* Blockchain */}
+                <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                  <h3 className="font-semibold text-white mb-3">
+                    {t('privacy_policy.sections.information_collect.blockchain.subtitle')}
+                  </h3>
+                  <p className="text-gray-300 mb-3">
+                    {t('privacy_policy.sections.information_collect.blockchain.intro')}
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-400 mb-4">
+                    {t('privacy_policy.sections.information_collect.blockchain.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[#ff0080] mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
-                  <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
+                  <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4">
                     <p className="text-yellow-200 text-sm">
-                      <strong>Important:</strong> Blockchain information is publicly available and permanently recorded on the blockchain. We cannot delete or modify information stored on the blockchain.
+                      <strong>{t('privacy_policy.sections.information_collect.blockchain.important')}</strong>{' '}
+                      {t('privacy_policy.sections.information_collect.blockchain.important_text')}
                     </p>
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-3">d) Local Storage</h3>
-                  <p className="mb-2">We use browser local storage to:</p>
-                  <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                    <li>Remember your age verification status (key: 'age_verified_v2')</li>
-                    <li>Store your language preference</li>
+                {/* Local Storage */}
+                <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                  <h3 className="font-semibold text-white mb-3">
+                    {t('privacy_policy.sections.information_collect.local_storage.subtitle')}
+                  </h3>
+                  <p className="text-gray-300 mb-3">
+                    {t('privacy_policy.sections.information_collect.local_storage.intro')}
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-400 mb-4">
+                    {t('privacy_policy.sections.information_collect.local_storage.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[#ff0080] mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
                   </ul>
-                  <p className="mt-2 text-sm text-gray-400">
-                    This information is stored locally in your browser and is not transmitted to our servers.
+                  <p className="text-sm text-gray-400 italic">
+                    {t('privacy_policy.sections.information_collect.local_storage.note')}
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* How We Use Your Information */}
+            {/* How We Use */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">03.</span>
-                How We Use Your Information
-              </h2>
-              <div className="space-y-3">
-                <p>We use the collected information for the following purposes:</p>
-                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                  <li><strong className="text-white">NFT Sales and Membership Management:</strong> To identify NFT holders and provide member-exclusive benefits</li>
-                  <li><strong className="text-white">Communication:</strong> To send project updates, event announcements, and important notices</li>
-                  <li><strong className="text-white">Service Improvement:</strong> To analyze website performance and enhance user experience</li>
-                  <li><strong className="text-white">Security:</strong> To detect and prevent fraud, unauthorized access, and other illegal activities</li>
-                  <li><strong className="text-white">Legal Compliance:</strong> To comply with legal obligations and respond to lawful requests</li>
-                  <li><strong className="text-white">Revenue Distribution:</strong> To calculate and distribute revenue share to NFT holders</li>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.how_we_use.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white">
+                  {t('privacy_policy.sections.how_we_use.title')}
+                </h2>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                <p className="text-gray-300 mb-4">
+                  {t('privacy_policy.sections.how_we_use.intro')}
+                </p>
+                <ul className="space-y-3 text-sm text-gray-400">
+                  {t('privacy_policy.sections.how_we_use.items', { returnObjects: true }).map((item: any, index: number) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-[#ff0080] mt-1">•</span>
+                      <span>
+                        <strong className="text-white">{item.title}</strong> {item.desc}
+                      </span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </section>
 
             {/* Information Sharing */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">04.</span>
-                Information Sharing and Disclosure
-              </h2>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.information_sharing.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <Globe className="w-6 h-6" />
+                  {t('privacy_policy.sections.information_sharing.title')}
+                </h2>
+              </div>
               <div className="space-y-4">
-                <p>We may share your information with the following third parties:</p>
-                
-                <div className="bg-white/5 rounded-lg p-6 space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-white mb-2">Service Providers</h4>
-                    <ul className="list-disc list-inside space-y-1 ml-4 text-gray-400 text-sm">
-                      <li><strong>Vercel:</strong> Website hosting and deployment</li>
-                      <li><strong>Plausible Analytics:</strong> Privacy-friendly, cookieless website analytics</li>
-                      <li><strong>Ethereum/Solana Blockchain:</strong> NFT issuance and management</li>
-                      <li><strong>Discord/Telegram:</strong> Community management and communication</li>
-                    </ul>
-                  </div>
+                <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                  <p className="text-gray-300 mb-4">
+                    {t('privacy_policy.sections.information_sharing.intro')}
+                  </p>
+                  <h4 className="font-semibold text-white mb-3">
+                    {t('privacy_policy.sections.information_sharing.service_providers.subtitle')}
+                  </h4>
+                  <ul className="space-y-2 text-sm text-gray-400 mb-4">
+                    {t('privacy_policy.sections.information_sharing.service_providers.items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[#ff0080] mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-gray-300 mb-2">
+                    {t('privacy_policy.sections.information_sharing.disclosure')}
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-400">
+                    {t('privacy_policy.sections.information_sharing.disclosure_items', { returnObjects: true }).map((item: string, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[#ff0080] mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-
-                <p>We may also disclose your information:</p>
-                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                  <li>When required by law or in response to valid legal requests</li>
-                  <li>To protect our rights, property, or safety, or that of our users</li>
-                  <li>In connection with a business transfer, merger, or acquisition</li>
-                </ul>
-
-                <div className="mt-4 p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg">
-                  <p className="text-blue-200 text-sm">
-                    <strong>We do not sell your personal information to third parties.</strong>
+                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+                  <p className="text-green-200 text-sm font-semibold">
+                    {t('privacy_policy.sections.information_sharing.no_sell')}
                   </p>
                 </div>
               </div>
             </section>
 
-            {/* Cookies and Tracking */}
+            {/* Cookies */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">05.</span>
-                Cookies and Tracking Technologies
-              </h2>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.cookies.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white">
+                  {t('privacy_policy.sections.cookies.title')}
+                </h2>
+              </div>
               <div className="space-y-4">
-                <p>
-                  We prioritize your privacy and use minimal tracking technologies:
+                <p className="text-gray-300">
+                  {t('privacy_policy.sections.cookies.intro')}
                 </p>
-
-                <div className="bg-white/5 rounded-lg p-6 space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-white mb-2">Plausible Analytics (Cookieless)</h4>
-                    <p className="text-gray-400 text-sm">
-                      We use Plausible Analytics, a privacy-friendly analytics tool that does not use cookies and does not collect personally identifiable information. Plausible is GDPR, CCPA, and PECR compliant.
-                    </p>
-                    <p className="text-gray-400 text-sm mt-2">
-                      Data collected: Page views, referral sources, device type (without identifying individual users)
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-white mb-2">Local Storage</h4>
-                    <p className="text-gray-400 text-sm">
-                      We use browser local storage (not cookies) to remember your age verification status and language preference. This data is stored locally on your device and is not transmitted to our servers.
-                    </p>
-                  </div>
+                
+                <div className="bg-gradient-to-br from-green-500/10 to-blue-500/10 rounded-lg p-6 border border-green-500/20">
+                  <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                    <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
+                    {t('privacy_policy.sections.cookies.plausible.subtitle')}
+                  </h4>
+                  <p className="text-sm text-gray-300 mb-2">
+                    {t('privacy_policy.sections.cookies.plausible.content')}
+                  </p>
+                  <p className="text-sm text-gray-400 italic">
+                    {t('privacy_policy.sections.cookies.plausible.data_collected')}
+                  </p>
                 </div>
 
-                <div className="mt-4 p-4 bg-green-500/10 border border-green-500/20 rounded-lg">
-                  <p className="text-green-200 text-sm">
-                    <strong>No Cookie Consent Required:</strong> Since we do not use cookies for tracking or advertising, no cookie consent banner is required under GDPR and ePrivacy regulations.
+                <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                  <h4 className="font-semibold text-white mb-3">
+                    {t('privacy_policy.sections.cookies.local_storage.subtitle')}
+                  </h4>
+                  <p className="text-sm text-gray-300">
+                    {t('privacy_policy.sections.cookies.local_storage.content')}
+                  </p>
+                </div>
+
+                <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                  <p className="text-blue-200 text-sm">
+                    <strong>{t('privacy_policy.sections.cookies.no_consent.subtitle')}</strong>{' '}
+                    {t('privacy_policy.sections.cookies.no_consent.content')}
                   </p>
                 </div>
               </div>
@@ -202,26 +265,34 @@ export default function Privacy() {
 
             {/* Data Security */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">06.</span>
-                Data Security
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  We implement industry-standard security measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction. These measures include:
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.data_security.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <Lock className="w-6 h-6" />
+                  {t('privacy_policy.sections.data_security.title')}
+                </h2>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6 border border-white/10 space-y-4">
+                <p className="text-gray-300">
+                  {t('privacy_policy.sections.data_security.intro')}
                 </p>
-                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                  <li>HTTPS encryption for all data transmission</li>
-                  <li>Secure hosting infrastructure (Vercel)</li>
-                  <li>Regular security audits and updates</li>
-                  <li>Access controls and authentication mechanisms</li>
+                <ul className="space-y-2 text-sm text-gray-400">
+                  {t('privacy_policy.sections.data_security.measures', { returnObjects: true }).map((item: string, index: number) => (
+                    <li key={index} className="flex items-start gap-2">
+                      <span className="text-[#ff0080] mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
-                <p className="text-gray-400">
-                  However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your personal information, we cannot guarantee its absolute security.
+                <p className="text-sm text-gray-400">
+                  {t('privacy_policy.sections.data_security.limitation')}
                 </p>
-                <div className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-lg">
-                  <p className="text-red-200 text-sm">
-                    <strong>Wallet Security:</strong> Never share your wallet's private keys or seed phrase with anyone, including our team. We will never ask for this information.
+                <div className="border-l-4 border-[#ff0080] pl-4 bg-white/5 p-4 rounded">
+                  <p className="text-sm text-gray-300">
+                    <strong className="text-white">{t('privacy_policy.sections.data_security.wallet_security.title')}</strong>{' '}
+                    {t('privacy_policy.sections.data_security.wallet_security.content')}
                   </p>
                 </div>
               </div>
@@ -229,94 +300,134 @@ export default function Privacy() {
 
             {/* Your Rights */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">07.</span>
-                Your Rights
-              </h2>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.your_rights.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <Users className="w-6 h-6" />
+                  {t('privacy_policy.sections.your_rights.title')}
+                </h2>
+              </div>
               <div className="space-y-4">
-                <p>Under applicable privacy laws, you have the following rights:</p>
-                <ul className="list-disc list-inside space-y-2 ml-4 text-gray-400">
-                  <li><strong className="text-white">Right to Access:</strong> Request access to the personal information we hold about you</li>
-                  <li><strong className="text-white">Right to Rectification:</strong> Request correction of inaccurate personal information</li>
-                  <li><strong className="text-white">Right to Erasure:</strong> Request deletion of your personal information (subject to limitations)</li>
-                  <li><strong className="text-white">Right to Opt-Out:</strong> Unsubscribe from marketing communications at any time</li>
-                  <li><strong className="text-white">Right to Data Portability:</strong> Request a copy of your data in a structured format</li>
-                </ul>
-
-                <div className="mt-4 p-4 bg-yellow-500/10 border border-yellow-500/20 rounded-lg">
-                  <p className="text-yellow-200 text-sm">
-                    <strong>Blockchain Limitation:</strong> Information recorded on the blockchain (wallet addresses, transaction history, NFT ownership) cannot be deleted or modified due to the immutable nature of blockchain technology.
+                <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+                  <p className="text-gray-300 mb-4">
+                    {t('privacy_policy.sections.your_rights.intro')}
                   </p>
+                  <ul className="space-y-3 text-sm text-gray-400 mb-4">
+                    {t('privacy_policy.sections.your_rights.rights', { returnObjects: true }).map((item: any, index: number) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <span className="text-[#ff0080] mt-1">•</span>
+                        <span>
+                          <strong className="text-white">{item.title}</strong> {item.desc}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-lg p-4 mb-4">
+                    <p className="text-yellow-200 text-sm">
+                      <strong>{t('privacy_policy.sections.your_rights.blockchain_limitation.title')}</strong>{' '}
+                      {t('privacy_policy.sections.your_rights.blockchain_limitation.content')}
+                    </p>
+                  </div>
+                  <p className="text-gray-300 mb-2">
+                    {t('privacy_policy.sections.your_rights.contact')}
+                  </p>
+                  <a href={`mailto:${t('privacy_policy.sections.your_rights.email')}`} className="text-[#ff0080] hover:underline">
+                    {t('privacy_policy.sections.your_rights.email')}
+                  </a>
                 </div>
-
-                <p className="mt-4">
-                  To exercise any of these rights, please contact us at: <a href="mailto:privacy@spicynftclub.com" className="text-[#ff0080] hover:underline">privacy@spicynftclub.com</a>
-                </p>
               </div>
             </section>
 
-            {/* International Data Transfers */}
+            {/* International Transfers */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">08.</span>
-                International Data Transfers
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  Your information may be transferred to and stored on servers located outside of Japan, including in the United States (Vercel hosting). By using our services, you consent to the transfer of your information to countries that may have different data protection laws than Japan.
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.international_transfers.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white">
+                  {t('privacy_policy.sections.international_transfers.title')}
+                </h2>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6 border border-white/10 space-y-4">
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.international_transfers.content_1')}
                 </p>
-                <p>
-                  We ensure that appropriate safeguards are in place to protect your information in accordance with this Privacy Policy.
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.international_transfers.content_2')}
                 </p>
               </div>
             </section>
 
             {/* Children's Privacy */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">09.</span>
-                Children's Privacy
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  Our services are intended for individuals aged 18 and above. We do not knowingly collect personal information from individuals under 18 years of age.
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.children_privacy.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white">
+                  {t('privacy_policy.sections.children_privacy.title')}
+                </h2>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6 border border-white/10 space-y-4">
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.children_privacy.content_1')}
                 </p>
-                <p>
-                  If we become aware that we have collected personal information from someone under 18, we will take steps to delete such information promptly.
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.children_privacy.content_2')}
                 </p>
               </div>
             </section>
 
-            {/* Changes to Privacy Policy */}
+            {/* Changes */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">10.</span>
-                Changes to This Privacy Policy
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.changes.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                  <FileText className="w-6 h-6" />
+                  {t('privacy_policy.sections.changes.title')}
+                </h2>
+              </div>
+              <div className="bg-white/5 rounded-lg p-6 border border-white/10 space-y-4">
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.changes.content_1')}
                 </p>
-                <p>
-                  We encourage you to review this Privacy Policy periodically for any changes. Your continued use of our services after any modifications indicates your acceptance of the updated Privacy Policy.
+                <p className="text-gray-300 leading-relaxed">
+                  {t('privacy_policy.sections.changes.content_2')}
                 </p>
               </div>
             </section>
 
             {/* Contact Us */}
             <section>
-              <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-[#ff0080]">11.</span>
-                Contact Us
-              </h2>
-              <div className="space-y-4">
-                <p>
-                  If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl font-bold text-[#ff0080]">
+                  {t('privacy_policy.sections.contact_us.number')}
+                </span>
+                <h2 className="text-2xl font-bold text-white">
+                  {t('privacy_policy.sections.contact_us.title')}
+                </h2>
+              </div>
+              <div className="bg-gradient-to-br from-[#ff0080]/10 to-[#7928ca]/10 rounded-lg p-6 border border-white/10">
+                <p className="text-gray-300 mb-4">
+                  {t('privacy_policy.sections.contact_us.intro')}
                 </p>
-                <div className="bg-white/5 rounded-lg p-6">
-                  <p className="text-white font-semibold mb-2">SPICY NFT CLUB</p>
-                  <p className="text-gray-400 text-sm">Email: <a href="mailto:privacy@spicynftclub.com" className="text-[#ff0080] hover:underline">privacy@spicynftclub.com</a></p>
-                  <p className="text-gray-400 text-sm">General Inquiries: <a href="mailto:contact@spicynftclub.com" className="text-[#ff0080] hover:underline">contact@spicynftclub.com</a></p>
+                <div className="space-y-2 text-sm text-gray-300">
+                  <p>
+                    <span className="text-gray-400">Privacy:</span>{' '}
+                    <a href={`mailto:${t('privacy_policy.sections.contact_us.emails.privacy')}`} className="text-[#ff0080] hover:underline">
+                      {t('privacy_policy.sections.contact_us.emails.privacy')}
+                    </a>
+                  </p>
+                  <p>
+                    <span className="text-gray-400">General:</span>{' '}
+                    <a href={`mailto:${t('privacy_policy.sections.contact_us.emails.general')}`} className="text-[#ff0080] hover:underline">
+                      {t('privacy_policy.sections.contact_us.emails.general')}
+                    </a>
+                  </p>
                 </div>
               </div>
             </section>
