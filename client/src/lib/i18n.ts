@@ -24,8 +24,10 @@ i18n
       escapeValue: false,
     },
     detection: {
-      order: ['localStorage', 'navigator'],
+      // 優先順位: URLパラメータ → localStorage → ブラウザ言語 → デフォルト
+      order: ['querystring', 'localStorage', 'navigator'],
       caches: ['localStorage'],
+      lookupQuerystring: 'lang', // URLパラメータ ?lang=xx
       lookupLocalStorage: 'i18nextLng',
     },
   });
