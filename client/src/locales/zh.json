@@ -598,5 +598,315 @@
     "view_etherscan": "在Etherscan上查看",
     "view_solscan": "在Solscan上查看",
     "close": "关闭"
+  },
+  "privacy_policy": {
+    "title": "隐私政策",
+    "last_updated": "最后更新：2026年1月21日",
+    "sections": {
+      "introduction": {
+        "number": "01.",
+        "title": "介绍",
+        "content_1": "SPICY NFT CLUB（以下简称“项目”、“我们”或“我们的”）尊重您的隐私，并致力于根据《个人信息保护法》（日本）及其他适用法律保护您的个人信息。",
+        "content_2": "本隐私政策说明了当您访问我们的网站（spicynftclub.com）、NFT 铸造网站（mint.spicynftclub.com）以及与我们的社交媒体渠道（包括 Discord、Telegram 和 X（Twitter））互动时，我们如何收集、使用、披露和保护您的信息。"
+      },
+      "information_collect": {
+        "number": "02.",
+        "title": "我们收集的信息",
+        "auto_collected": {
+          "subtitle": "a) 自动收集的信息",
+          "intro": "当您访问我们的网站时，我们会自动收集某些信息：",
+          "items": [
+            "IP 地址",
+            "浏览器类型和版本",
+            "设备信息（操作系统、屏幕分辨率）",
+            "访问日期和时间",
+            "来源网址",
+            "访问的页面及在每个页面停留的时间"
+          ]
+        },
+        "user_provided": {
+          "subtitle": "b) 您提供的信息",
+          "items": [
+            "电子邮件地址（订阅新闻通讯或更新时）",
+            "钱包地址（购买 NFT 时）",
+            "Discord/Telegram 用户名（加入我们的社区时）",
+            "活动参与信息"
+          ]
+        },
+        "blockchain": {
+          "subtitle": "c) 区块链信息",
+          "intro": "当您与我们的 NFT 智能合约互动时：",
+          "items": [
+            "钱包地址",
+            "交易历史",
+            "NFT 所有权状态",
+            "智能合约互动历史"
+          ],
+          "important": "重要提示：",
+          "important_text": "区块链信息是公开且永久记录在区块链上的。我们无法删除或修改存储在区块链上的信息。"
+        },
+        "local_storage": {
+          "subtitle": "d) 本地存储",
+          "intro": "我们使用浏览器本地存储来：",
+          "items": [
+            "记住您的年龄验证状态（键名：'age_verified_v2'）",
+            "存储您的语言偏好"
+          ],
+          "note": "这些信息存储在您浏览器的本地，不会传输到我们的服务器。"
+        }
+      },
+      "how_we_use": {
+        "number": "03.",
+        "title": "我们如何使用您的信息",
+        "intro": "我们将收集的信息用于以下目的：",
+        "items": [
+          {
+            "title": "NFT 销售及会员管理：",
+            "desc": "识别 NFT 持有者并提供会员专属权益"
+          },
+          {
+            "title": "沟通交流：",
+            "desc": "发送项目更新、活动公告及重要通知"
+          },
+          {
+            "title": "服务改进：",
+            "desc": "分析网站性能并提升用户体验"
+          },
+          {
+            "title": "安全保障：",
+            "desc": "检测并防止欺诈、未授权访问及其他非法活动"
+          },
+          {
+            "title": "法律合规：",
+            "desc": "遵守法律义务并响应合法请求"
+          },
+          {
+            "title": "收益分配：",
+            "desc": "计算并分配 NFT 持有者的收益份额"
+          }
+        ]
+      },
+      "information_sharing": {
+        "number": "04.",
+        "title": "信息共享与披露",
+        "intro": "我们可能会与以下第三方共享您的信息：",
+        "service_providers": {
+          "subtitle": "服务提供商",
+          "items": [
+            "Vercel：网站托管与部署",
+            "Plausible Analytics：注重隐私、无 Cookie 的网站分析工具",
+            "以太坊/索拉纳区块链：NFT 发行与管理",
+            "Discord/Telegram：社区管理与沟通"
+          ]
+        },
+        "disclosure": "我们也可能披露您的信息：",
+        "disclosure_items": [
+          "法律要求或响应有效法律请求时",
+          "为保护我们的权利、财产或安全，或保护用户的权利、财产或安全时",
+          "在业务转让、合并或收购相关情况下"
+        ],
+        "no_sell": "我们不会将您的个人信息出售给第三方。"
+      },
+      "cookies": {
+        "number": "05.",
+        "title": "Cookie 与追踪技术",
+        "intro": "我们重视您的隐私，使用最少的追踪技术：",
+        "plausible": {
+          "subtitle": "Plausible Analytics（无 Cookie）",
+          "content": "我们使用 Plausible Analytics，这是一款注重隐私的分析工具，不使用 Cookie，也不收集可识别个人身份的信息。Plausible 符合 GDPR、CCPA 和 PECR 规定。",
+          "data_collected": "收集数据：页面浏览量、推荐来源、设备类型（不识别具体用户）"
+        },
+        "local_storage": {
+          "subtitle": "本地存储",
+          "content": "我们使用浏览器本地存储（非 Cookie）来记住您的年龄验证状态和语言偏好。此数据存储在您的设备本地，不会传输到我们的服务器。"
+        },
+        "no_consent": {
+          "subtitle": "无需 Cookie 同意：",
+          "content": "由于我们不使用 Cookie 进行追踪或广告，根据 GDPR 和电子隐私法规，无需显示 Cookie 同意横幅。"
+        }
+      },
+      "data_security": {
+        "number": "06.",
+        "title": "数据安全",
+        "intro": "我们实施行业标准的安全措施，保护您的个人信息免受未经授权的访问、披露、更改和破坏。这些措施包括：",
+        "measures": [
+          "所有数据传输均采用 HTTPS 加密",
+          "安全的托管基础设施（Vercel）",
+          "定期的安全审计和更新",
+          "访问控制和身份验证机制"
+        ],
+        "limitation": "然而，互联网传输或电子存储方式没有 100% 的安全保障。尽管我们努力保护您的个人信息，但无法保证其绝对安全。",
+        "wallet_security": {
+          "title": "钱包安全：",
+          "content": "切勿向任何人（包括我们的团队）透露您的钱包私钥或助记词。我们绝不会要求您提供此类信息。"
+        }
+      },
+      "your_rights": {
+        "number": "07.",
+        "title": "您的权利",
+        "intro": "根据适用的隐私法律，您享有以下权利：",
+        "rights": [
+          {
+            "title": "访问权：",
+            "desc": "请求访问我们持有的关于您的个人信息"
+          },
+          {
+            "title": "更正权：",
+            "desc": "请求更正不准确的个人信息"
+          },
+          {
+            "title": "删除权：",
+            "desc": "请求删除您的个人信息（受限于相关限制）"
+          },
+          {
+            "title": "选择退出权：",
+            "desc": "随时取消订阅营销通讯"
+          },
+          {
+            "title": "数据可携权：",
+            "desc": "请求以结构化格式获取您的数据副本"
+          }
+        ],
+        "blockchain_limitation": {
+          "title": "区块链限制：",
+          "content": "由于区块链技术的不可篡改性，记录在区块链上的信息（钱包地址、交易历史、NFT 所有权）无法被删除或修改。"
+        },
+        "contact": "如需行使上述任何权利，请联系我们：",
+        "email": "privacy@spicynftclub.com"
+      },
+      "international_transfers": {
+        "number": "08.",
+        "title": "国际数据传输",
+        "content_1": "您的信息可能会被传输并存储在日本以外的服务器上，包括美国（Vercel 托管）。使用我们的服务即表示您同意将您的信息传输至可能拥有不同数据保护法律的国家。",
+        "content_2": "我们确保采取适当的保障措施，以根据本隐私政策保护您的信息。"
+      },
+      "children_privacy": {
+        "number": "09.",
+        "title": "儿童隐私",
+        "content_1": "我们的服务面向18岁及以上的个人。我们不会有意收集18岁以下个人的个人信息。",
+        "content_2": "如果我们发现收集了18岁以下人员的个人信息，将立即采取措施删除相关信息。"
+      },
+      "changes": {
+        "number": "10.",
+        "title": "隐私政策的变更",
+        "content_1": "我们可能会不时更新本隐私政策。任何重大变更，我们将通过在本页面发布新的隐私政策并更新“最后更新”日期来通知您。",
+        "content_2": "我们鼓励您定期查看本隐私政策的更新。您在任何修改后继续使用我们的服务，即表示您接受更新后的隐私政策。"
+      },
+      "contact_us": {
+        "number": "11.",
+        "title": "联系我们",
+        "intro": "如果您对本隐私政策或我们的隐私实践有任何疑问、关注或请求，请通过以下方式联系我们：",
+        "emails": {
+          "privacy": "privacy@spicynftclub.com",
+          "general": "contact@spicynftclub.com"
+        }
+      }
+    }
+  },
+  "legal_notice_additional": {
+    "last_updated": "最后更新：2026年1月21日",
+    "business_description": {
+      "title": "业务描述",
+      "content_1": "SPICY NFT CLUB 是一个 Web3 项目，发行和管理高端成人娱乐会员NFT。我们为NFT持有者提供独家权益，包括实体店使用权、收益分配、治理参与权及其他高级特权。",
+      "content_2": "我们的使命是通过区块链技术和专业管理，将成人娱乐行业发展为一个安全、公平且有吸引力的领域，为全球利益相关者提供有价值的体验和可能性。"
+    },
+    "intellectual_property": {
+      "title": "知识产权",
+      "content": "本网站及与我们NFT相关的所有内容（包括文本、图片、标志、设计及其他材料）均为SPICY NFT CLUB或其许可方所有，受版权、商标及其他知识产权法律保护。",
+      "nft_holder_rights": {
+        "title": "NFT持有者权利：",
+        "content": "NFT持有者被授予有限的、非独占的许可，用于个人非商业目的使用、展示及展示NFT艺术作品。商业使用需另行授权。"
+      }
+    },
+    "disclaimer": {
+      "title": "免责声明及风险披露",
+      "important_notice": "重要通知",
+      "risks": {
+        "investment": {
+          "title": "投资风险：",
+          "content": "该NFT非投资产品。我们不保证未来价值升值或利润。"
+        },
+        "price_volatility": {
+          "title": "价格波动：",
+          "content": "加密货币价格持续波动，NFT价值可能与购买时不同。"
+        },
+        "service_changes": {
+          "title": "服务变更：",
+          "content": "与该NFT相关的权益和服务可由管理层自行决定变更或终止。"
+        },
+        "secondary_market": {
+          "title": "二级市场：",
+          "content": "二级市场交易的内容或价格不由我们保证。"
+        }
+      },
+      "additional_risks": {
+        "title": "附加风险",
+        "items": [
+          {
+            "title": "技术风险：",
+            "desc": "区块链技术、智能合约和钱包的使用涉及技术风险，包括潜在漏洞、缺陷及网络故障。"
+          },
+          {
+            "title": "监管风险：",
+            "desc": "有关加密货币和NFT的法律法规变更可能影响本项目。"
+          },
+          {
+            "title": "业务风险：",
+            "desc": "实体店运营的成功不保证，可能受市场状况影响。"
+          },
+          {
+            "title": "流动性风险：",
+            "desc": "NFT在二级市场的流动性不保证。"
+          }
+        ]
+      },
+      "limitation_liability": {
+        "title": "责任限制：",
+        "content": "在法律允许的范围内，我们不对因使用本服务而产生的超出适用法律要求范围的任何损害承担责任。"
+      }
+    },
+    "compliance": {
+      "title": "法律合规",
+      "entertainment_act": {
+        "title": "娱乐营业法",
+        "content": "我们严格遵守日本《风俗营业法》。实体店运营将取得所有必要的许可和执照，并保持排除反社会势力的清洁运营。"
+      },
+      "aml": {
+        "title": "反洗钱",
+        "content": "我们致力于防止洗钱和恐怖融资。根据需要，我们可能实施客户身份识别（KYC）程序，并向相关部门报告可疑交易。"
+      }
+    },
+    "age_restriction": {
+      "title": "年龄限制",
+      "content_1": "我们的服务仅面向18岁及以上的个人。18岁以下者不得使用本服务。",
+      "content_2": "我们在访问网站时实施年龄验证。使用本服务即表示您确认已满18岁。"
+    },
+    "prohibited_activities": {
+      "title": "禁止活动",
+      "intro": "用户禁止从事以下活动：",
+      "items": [
+        "违反法律、法规或公共秩序与善良风俗",
+        "侵犯本项目或第三方的知识产权、隐私权或其他权利",
+        "将服务用于洗钱、恐怖融资或其他非法目的",
+        "未经授权访问、黑客攻击或传播恶意软件",
+        "冒充本项目、工作人员或其他用户",
+        "本项目认为不适当的其他活动"
+      ]
+    },
+    "governing_law": {
+      "title": "适用法律及管辖权",
+      "content_1": "本法律声明及因本服务产生或与之相关的所有事项均适用日本法律并依其解释。",
+      "content_2": "因本服务产生或与之相关的任何争议，均由东京地方法院作为第一审专属管辖法院管辖。"
+    },
+    "contact_info": {
+      "title": "联系方式",
+      "company": "SPICY NFT CLUB",
+      "general": "一般咨询：",
+      "legal": "法律事务：",
+      "support": "支持："
+    }
+  },
+  "common": {
+    "back_to_home": "返回首页"
   }
 }
