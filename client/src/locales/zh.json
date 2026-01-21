@@ -469,21 +469,9 @@
         "label": "销售部分",
         "value": "400 个 (ETH 200 / SOL 200)"
       },
-      "team": {
-        "label": "团队保留",
-        "value": "0 个 (全部销售)"
-      },
       "price": {
         "label": "价格",
         "value": "联合曲线"
-      },
-      "revenue": {
-        "label": "收益返还",
-        "value": "店铺收益的 5%"
-      },
-      "royalty": {
-        "label": "二级流通",
-        "value": "版税 3%"
       }
     }
   },
@@ -908,5 +896,25 @@
   },
   "common": {
     "back_to_home": "返回首页"
+  },
+  "features_section": {
+    "items": [
+      {
+        "title": "实质免费*使用权",
+        "description": "仅持有NFT即可获得*年度50万日元相当的VIP使用权。仅持有即可创造价值。"
+      },
+      {
+        "title": "可二次流通",
+        "description": "由于是NFT购买，可在OpenSea等平台进行出售和二次流通。"
+      },
+      {
+        "title": "参与经营",
+        "description": "通过经营投票权（治理），您可以参与项目的决策。"
+      },
+      {
+        "title": "持有返还与实用性",
+        "description": "根据店铺收益进行返还，以及随持有期间增加的实用性。可直接享受事业的成长。"
+      }
+    ]
   }
 }
