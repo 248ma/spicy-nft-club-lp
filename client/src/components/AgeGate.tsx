@@ -107,7 +107,21 @@ export function AgeGate() {
                 className="flex justify-center mb-6"
               >
                 <div className="w-60 h-32 flex items-center justify-center">
-                  <img src="/age-gate-logo.webp" alt="Spicy NFT Club" className="w-full h-full object-contain drop-shadow-md" loading="eager" width="240" height="128" />
+                  <picture>
+                    <source
+                      type="image/webp"
+                      srcSet="/age-gate-logo-256.webp 256w, /age-gate-logo-512.webp 512w, /age-gate-logo.webp 1024w"
+                      sizes="(max-width: 640px) 224px, 240px"
+                    />
+                    <img
+                      src="/age-gate-logo.webp"
+                      alt="Spicy NFT Club"
+                      className="w-full h-full object-contain drop-shadow-md"
+                      loading="eager"
+                      width="240"
+                      height="240"
+                    />
+                  </picture>
                 </div>
               </motion.div>
 
