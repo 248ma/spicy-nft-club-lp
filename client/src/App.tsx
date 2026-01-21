@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import LegalNotice from "./pages/LegalNotice";
 import Exit from "./pages/Exit";
 import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 import Whitepaper from "./pages/Whitepaper";
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -16,8 +17,10 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/whitepaper" component={Whitepaper} />
       <Route path="/legal-notice" component={LegalNotice} />
+      <Route path="/legal" component={LegalNotice} />
       <Route path="/exit" component={Exit} />
       <Route path="/terms" component={Terms} />
+      <Route path="/privacy" component={Privacy} />
       {/* Add explicit routes for anchor links to prevent 404s if accessed directly */}
       <Route path="/:section" component={Home} />
       <Route path="/404" component={NotFound} />

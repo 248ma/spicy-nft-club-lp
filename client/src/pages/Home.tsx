@@ -947,34 +947,9 @@ export default function Home() {
                 <Link href="/terms" className="hover:text-primary transition-colors cursor-pointer">
                   {t('footer.terms')}
                 </Link>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <button className="hover:text-primary transition-colors">{t('footer.privacy')}</button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-black/90 border-white/10 text-white">
-                    <DialogHeader>
-                      <DialogTitle className="text-2xl font-bold mb-4">{t('footer.privacy')}</DialogTitle>
-                      <DialogDescription className="text-gray-400">
-                        <div className="space-y-6 text-left">
-                          <div className="p-4 rounded-lg bg-white/5 border border-white/10">
-                            <h3 className="text-lg font-semibold text-primary mb-2 flex items-center gap-2">
-                              <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
-                              {t('footer.cookie_policy.title')}
-                            </h3>
-                            <p className="text-sm leading-relaxed text-gray-300">
-                              {t('footer.cookie_policy.content')}
-                            </p>
-                          </div>
-                          {/* Placeholder for full privacy policy content */}
-                          <div className="space-y-4 text-sm text-gray-400">
-                            <p>Last updated: December 2025</p>
-                            <p>This Privacy Policy describes how SPICY NFT CLUB collects, uses, and discloses your information...</p>
-                          </div>
-                        </div>
-                      </DialogDescription>
-                    </DialogHeader>
-                  </DialogContent>
-                </Dialog>
+                <Link href="/privacy" className="hover:text-primary transition-colors cursor-pointer">
+                  {t('footer.privacy')}
+                </Link>
                 <Link href="/legal-notice" className="hover:text-primary transition-colors cursor-pointer">
                   {t('footer.law')}
                 </Link>
