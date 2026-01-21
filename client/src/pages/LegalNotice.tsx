@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Building, Scale, AlertTriangle, Shield, Ban, Gavel, Mail } from "lucide-react";
 import { Link } from "wouter";
+import { useEffect } from 'react';
 
 export default function LegalNotice() {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="min-h-screen bg-black text-white pt-24 pb-12">
