@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
+import { useEffect } from 'react';
 
 export default function Terms() {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Define sections based on translation keys
   const sections = [
