@@ -752,5 +752,315 @@
     },
     "note": "※El contenido principal de este sitio está restringido para menores de 18 años conforme a la ley.",
     "back_button": "Volver a la página principal"
+  },
+  "privacy_policy": {
+    "title": "Política de Privacidad",
+    "last_updated": "Última actualización: 21 de enero de 2026",
+    "sections": {
+      "introduction": {
+        "number": "01.",
+        "title": "Introducción",
+        "content_1": "SPICY NFT CLUB (en adelante denominado \"el Proyecto\", \"nosotros\", \"nos\" o \"nuestro\") respeta su privacidad y se compromete a proteger su información personal de acuerdo con la Ley de Protección de Información Personal (Japón) y otras leyes aplicables.",
+        "content_2": "Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y protegemos su información cuando visita nuestro sitio web (spicynftclub.com), sitio de acuñación de NFT (mint.spicynftclub.com) y cuando interactúa con nuestros canales de redes sociales, incluyendo Discord, Telegram y X (Twitter)."
+      },
+      "information_collect": {
+        "number": "02.",
+        "title": "Información que Recopilamos",
+        "auto_collected": {
+          "subtitle": "a) Información Recopilada Automáticamente",
+          "intro": "Cuando visita nuestro sitio web, recopilamos automáticamente cierta información:",
+          "items": [
+            "Dirección IP",
+            "Tipo y versión del navegador",
+            "Información del dispositivo (sistema operativo, resolución de pantalla)",
+            "Fecha y hora de acceso",
+            "URL de referencia",
+            "Páginas visitadas y tiempo dedicado en cada página"
+          ]
+        },
+        "user_provided": {
+          "subtitle": "b) Información que Usted Proporciona",
+          "items": [
+            "Dirección de correo electrónico (al suscribirse a boletines o actualizaciones)",
+            "Dirección de billetera (al comprar NFTs)",
+            "Nombre de usuario de Discord/Telegram (al unirse a nuestra comunidad)",
+            "Información de participación en eventos"
+          ]
+        },
+        "blockchain": {
+          "subtitle": "c) Información de Blockchain",
+          "intro": "Cuando interactúa con nuestros contratos inteligentes NFT:",
+          "items": [
+            "Dirección de billetera",
+            "Historial de transacciones",
+            "Estado de propiedad de NFT",
+            "Historial de interacción con contratos inteligentes"
+          ],
+          "important": "Importante:",
+          "important_text": "La información de blockchain está disponible públicamente y se registra permanentemente en la blockchain. No podemos eliminar ni modificar la información almacenada en la blockchain."
+        },
+        "local_storage": {
+          "subtitle": "d) Almacenamiento Local",
+          "intro": "Usamos el almacenamiento local del navegador para:",
+          "items": [
+            "Recordar su estado de verificación de edad (clave: 'age_verified_v2')",
+            "Almacenar su preferencia de idioma"
+          ],
+          "note": "Esta información se almacena localmente en su navegador y no se transmite a nuestros servidores."
+        }
+      },
+      "how_we_use": {
+        "number": "03.",
+        "title": "Cómo Usamos Su Información",
+        "intro": "Usamos la información recopilada para los siguientes propósitos:",
+        "items": [
+          {
+            "title": "Ventas de NFT y Gestión de Membresías:",
+            "desc": "Para identificar a los poseedores de NFT y proporcionar beneficios exclusivos para miembros"
+          },
+          {
+            "title": "Comunicación:",
+            "desc": "Para enviar actualizaciones del proyecto, anuncios de eventos y avisos importantes"
+          },
+          {
+            "title": "Mejora del Servicio:",
+            "desc": "Para analizar el rendimiento del sitio web y mejorar la experiencia del usuario"
+          },
+          {
+            "title": "Seguridad:",
+            "desc": "Para detectar y prevenir fraudes, accesos no autorizados y otras actividades ilegales"
+          },
+          {
+            "title": "Cumplimiento Legal:",
+            "desc": "Para cumplir con obligaciones legales y responder a solicitudes legales válidas"
+          },
+          {
+            "title": "Distribución de Ingresos:",
+            "desc": "Para calcular y distribuir la parte proporcional de ingresos a los poseedores de NFT"
+          }
+        ]
+      },
+      "information_sharing": {
+        "number": "04.",
+        "title": "Compartir y Divulgación de Información",
+        "intro": "Podemos compartir su información con los siguientes terceros:",
+        "service_providers": {
+          "subtitle": "Proveedores de Servicios",
+          "items": [
+            "Vercel: Hospedaje y despliegue del sitio web",
+            "Plausible Analytics: Análisis del sitio web respetuoso con la privacidad y sin cookies",
+            "Blockchain Ethereum/Solana: Emisión y gestión de NFT",
+            "Discord/Telegram: Gestión y comunicación comunitaria"
+          ]
+        },
+        "disclosure": "También podemos divulgar su información:",
+        "disclosure_items": [
+          "Cuando sea requerido por ley o en respuesta a solicitudes legales válidas",
+          "Para proteger nuestros derechos, propiedad o seguridad, o los de nuestros usuarios",
+          "En relación con una transferencia de negocio, fusión o adquisición"
+        ],
+        "no_sell": "No vendemos su información personal a terceros."
+      },
+      "cookies": {
+        "number": "05.",
+        "title": "Cookies y Tecnologías de Seguimiento",
+        "intro": "Priorizamos su privacidad y usamos tecnologías de seguimiento mínimas:",
+        "plausible": {
+          "subtitle": "Plausible Analytics (Sin Cookies)",
+          "content": "Usamos Plausible Analytics, una herramienta de análisis respetuosa con la privacidad que no utiliza cookies ni recopila información personal identificable. Plausible cumple con GDPR, CCPA y PECR.",
+          "data_collected": "Datos recopilados: Vistas de página, fuentes de referencia, tipo de dispositivo (sin identificar usuarios individuales)"
+        },
+        "local_storage": {
+          "subtitle": "Almacenamiento Local",
+          "content": "Usamos almacenamiento local del navegador (no cookies) para recordar su estado de verificación de edad y preferencia de idioma. Estos datos se almacenan localmente en su dispositivo y no se transmiten a nuestros servidores."
+        },
+        "no_consent": {
+          "subtitle": "No se Requiere Consentimiento de Cookies:",
+          "content": "Dado que no usamos cookies para seguimiento o publicidad, no se requiere un banner de consentimiento de cookies bajo GDPR y regulaciones de ePrivacy."
+        }
+      },
+      "data_security": {
+        "number": "06.",
+        "title": "Seguridad de los Datos",
+        "intro": "Implementamos medidas de seguridad estándar en la industria para proteger su información personal contra acceso no autorizado, divulgación, alteración y destrucción. Estas medidas incluyen:",
+        "measures": [
+          "Cifrado HTTPS para toda la transmisión de datos",
+          "Infraestructura de hospedaje segura (Vercel)",
+          "Auditorías y actualizaciones de seguridad regulares",
+          "Controles de acceso y mecanismos de autenticación"
+        ],
+        "limitation": "Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro. Aunque nos esforzamos por proteger su información personal, no podemos garantizar su seguridad absoluta.",
+        "wallet_security": {
+          "title": "Seguridad de la Billetera:",
+          "content": "Nunca comparta las claves privadas o la frase semilla de su billetera con nadie, incluido nuestro equipo. Nunca solicitaremos esta información."
+        }
+      },
+      "your_rights": {
+        "number": "07.",
+        "title": "Sus Derechos",
+        "intro": "Bajo las leyes de privacidad aplicables, usted tiene los siguientes derechos:",
+        "rights": [
+          {
+            "title": "Derecho de Acceso:",
+            "desc": "Solicitar acceso a la información personal que poseemos sobre usted"
+          },
+          {
+            "title": "Derecho de Rectificación:",
+            "desc": "Solicitar la corrección de información personal inexacta"
+          },
+          {
+            "title": "Derecho de Supresión:",
+            "desc": "Solicitar la eliminación de su información personal (sujeto a limitaciones)"
+          },
+          {
+            "title": "Derecho a Oponerse:",
+            "desc": "Darse de baja de comunicaciones de marketing en cualquier momento"
+          },
+          {
+            "title": "Derecho a la Portabilidad de Datos:",
+            "desc": "Solicitar una copia de sus datos en un formato estructurado"
+          }
+        ],
+        "blockchain_limitation": {
+          "title": "Limitación de Blockchain:",
+          "content": "La información registrada en la blockchain (direcciones de billetera, historial de transacciones, propiedad de NFT) no puede ser eliminada ni modificada debido a la naturaleza inmutable de la tecnología blockchain."
+        },
+        "contact": "Para ejercer cualquiera de estos derechos, por favor contáctenos en:",
+        "email": "privacy@spicynftclub.com"
+      },
+      "international_transfers": {
+        "number": "08.",
+        "title": "Transferencias Internacionales de Datos",
+        "content_1": "Su información puede ser transferida y almacenada en servidores ubicados fuera de Japón, incluyendo en Estados Unidos (hospedaje Vercel). Al usar nuestros servicios, usted consiente la transferencia de su información a países que pueden tener leyes de protección de datos diferentes a las de Japón.",
+        "content_2": "Nos aseguramos de que existan salvaguardas apropiadas para proteger su información de acuerdo con esta Política de Privacidad."
+      },
+      "children_privacy": {
+        "number": "09.",
+        "title": "Privacidad de los Niños",
+        "content_1": "Nuestros servicios están destinados a personas mayores de 18 años. No recopilamos conscientemente información personal de personas menores de 18 años.",
+        "content_2": "Si nos damos cuenta de que hemos recopilado información personal de alguien menor de 18 años, tomaremos medidas para eliminar dicha información de inmediato."
+      },
+      "changes": {
+        "number": "10.",
+        "title": "Cambios en Esta Política de Privacidad",
+        "content_1": "Podemos actualizar esta Política de Privacidad ocasionalmente. Le notificaremos sobre cualquier cambio material publicando la nueva Política de Privacidad en esta página y actualizando la fecha de \"Última actualización\".",
+        "content_2": "Le recomendamos revisar esta Política de Privacidad periódicamente para detectar cambios. Su uso continuado de nuestros servicios después de cualquier modificación indica su aceptación de la Política de Privacidad actualizada."
+      },
+      "contact_us": {
+        "number": "11.",
+        "title": "Contáctenos",
+        "intro": "Si tiene alguna pregunta, inquietud o solicitud respecto a esta Política de Privacidad o nuestras prácticas de privacidad, por favor contáctenos en:",
+        "emails": {
+          "privacy": "privacy@spicynftclub.com",
+          "general": "contact@spicynftclub.com"
+        }
+      }
+    }
+  },
+  "legal_notice_additional": {
+    "last_updated": "Última actualización: 21 de enero de 2026",
+    "business_description": {
+      "title": "Descripción del Negocio",
+      "content_1": "SPICY NFT CLUB es un proyecto Web3 que emite y gestiona NFTs de membresía premium para entretenimiento adulto. Proporcionamos a los poseedores de NFTs beneficios exclusivos que incluyen derechos de uso en tiendas físicas, distribución de ingresos, derechos de participación en la gobernanza y otros privilegios premium.",
+      "content_2": "Nuestra misión es evolucionar la industria del entretenimiento adulto hacia un sector seguro, justo y atractivo mediante tecnología blockchain y gestión profesional, brindando experiencias y posibilidades valiosas a los interesados globales."
+    },
+    "intellectual_property": {
+      "title": "Derechos de Propiedad Intelectual",
+      "content": "Todo el contenido en este sitio web y relacionado con nuestros NFTs (incluyendo textos, imágenes, logotipos, diseños y otros materiales) es propiedad de SPICY NFT CLUB o sus licenciantes y está protegido por derechos de autor, marcas registradas y otras leyes de propiedad intelectual.",
+      "nft_holder_rights": {
+        "title": "Derechos de los Poseedores de NFT:",
+        "content": "Se concede a los poseedores de NFTs una licencia limitada, no exclusiva para usar, mostrar y exhibir la obra de arte del NFT para fines personales y no comerciales. El uso comercial requiere autorización separada."
+      }
+    },
+    "disclaimer": {
+      "title": "Aviso Legal y Divulgación de Riesgos",
+      "important_notice": "Aviso Importante",
+      "risks": {
+        "investment": {
+          "title": "Riesgo de Inversión:",
+          "content": "Este NFT no es un producto de inversión. No garantizamos la apreciación del valor futuro ni ganancias."
+        },
+        "price_volatility": {
+          "title": "Volatilidad de Precio:",
+          "content": "Los precios de las criptomonedas fluctúan constantemente, y el valor de los NFTs puede cambiar respecto al momento de la compra."
+        },
+        "service_changes": {
+          "title": "Cambios en el Servicio:",
+          "content": "Los beneficios y servicios asociados con este NFT pueden ser modificados o terminados a discreción de la administración."
+        },
+        "secondary_market": {
+          "title": "Mercado Secundario:",
+          "content": "Las transacciones en el mercado secundario no están garantizadas por nosotros en cuanto a contenido o precio."
+        }
+      },
+      "additional_risks": {
+        "title": "Riesgos Adicionales",
+        "items": [
+          {
+            "title": "Riesgo Técnico:",
+            "desc": "El uso de tecnología blockchain, contratos inteligentes y billeteras implica riesgos técnicos incluyendo posibles errores, vulnerabilidades y fallos de red."
+          },
+          {
+            "title": "Riesgo Regulatorio:",
+            "desc": "Cambios en leyes y regulaciones relativas a criptomonedas y NFTs pueden afectar el proyecto."
+          },
+          {
+            "title": "Riesgo Comercial:",
+            "desc": "El éxito de las operaciones de tiendas físicas no está garantizado y puede verse afectado por condiciones del mercado."
+          },
+          {
+            "title": "Riesgo de Liquidez:",
+            "desc": "No hay garantía de liquidez en el mercado secundario para los NFTs."
+          }
+        ]
+      },
+      "limitation_liability": {
+        "title": "Limitación de Responsabilidad:",
+        "content": "En la medida permitida por la ley, no seremos responsables por daños derivados del uso de este servicio más allá del alcance requerido por las leyes aplicables."
+      }
+    },
+    "compliance": {
+      "title": "Cumplimiento Legal",
+      "entertainment_act": {
+        "title": "Ley de Negocios de Entretenimiento",
+        "content": "Cumplimos estrictamente con la Ley de Control y Mejora de Negocios de Entretenimiento de Japón (風俗営業法). Las operaciones de tiendas físicas obtendrán todas las licencias y permisos necesarios, y mantenemos operaciones limpias que excluyen fuerzas antisociales."
+      },
+      "aml": {
+        "title": "Prevención de Lavado de Dinero",
+        "content": "Estamos comprometidos con la prevención del lavado de dinero y financiamiento del terrorismo. Podemos implementar procedimientos de Conozca a Su Cliente (KYC) según sea necesario y reportaremos transacciones sospechosas a las autoridades correspondientes."
+      }
+    },
+    "age_restriction": {
+      "title": "Restricción de Edad",
+      "content_1": "Nuestros servicios están destinados únicamente a personas de 18 años o más. No se permite el uso del servicio a menores de 18 años.",
+      "content_2": "Implementamos verificación de edad al acceder al sitio web. Al usar nuestros servicios, usted confirma que tiene 18 años o más."
+    },
+    "prohibited_activities": {
+      "title": "Actividades Prohibidas",
+      "intro": "Se prohíbe a los usuarios realizar las siguientes actividades:",
+      "items": [
+        "Violar leyes, regulaciones o el orden público y las buenas costumbres",
+        "Infringir derechos de propiedad intelectual, derechos de privacidad u otros derechos del Proyecto o terceros",
+        "Usar el servicio para lavado de dinero, financiamiento del terrorismo u otros fines ilegales",
+        "Acceso no autorizado, hacking o distribución de malware",
+        "Suplantar al Proyecto, personal u otros usuarios",
+        "Cualquier otra actividad considerada inapropiada por el Proyecto"
+      ]
+    },
+    "governing_law": {
+      "title": "Ley Aplicable y Jurisdicción",
+      "content_1": "Este Aviso Legal y todos los asuntos derivados o relacionados con nuestros servicios se regirán e interpretarán de acuerdo con las leyes de Japón.",
+      "content_2": "Cualquier disputa derivada o relacionada con nuestros servicios estará sujeta a la jurisdicción exclusiva del Tribunal de Distrito de Tokio como tribunal de primera instancia."
+    },
+    "contact_info": {
+      "title": "Información de Contacto",
+      "company": "SPICY NFT CLUB",
+      "general": "Consultas Generales:",
+      "legal": "Asuntos Legales:",
+      "support": "Soporte:"
+    }
+  },
+  "common": {
+    "back_to_home": "Volver al Inicio"
   }
 }
