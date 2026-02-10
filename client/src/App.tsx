@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
@@ -10,6 +11,7 @@ import Exit from "./pages/Exit";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import Whitepaper from "./pages/Whitepaper";
+import { trackAffiliate } from "./lib/affiliate";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -35,6 +37,11 @@ function Router() {
 // - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
 
 function App() {
+  // アフィリエイトトラッキングの初期化
+  useEffect(() => {
+    trackAffiliate();
+  }, []);
+
   return (
     <ErrorBoundary>
       <ThemeProvider
