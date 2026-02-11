@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import { MINT_SITE_URL } from '@/contracts/config';
 import analytics from '@/lib/analytics';
+import { getMintUrlWithAffiliate } from '@/lib/affiliate';
 
 interface MintModalProps {
   trigger?: React.ReactNode;
@@ -36,7 +37,8 @@ export function MintModal({ trigger, open, onOpenChange }: MintModalProps) {
               className="w-full h-20 text-lg font-bold bg-[#627EEA] hover:bg-[#627EEA]/90 text-white flex items-center justify-between px-6 transition-all hover:scale-[1.02] group"
               onClick={() => {
                 analytics.trackNFTPurchaseClick();
-                window.open(MINT_SITE_URL, '_blank');
+                const mintUrl = getMintUrlWithAffiliate(MINT_SITE_URL);
+                window.open(mintUrl, '_blank');
               }}
             >
               <div className="flex items-center gap-4">

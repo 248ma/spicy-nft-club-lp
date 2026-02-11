@@ -1,58 +1,18 @@
 {
-  "framework": "vite",
-  "buildCommand": "pnpm build",
-  "outputDirectory": "dist",
+  "buildCommand": "cd client && pnpm build",
+  "outputDirectory": "client/dist",
+  "devCommand": "cd client && pnpm dev",
   "installCommand": "pnpm install",
+  "framework": null,
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs20.x"
+    }
+  },
   "rewrites": [
     {
-      "source": "/((?!documents/|assets/|logo.png|favicon.ico).*)",
-      "destination": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/documents/(.*).pdf",
-      "headers": [
-        {
-          "key": "Content-Type",
-          "value": "application/pdf"
-        },
-        {
-          "key": "Content-Disposition",
-          "value": "inline; filename=\"whitepaper.pdf\""
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf|eot)$",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(mp4)$",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
     }
   ]
 }
