@@ -1,7 +1,17 @@
 {
   "buildCommand": "pnpm build",
   "outputDirectory": "dist",
-  "devCommand": "cd client && pnpm dev",
+  "devCommand": "pnpm dev",
   "installCommand": "pnpm install",
-  "framework": null
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
